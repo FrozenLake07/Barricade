@@ -1,0 +1,4388 @@
+{
+  "title": "主角64×64步态与呼吸重制版",
+  "canvas": [
+    64,
+    64
+  ],
+  "pixels_per_unit": 32,
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "filter_mode": "Point",
+  "mipmaps": false,
+  "compression": "None",
+  "alpha_values": [
+    0,
+    255
+  ],
+  "foot_baseline_top_y": 51,
+  "action_count": 17,
+  "frame_count": 136,
+  "sheet_columns": 8,
+  "sheet_rows": 17,
+  "preserved_actions": [
+    "CarryIdle",
+    "PickUp",
+    "Place",
+    "Rest",
+    "AimGround",
+    "FireGround",
+    "AimUp",
+    "FireUp",
+    "Reload",
+    "RaiseGun",
+    "LowerGun",
+    "EndingRemember",
+    "EndingHope"
+  ],
+  "remade_actions": [
+    "IdleLeft",
+    "Walk",
+    "CarryIdle",
+    "CarryWalk",
+    "PickUp",
+    "Place",
+    "Rest",
+    "LowerGun",
+    "EndingRemember",
+    "EndingHope"
+  ],
+  "dialogue_actions_included": false,
+  "source_sha256": "a57cf4cc31a5bfaa44de1de84553479e89b380176c21de525792cbf5c5fbe6b1",
+  "actions": [
+    {
+      "name": "Idle",
+      "label": "呼吸待机",
+      "frame_count": 8,
+      "fps": 3,
+      "loop": true,
+      "duration_seconds": 2.6666666666666665,
+      "files": [
+        "Actions/Idle/Hero_Idle_00.png",
+        "Actions/Idle/Hero_Idle_01.png",
+        "Actions/Idle/Hero_Idle_02.png",
+        "Actions/Idle/Hero_Idle_03.png",
+        "Actions/Idle/Hero_Idle_04.png",
+        "Actions/Idle/Hero_Idle_05.png",
+        "Actions/Idle/Hero_Idle_06.png",
+        "Actions/Idle/Hero_Idle_07.png"
+      ],
+      "frame_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "sheet": "Sheets/Hero_Idle_64.png",
+      "preserved": false,
+      "note": "2026-10-18 步态与呼吸重制"
+    },
+    {
+      "name": "IdleLeft",
+      "label": "朝左待机",
+      "frame_count": 8,
+      "fps": 3,
+      "loop": true,
+      "duration_seconds": 2.6666666666666665,
+      "files": [
+        "Actions/IdleLeft/Hero_IdleLeft_00.png",
+        "Actions/IdleLeft/Hero_IdleLeft_01.png",
+        "Actions/IdleLeft/Hero_IdleLeft_02.png",
+        "Actions/IdleLeft/Hero_IdleLeft_03.png",
+        "Actions/IdleLeft/Hero_IdleLeft_04.png",
+        "Actions/IdleLeft/Hero_IdleLeft_05.png",
+        "Actions/IdleLeft/Hero_IdleLeft_06.png",
+        "Actions/IdleLeft/Hero_IdleLeft_07.png"
+      ],
+      "frame_ids": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "sheet": "Sheets/Hero_IdleLeft_64.png",
+      "preserved": false,
+      "note": "2026-10-18 步态与呼吸重制"
+    },
+    {
+      "name": "Walk",
+      "label": "走路",
+      "frame_count": 8,
+      "fps": 8,
+      "loop": true,
+      "duration_seconds": 1.0,
+      "files": [
+        "Actions/Walk/Hero_Walk_00.png",
+        "Actions/Walk/Hero_Walk_01.png",
+        "Actions/Walk/Hero_Walk_02.png",
+        "Actions/Walk/Hero_Walk_03.png",
+        "Actions/Walk/Hero_Walk_04.png",
+        "Actions/Walk/Hero_Walk_05.png",
+        "Actions/Walk/Hero_Walk_06.png",
+        "Actions/Walk/Hero_Walk_07.png"
+      ],
+      "frame_ids": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "sheet": "Sheets/Hero_Walk_64.png",
+      "preserved": false,
+      "note": "2026-10-18 步态与呼吸重制"
+    },
+    {
+      "name": "CarryIdle",
+      "label": "抱物站立",
+      "frame_count": 8,
+      "fps": 6,
+      "loop": true,
+      "duration_seconds": 1.3333333333333333,
+      "files": [
+        "Actions/CarryIdle/Hero_CarryIdle_00.png",
+        "Actions/CarryIdle/Hero_CarryIdle_01.png",
+        "Actions/CarryIdle/Hero_CarryIdle_02.png",
+        "Actions/CarryIdle/Hero_CarryIdle_03.png",
+        "Actions/CarryIdle/Hero_CarryIdle_04.png",
+        "Actions/CarryIdle/Hero_CarryIdle_05.png",
+        "Actions/CarryIdle/Hero_CarryIdle_06.png",
+        "Actions/CarryIdle/Hero_CarryIdle_07.png"
+      ],
+      "frame_ids": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "sheet": "Sheets/Hero_CarryIdle_64.png",
+      "preserved": false,
+      "note": "沿用原动作，仅修补大衣下摆与鞋底边缘"
+    },
+    {
+      "name": "CarryWalk",
+      "label": "抱物搬运",
+      "frame_count": 8,
+      "fps": 8,
+      "loop": true,
+      "duration_seconds": 1.0,
+      "files": [
+        "Actions/CarryWalk/Hero_CarryWalk_00.png",
+        "Actions/CarryWalk/Hero_CarryWalk_01.png",
+        "Actions/CarryWalk/Hero_CarryWalk_02.png",
+        "Actions/CarryWalk/Hero_CarryWalk_03.png",
+        "Actions/CarryWalk/Hero_CarryWalk_04.png",
+        "Actions/CarryWalk/Hero_CarryWalk_05.png",
+        "Actions/CarryWalk/Hero_CarryWalk_06.png",
+        "Actions/CarryWalk/Hero_CarryWalk_07.png"
+      ],
+      "frame_ids": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39
+      ],
+      "sheet": "Sheets/Hero_CarryWalk_64.png",
+      "preserved": false,
+      "note": "2026-10-18 步态与呼吸重制"
+    },
+    {
+      "name": "PickUp",
+      "label": "拾取举起",
+      "frame_count": 8,
+      "fps": 8,
+      "loop": false,
+      "duration_seconds": 1.0,
+      "files": [
+        "Actions/PickUp/Hero_PickUp_00.png",
+        "Actions/PickUp/Hero_PickUp_01.png",
+        "Actions/PickUp/Hero_PickUp_02.png",
+        "Actions/PickUp/Hero_PickUp_03.png",
+        "Actions/PickUp/Hero_PickUp_04.png",
+        "Actions/PickUp/Hero_PickUp_05.png",
+        "Actions/PickUp/Hero_PickUp_06.png",
+        "Actions/PickUp/Hero_PickUp_07.png"
+      ],
+      "frame_ids": [
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47
+      ],
+      "sheet": "Sheets/Hero_PickUp_64.png",
+      "preserved": false,
+      "note": "沿用原动作，仅修补大衣下摆与鞋底边缘"
+    },
+    {
+      "name": "Place",
+      "label": "放置材料",
+      "frame_count": 8,
+      "fps": 8,
+      "loop": false,
+      "duration_seconds": 1.0,
+      "files": [
+        "Actions/Place/Hero_Place_00.png",
+        "Actions/Place/Hero_Place_01.png",
+        "Actions/Place/Hero_Place_02.png",
+        "Actions/Place/Hero_Place_03.png",
+        "Actions/Place/Hero_Place_04.png",
+        "Actions/Place/Hero_Place_05.png",
+        "Actions/Place/Hero_Place_06.png",
+        "Actions/Place/Hero_Place_07.png"
+      ],
+      "frame_ids": [
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55
+      ],
+      "sheet": "Sheets/Hero_Place_64.png",
+      "preserved": false,
+      "note": "沿用原动作，仅修补大衣下摆与鞋底边缘"
+    },
+    {
+      "name": "Rest",
+      "label": "歇息喘息",
+      "frame_count": 8,
+      "fps": 6,
+      "loop": true,
+      "duration_seconds": 1.3333333333333333,
+      "files": [
+        "Actions/Rest/Hero_Rest_00.png",
+        "Actions/Rest/Hero_Rest_01.png",
+        "Actions/Rest/Hero_Rest_02.png",
+        "Actions/Rest/Hero_Rest_03.png",
+        "Actions/Rest/Hero_Rest_04.png",
+        "Actions/Rest/Hero_Rest_05.png",
+        "Actions/Rest/Hero_Rest_06.png",
+        "Actions/Rest/Hero_Rest_07.png"
+      ],
+      "frame_ids": [
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63
+      ],
+      "sheet": "Sheets/Hero_Rest_64.png",
+      "preserved": false,
+      "note": "沿用原动作，仅修补大衣下摆与鞋底边缘"
+    },
+    {
+      "name": "AimGround",
+      "label": "地面瞄准",
+      "frame_count": 8,
+      "fps": 8,
+      "loop": true,
+      "duration_seconds": 1.0,
+      "files": [
+        "Actions/AimGround/Hero_AimGround_00.png",
+        "Actions/AimGround/Hero_AimGround_01.png",
+        "Actions/AimGround/Hero_AimGround_02.png",
+        "Actions/AimGround/Hero_AimGround_03.png",
+        "Actions/AimGround/Hero_AimGround_04.png",
+        "Actions/AimGround/Hero_AimGround_05.png",
+        "Actions/AimGround/Hero_AimGround_06.png",
+        "Actions/AimGround/Hero_AimGround_07.png"
+      ],
+      "frame_ids": [
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71
+      ],
+      "sheet": "Sheets/Hero_AimGround_64.png",
+      "preserved": false,
+      "note": "沿用原动作，仅修补大衣下摆与鞋底边缘"
+    },
+    {
+      "name": "FireGround",
+      "label": "地面开火",
+      "frame_count": 8,
+      "fps": 16,
+      "loop": false,
+      "duration_seconds": 0.5,
+      "files": [
+        "Actions/FireGround/Hero_FireGround_00.png",
+        "Actions/FireGround/Hero_FireGround_01.png",
+        "Actions/FireGround/Hero_FireGround_02.png",
+        "Actions/FireGround/Hero_FireGround_03.png",
+        "Actions/FireGround/Hero_FireGround_04.png",
+        "Actions/FireGround/Hero_FireGround_05.png",
+        "Actions/FireGround/Hero_FireGround_06.png",
+        "Actions/FireGround/Hero_FireGround_07.png"
+      ],
+      "frame_ids": [
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79
+      ],
+      "sheet": "Sheets/Hero_FireGround_64.png",
+      "preserved": false,
+      "note": "沿用原动作，仅修补大衣下摆与鞋底边缘"
+    },
+    {
+      "name": "AimUp",
+      "label": "抬枪瞄准",
+      "frame_count": 8,
+      "fps": 8,
+      "loop": true,
+      "duration_seconds": 1.0,
+      "files": [
+        "Actions/AimUp/Hero_AimUp_00.png",
+        "Actions/AimUp/Hero_AimUp_01.png",
+        "Actions/AimUp/Hero_AimUp_02.png",
+        "Actions/AimUp/Hero_AimUp_03.png",
+        "Actions/AimUp/Hero_AimUp_04.png",
+        "Actions/AimUp/Hero_AimUp_05.png",
+        "Actions/AimUp/Hero_AimUp_06.png",
+        "Actions/AimUp/Hero_AimUp_07.png"
+      ],
+      "frame_ids": [
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87
+      ],
+      "sheet": "Sheets/Hero_AimUp_64.png",
+      "preserved": false,
+      "note": "沿用原动作，仅修补大衣下摆与鞋底边缘"
+    },
+    {
+      "name": "FireUp",
+      "label": "向上开火",
+      "frame_count": 8,
+      "fps": 16,
+      "loop": false,
+      "duration_seconds": 0.5,
+      "files": [
+        "Actions/FireUp/Hero_FireUp_00.png",
+        "Actions/FireUp/Hero_FireUp_01.png",
+        "Actions/FireUp/Hero_FireUp_02.png",
+        "Actions/FireUp/Hero_FireUp_03.png",
+        "Actions/FireUp/Hero_FireUp_04.png",
+        "Actions/FireUp/Hero_FireUp_05.png",
+        "Actions/FireUp/Hero_FireUp_06.png",
+        "Actions/FireUp/Hero_FireUp_07.png"
+      ],
+      "frame_ids": [
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95
+      ],
+      "sheet": "Sheets/Hero_FireUp_64.png",
+      "preserved": false,
+      "note": "沿用原动作，仅修补大衣下摆与鞋底边缘"
+    },
+    {
+      "name": "Reload",
+      "label": "换弹",
+      "frame_count": 8,
+      "fps": 8,
+      "loop": false,
+      "duration_seconds": 1.0,
+      "files": [
+        "Actions/Reload/Hero_Reload_00.png",
+        "Actions/Reload/Hero_Reload_01.png",
+        "Actions/Reload/Hero_Reload_02.png",
+        "Actions/Reload/Hero_Reload_03.png",
+        "Actions/Reload/Hero_Reload_04.png",
+        "Actions/Reload/Hero_Reload_05.png",
+        "Actions/Reload/Hero_Reload_06.png",
+        "Actions/Reload/Hero_Reload_07.png"
+      ],
+      "frame_ids": [
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103
+      ],
+      "sheet": "Sheets/Hero_Reload_64.png",
+      "preserved": false,
+      "note": "沿用原动作，仅修补大衣下摆与鞋底边缘"
+    },
+    {
+      "name": "RaiseGun",
+      "label": "举枪",
+      "frame_count": 8,
+      "fps": 12,
+      "loop": false,
+      "duration_seconds": 0.6666666666666666,
+      "files": [
+        "Actions/RaiseGun/Hero_RaiseGun_00.png",
+        "Actions/RaiseGun/Hero_RaiseGun_01.png",
+        "Actions/RaiseGun/Hero_RaiseGun_02.png",
+        "Actions/RaiseGun/Hero_RaiseGun_03.png",
+        "Actions/RaiseGun/Hero_RaiseGun_04.png",
+        "Actions/RaiseGun/Hero_RaiseGun_05.png",
+        "Actions/RaiseGun/Hero_RaiseGun_06.png",
+        "Actions/RaiseGun/Hero_RaiseGun_07.png"
+      ],
+      "frame_ids": [
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111
+      ],
+      "sheet": "Sheets/Hero_RaiseGun_64.png",
+      "preserved": false,
+      "note": "沿用原动作，仅修补大衣下摆与鞋底边缘"
+    },
+    {
+      "name": "LowerGun",
+      "label": "收枪低持",
+      "frame_count": 8,
+      "fps": 12,
+      "loop": false,
+      "duration_seconds": 0.6666666666666666,
+      "files": [
+        "Actions/LowerGun/Hero_LowerGun_00.png",
+        "Actions/LowerGun/Hero_LowerGun_01.png",
+        "Actions/LowerGun/Hero_LowerGun_02.png",
+        "Actions/LowerGun/Hero_LowerGun_03.png",
+        "Actions/LowerGun/Hero_LowerGun_04.png",
+        "Actions/LowerGun/Hero_LowerGun_05.png",
+        "Actions/LowerGun/Hero_LowerGun_06.png",
+        "Actions/LowerGun/Hero_LowerGun_07.png"
+      ],
+      "frame_ids": [
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119
+      ],
+      "sheet": "Sheets/Hero_LowerGun_64.png",
+      "preserved": false,
+      "note": "沿用原动作，仅修补大衣下摆与鞋底边缘"
+    },
+    {
+      "name": "EndingRemember",
+      "label": "纪念伙伴",
+      "frame_count": 8,
+      "fps": 4,
+      "loop": false,
+      "duration_seconds": 2.0,
+      "files": [
+        "Actions/EndingRemember/Hero_EndingRemember_00.png",
+        "Actions/EndingRemember/Hero_EndingRemember_01.png",
+        "Actions/EndingRemember/Hero_EndingRemember_02.png",
+        "Actions/EndingRemember/Hero_EndingRemember_03.png",
+        "Actions/EndingRemember/Hero_EndingRemember_04.png",
+        "Actions/EndingRemember/Hero_EndingRemember_05.png",
+        "Actions/EndingRemember/Hero_EndingRemember_06.png",
+        "Actions/EndingRemember/Hero_EndingRemember_07.png"
+      ],
+      "frame_ids": [
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127
+      ],
+      "sheet": "Sheets/Hero_EndingRemember_64.png",
+      "preserved": false,
+      "note": "沿用原动作，仅修补大衣下摆与鞋底边缘"
+    },
+    {
+      "name": "EndingHope",
+      "label": "憧憬未来",
+      "frame_count": 8,
+      "fps": 4,
+      "loop": false,
+      "duration_seconds": 2.0,
+      "files": [
+        "Actions/EndingHope/Hero_EndingHope_00.png",
+        "Actions/EndingHope/Hero_EndingHope_01.png",
+        "Actions/EndingHope/Hero_EndingHope_02.png",
+        "Actions/EndingHope/Hero_EndingHope_03.png",
+        "Actions/EndingHope/Hero_EndingHope_04.png",
+        "Actions/EndingHope/Hero_EndingHope_05.png",
+        "Actions/EndingHope/Hero_EndingHope_06.png",
+        "Actions/EndingHope/Hero_EndingHope_07.png"
+      ],
+      "frame_ids": [
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135
+      ],
+      "sheet": "Sheets/Hero_EndingHope_64.png",
+      "preserved": false,
+      "note": "沿用原动作，仅修补大衣下摆与鞋底边缘"
+    }
+  ],
+  "frames": [
+    {
+      "id": 0,
+      "action": "Idle",
+      "index": 0,
+      "file": "Actions/Idle/Hero_Idle_00.png",
+      "method": "原图像素微幅胸腔呼吸，头帽与双脚固定",
+      "head_translation": [
+        0,
+        0
+      ],
+      "head_mirrored": false,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        0,
+        1024,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 1,
+      "action": "Idle",
+      "index": 1,
+      "file": "Actions/Idle/Hero_Idle_01.png",
+      "method": "原图像素微幅胸腔呼吸，头帽与双脚固定",
+      "head_translation": [
+        0,
+        0
+      ],
+      "head_mirrored": false,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        64,
+        0,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        64,
+        1024,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 2,
+      "action": "Idle",
+      "index": 2,
+      "file": "Actions/Idle/Hero_Idle_02.png",
+      "method": "原图像素微幅胸腔呼吸，头帽与双脚固定",
+      "head_translation": [
+        0,
+        0
+      ],
+      "head_mirrored": false,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        128,
+        0,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        128,
+        1024,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 3,
+      "action": "Idle",
+      "index": 3,
+      "file": "Actions/Idle/Hero_Idle_03.png",
+      "method": "原图像素微幅胸腔呼吸，头帽与双脚固定",
+      "head_translation": [
+        0,
+        0
+      ],
+      "head_mirrored": false,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        192,
+        0,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        192,
+        1024,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 4,
+      "action": "Idle",
+      "index": 4,
+      "file": "Actions/Idle/Hero_Idle_04.png",
+      "method": "原图像素微幅胸腔呼吸，头帽与双脚固定",
+      "head_translation": [
+        0,
+        0
+      ],
+      "head_mirrored": false,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        256,
+        0,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        256,
+        1024,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 5,
+      "action": "Idle",
+      "index": 5,
+      "file": "Actions/Idle/Hero_Idle_05.png",
+      "method": "原图像素微幅胸腔呼吸，头帽与双脚固定",
+      "head_translation": [
+        0,
+        0
+      ],
+      "head_mirrored": false,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        320,
+        0,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        320,
+        1024,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 6,
+      "action": "Idle",
+      "index": 6,
+      "file": "Actions/Idle/Hero_Idle_06.png",
+      "method": "原图像素微幅胸腔呼吸，头帽与双脚固定",
+      "head_translation": [
+        0,
+        0
+      ],
+      "head_mirrored": false,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        384,
+        0,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        384,
+        1024,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 7,
+      "action": "Idle",
+      "index": 7,
+      "file": "Actions/Idle/Hero_Idle_07.png",
+      "method": "原图像素微幅胸腔呼吸，头帽与双脚固定",
+      "head_translation": [
+        0,
+        0
+      ],
+      "head_mirrored": false,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        448,
+        0,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        448,
+        1024,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 8,
+      "action": "IdleLeft",
+      "index": 0,
+      "file": "Actions/IdleLeft/Hero_IdleLeft_00.png",
+      "atlas": "hold",
+      "row": 0,
+      "column": 0,
+      "head_translation": [
+        0,
+        0
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 0,
+      "method": "原图像素微幅胸腔呼吸，头帽与双脚固定",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        0,
+        64,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        0,
+        960,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 9,
+      "action": "IdleLeft",
+      "index": 1,
+      "file": "Actions/IdleLeft/Hero_IdleLeft_01.png",
+      "atlas": "hold",
+      "row": 0,
+      "column": 1,
+      "head_translation": [
+        0,
+        0
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 1,
+      "method": "原图像素微幅胸腔呼吸，头帽与双脚固定",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        64,
+        64,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        64,
+        960,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 10,
+      "action": "IdleLeft",
+      "index": 2,
+      "file": "Actions/IdleLeft/Hero_IdleLeft_02.png",
+      "atlas": "hold",
+      "row": 0,
+      "column": 2,
+      "head_translation": [
+        0,
+        0
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 2,
+      "method": "原图像素微幅胸腔呼吸，头帽与双脚固定",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        128,
+        64,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        128,
+        960,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 11,
+      "action": "IdleLeft",
+      "index": 3,
+      "file": "Actions/IdleLeft/Hero_IdleLeft_03.png",
+      "atlas": "hold",
+      "row": 0,
+      "column": 3,
+      "head_translation": [
+        0,
+        0
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 3,
+      "method": "原图像素微幅胸腔呼吸，头帽与双脚固定",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        192,
+        64,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        192,
+        960,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 12,
+      "action": "IdleLeft",
+      "index": 4,
+      "file": "Actions/IdleLeft/Hero_IdleLeft_04.png",
+      "atlas": "hold",
+      "row": 0,
+      "column": 4,
+      "head_translation": [
+        0,
+        0
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 4,
+      "method": "原图像素微幅胸腔呼吸，头帽与双脚固定",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        256,
+        64,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        256,
+        960,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 13,
+      "action": "IdleLeft",
+      "index": 5,
+      "file": "Actions/IdleLeft/Hero_IdleLeft_05.png",
+      "atlas": "hold",
+      "row": 0,
+      "column": 5,
+      "head_translation": [
+        0,
+        0
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 5,
+      "method": "原图像素微幅胸腔呼吸，头帽与双脚固定",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        320,
+        64,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        320,
+        960,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 14,
+      "action": "IdleLeft",
+      "index": 6,
+      "file": "Actions/IdleLeft/Hero_IdleLeft_06.png",
+      "atlas": "hold",
+      "row": 0,
+      "column": 6,
+      "head_translation": [
+        0,
+        0
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 6,
+      "method": "原图像素微幅胸腔呼吸，头帽与双脚固定",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        384,
+        64,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        384,
+        960,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 15,
+      "action": "IdleLeft",
+      "index": 7,
+      "file": "Actions/IdleLeft/Hero_IdleLeft_07.png",
+      "atlas": "hold",
+      "row": 0,
+      "column": 7,
+      "head_translation": [
+        0,
+        0
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 7,
+      "method": "原图像素微幅胸腔呼吸，头帽与双脚固定",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        448,
+        64,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        448,
+        960,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 16,
+      "action": "Walk",
+      "index": 0,
+      "file": "Actions/Walk/Hero_Walk_00.png",
+      "atlas": "walk",
+      "row": 0,
+      "column": 0,
+      "head_translation": [
+        0,
+        0
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 0,
+      "method": "完整姿势重绘、统一周期尺度、原图头帽与脚底校准",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        0,
+        128,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        0,
+        896,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 17,
+      "action": "Walk",
+      "index": 1,
+      "file": "Actions/Walk/Hero_Walk_01.png",
+      "atlas": "walk",
+      "row": 0,
+      "column": 1,
+      "head_translation": [
+        0,
+        1
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 1,
+      "method": "完整姿势重绘、统一周期尺度、原图头帽与脚底校准",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        64,
+        128,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        64,
+        896,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 18,
+      "action": "Walk",
+      "index": 2,
+      "file": "Actions/Walk/Hero_Walk_02.png",
+      "atlas": "walk",
+      "row": 0,
+      "column": 2,
+      "head_translation": [
+        0,
+        0
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 2,
+      "method": "完整姿势重绘、统一周期尺度、原图头帽与脚底校准",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        128,
+        128,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        128,
+        896,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 19,
+      "action": "Walk",
+      "index": 3,
+      "file": "Actions/Walk/Hero_Walk_03.png",
+      "atlas": "walk",
+      "row": 0,
+      "column": 3,
+      "head_translation": [
+        0,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 3,
+      "method": "完整姿势重绘、统一周期尺度、原图头帽与脚底校准",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        192,
+        128,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        192,
+        896,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 20,
+      "action": "Walk",
+      "index": 4,
+      "file": "Actions/Walk/Hero_Walk_04.png",
+      "atlas": "walk",
+      "row": 0,
+      "column": 4,
+      "head_translation": [
+        0,
+        0
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 4,
+      "method": "完整姿势重绘、统一周期尺度、原图头帽与脚底校准",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        256,
+        128,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        256,
+        896,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 21,
+      "action": "Walk",
+      "index": 5,
+      "file": "Actions/Walk/Hero_Walk_05.png",
+      "atlas": "walk",
+      "row": 0,
+      "column": 5,
+      "head_translation": [
+        0,
+        1
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 5,
+      "method": "完整姿势重绘、统一周期尺度、原图头帽与脚底校准",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        320,
+        128,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        320,
+        896,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 22,
+      "action": "Walk",
+      "index": 6,
+      "file": "Actions/Walk/Hero_Walk_06.png",
+      "atlas": "walk",
+      "row": 0,
+      "column": 6,
+      "head_translation": [
+        0,
+        0
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 6,
+      "method": "完整姿势重绘、统一周期尺度、原图头帽与脚底校准",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        384,
+        128,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        384,
+        896,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 23,
+      "action": "Walk",
+      "index": 7,
+      "file": "Actions/Walk/Hero_Walk_07.png",
+      "atlas": "walk",
+      "row": 0,
+      "column": 7,
+      "head_translation": [
+        0,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 7,
+      "method": "完整姿势重绘、统一周期尺度、原图头帽与脚底校准",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        448,
+        128,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        448,
+        896,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 24,
+      "action": "CarryIdle",
+      "index": 0,
+      "file": "Actions/CarryIdle/Hero_CarryIdle_00.png",
+      "atlas": "hold",
+      "row": 0,
+      "column": 0,
+      "head_translation": [
+        0,
+        -2
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 8,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        0,
+        192,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        0,
+        832,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 25,
+      "action": "CarryIdle",
+      "index": 1,
+      "file": "Actions/CarryIdle/Hero_CarryIdle_01.png",
+      "atlas": "hold",
+      "row": 0,
+      "column": 1,
+      "head_translation": [
+        0,
+        -2
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 9,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        64,
+        192,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        64,
+        832,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 26,
+      "action": "CarryIdle",
+      "index": 2,
+      "file": "Actions/CarryIdle/Hero_CarryIdle_02.png",
+      "atlas": "hold",
+      "row": 0,
+      "column": 2,
+      "head_translation": [
+        0,
+        -2
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 10,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        128,
+        192,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        128,
+        832,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 27,
+      "action": "CarryIdle",
+      "index": 3,
+      "file": "Actions/CarryIdle/Hero_CarryIdle_03.png",
+      "atlas": "hold",
+      "row": 0,
+      "column": 3,
+      "head_translation": [
+        0,
+        -2
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 11,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        192,
+        192,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        192,
+        832,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 28,
+      "action": "CarryIdle",
+      "index": 4,
+      "file": "Actions/CarryIdle/Hero_CarryIdle_04.png",
+      "atlas": "hold",
+      "row": 0,
+      "column": 4,
+      "head_translation": [
+        0,
+        -2
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 12,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        256,
+        192,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        256,
+        832,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 29,
+      "action": "CarryIdle",
+      "index": 5,
+      "file": "Actions/CarryIdle/Hero_CarryIdle_05.png",
+      "atlas": "hold",
+      "row": 0,
+      "column": 5,
+      "head_translation": [
+        0,
+        -2
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 13,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        320,
+        192,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        320,
+        832,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 30,
+      "action": "CarryIdle",
+      "index": 6,
+      "file": "Actions/CarryIdle/Hero_CarryIdle_06.png",
+      "atlas": "hold",
+      "row": 0,
+      "column": 6,
+      "head_translation": [
+        0,
+        -2
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 14,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        384,
+        192,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        384,
+        832,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 31,
+      "action": "CarryIdle",
+      "index": 7,
+      "file": "Actions/CarryIdle/Hero_CarryIdle_07.png",
+      "atlas": "hold",
+      "row": 0,
+      "column": 7,
+      "head_translation": [
+        0,
+        -2
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 15,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        448,
+        192,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        448,
+        832,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 32,
+      "action": "CarryWalk",
+      "index": 0,
+      "file": "Actions/CarryWalk/Hero_CarryWalk_00.png",
+      "atlas": "walk",
+      "row": 0,
+      "column": 0,
+      "head_translation": [
+        0,
+        0
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 8,
+      "method": "完整姿势重绘、统一周期尺度、原图头帽与脚底校准",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        0,
+        256,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        0,
+        768,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 33,
+      "action": "CarryWalk",
+      "index": 1,
+      "file": "Actions/CarryWalk/Hero_CarryWalk_01.png",
+      "atlas": "walk",
+      "row": 0,
+      "column": 1,
+      "head_translation": [
+        0,
+        1
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 9,
+      "method": "完整姿势重绘、统一周期尺度、原图头帽与脚底校准",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        64,
+        256,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        64,
+        768,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 34,
+      "action": "CarryWalk",
+      "index": 2,
+      "file": "Actions/CarryWalk/Hero_CarryWalk_02.png",
+      "atlas": "walk",
+      "row": 0,
+      "column": 2,
+      "head_translation": [
+        0,
+        0
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 10,
+      "method": "完整姿势重绘、统一周期尺度、原图头帽与脚底校准",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        128,
+        256,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        128,
+        768,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 35,
+      "action": "CarryWalk",
+      "index": 3,
+      "file": "Actions/CarryWalk/Hero_CarryWalk_03.png",
+      "atlas": "walk",
+      "row": 0,
+      "column": 3,
+      "head_translation": [
+        0,
+        0
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 11,
+      "method": "完整姿势重绘、统一周期尺度、原图头帽与脚底校准",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        192,
+        256,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        192,
+        768,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 36,
+      "action": "CarryWalk",
+      "index": 4,
+      "file": "Actions/CarryWalk/Hero_CarryWalk_04.png",
+      "atlas": "walk",
+      "row": 0,
+      "column": 4,
+      "head_translation": [
+        0,
+        0
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 12,
+      "method": "完整姿势重绘、统一周期尺度、原图头帽与脚底校准",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        256,
+        256,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        256,
+        768,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 37,
+      "action": "CarryWalk",
+      "index": 5,
+      "file": "Actions/CarryWalk/Hero_CarryWalk_05.png",
+      "atlas": "walk",
+      "row": 0,
+      "column": 5,
+      "head_translation": [
+        0,
+        1
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 13,
+      "method": "完整姿势重绘、统一周期尺度、原图头帽与脚底校准",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        320,
+        256,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        320,
+        768,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 38,
+      "action": "CarryWalk",
+      "index": 6,
+      "file": "Actions/CarryWalk/Hero_CarryWalk_06.png",
+      "atlas": "walk",
+      "row": 0,
+      "column": 6,
+      "head_translation": [
+        0,
+        0
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 14,
+      "method": "完整姿势重绘、统一周期尺度、原图头帽与脚底校准",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        384,
+        256,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        384,
+        768,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 39,
+      "action": "CarryWalk",
+      "index": 7,
+      "file": "Actions/CarryWalk/Hero_CarryWalk_07.png",
+      "atlas": "walk",
+      "row": 0,
+      "column": 7,
+      "head_translation": [
+        0,
+        0
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 15,
+      "method": "完整姿势重绘、统一周期尺度、原图头帽与脚底校准",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        448,
+        256,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        448,
+        768,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 40,
+      "action": "PickUp",
+      "index": 0,
+      "file": "Actions/PickUp/Hero_PickUp_00.png",
+      "atlas": "work",
+      "row": 0,
+      "column": 0,
+      "head_translation": [
+        0,
+        2
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 0,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        0,
+        320,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        0,
+        704,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 41,
+      "action": "PickUp",
+      "index": 1,
+      "file": "Actions/PickUp/Hero_PickUp_01.png",
+      "atlas": "work",
+      "row": 0,
+      "column": 1,
+      "head_translation": [
+        -4,
+        5
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 1,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        64,
+        320,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        64,
+        704,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 42,
+      "action": "PickUp",
+      "index": 2,
+      "file": "Actions/PickUp/Hero_PickUp_02.png",
+      "atlas": "work",
+      "row": 0,
+      "column": 2,
+      "head_translation": [
+        -4,
+        11
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 2,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        128,
+        320,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        128,
+        704,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 43,
+      "action": "PickUp",
+      "index": 3,
+      "file": "Actions/PickUp/Hero_PickUp_03.png",
+      "atlas": "work",
+      "row": 0,
+      "column": 3,
+      "head_translation": [
+        -4,
+        12
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 3,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        192,
+        320,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        192,
+        704,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 44,
+      "action": "PickUp",
+      "index": 4,
+      "file": "Actions/PickUp/Hero_PickUp_04.png",
+      "atlas": "work",
+      "row": 0,
+      "column": 4,
+      "head_translation": [
+        -4,
+        5
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 4,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        256,
+        320,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        256,
+        704,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 45,
+      "action": "PickUp",
+      "index": 5,
+      "file": "Actions/PickUp/Hero_PickUp_05.png",
+      "atlas": "work",
+      "row": 0,
+      "column": 5,
+      "head_translation": [
+        -4,
+        3
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 5,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        320,
+        320,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        320,
+        704,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 46,
+      "action": "PickUp",
+      "index": 6,
+      "file": "Actions/PickUp/Hero_PickUp_06.png",
+      "atlas": "work",
+      "row": 0,
+      "column": 6,
+      "head_translation": [
+        -2,
+        0
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 6,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        384,
+        320,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        384,
+        704,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 47,
+      "action": "PickUp",
+      "index": 7,
+      "file": "Actions/PickUp/Hero_PickUp_07.png",
+      "atlas": "work",
+      "row": 0,
+      "column": 7,
+      "head_translation": [
+        -1,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 7,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        448,
+        320,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        448,
+        704,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 48,
+      "action": "Place",
+      "index": 0,
+      "file": "Actions/Place/Hero_Place_00.png",
+      "atlas": "work",
+      "row": 0,
+      "column": 0,
+      "head_translation": [
+        -1,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 8,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        0,
+        384,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        0,
+        640,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 49,
+      "action": "Place",
+      "index": 1,
+      "file": "Actions/Place/Hero_Place_01.png",
+      "atlas": "work",
+      "row": 0,
+      "column": 1,
+      "head_translation": [
+        -4,
+        3
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 9,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        64,
+        384,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        64,
+        640,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 50,
+      "action": "Place",
+      "index": 2,
+      "file": "Actions/Place/Hero_Place_02.png",
+      "atlas": "work",
+      "row": 0,
+      "column": 2,
+      "head_translation": [
+        -4,
+        8
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 10,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        128,
+        384,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        128,
+        640,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 51,
+      "action": "Place",
+      "index": 3,
+      "file": "Actions/Place/Hero_Place_03.png",
+      "atlas": "work",
+      "row": 0,
+      "column": 3,
+      "head_translation": [
+        -4,
+        14
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 11,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        192,
+        384,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        192,
+        640,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 52,
+      "action": "Place",
+      "index": 4,
+      "file": "Actions/Place/Hero_Place_04.png",
+      "atlas": "work",
+      "row": 0,
+      "column": 4,
+      "head_translation": [
+        -4,
+        9
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 12,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        256,
+        384,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        256,
+        640,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 53,
+      "action": "Place",
+      "index": 5,
+      "file": "Actions/Place/Hero_Place_05.png",
+      "atlas": "work",
+      "row": 0,
+      "column": 5,
+      "head_translation": [
+        -4,
+        4
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 13,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        320,
+        384,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        320,
+        640,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 54,
+      "action": "Place",
+      "index": 6,
+      "file": "Actions/Place/Hero_Place_06.png",
+      "atlas": "work",
+      "row": 0,
+      "column": 6,
+      "head_translation": [
+        -2,
+        0
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 14,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        384,
+        384,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        384,
+        640,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 55,
+      "action": "Place",
+      "index": 7,
+      "file": "Actions/Place/Hero_Place_07.png",
+      "atlas": "work",
+      "row": 0,
+      "column": 7,
+      "head_translation": [
+        -1,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 15,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        448,
+        384,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        448,
+        640,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 56,
+      "action": "Rest",
+      "index": 0,
+      "file": "Actions/Rest/Hero_Rest_00.png",
+      "atlas": "work",
+      "row": 0,
+      "column": 0,
+      "head_translation": [
+        -4,
+        7
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 16,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        0,
+        448,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        0,
+        576,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 57,
+      "action": "Rest",
+      "index": 1,
+      "file": "Actions/Rest/Hero_Rest_01.png",
+      "atlas": "work",
+      "row": 0,
+      "column": 1,
+      "head_translation": [
+        -4,
+        6
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 17,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        64,
+        448,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        64,
+        576,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 58,
+      "action": "Rest",
+      "index": 2,
+      "file": "Actions/Rest/Hero_Rest_02.png",
+      "atlas": "work",
+      "row": 0,
+      "column": 2,
+      "head_translation": [
+        -4,
+        7
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 18,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        128,
+        448,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        128,
+        576,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 59,
+      "action": "Rest",
+      "index": 3,
+      "file": "Actions/Rest/Hero_Rest_03.png",
+      "atlas": "work",
+      "row": 0,
+      "column": 3,
+      "head_translation": [
+        -4,
+        5
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 19,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        192,
+        448,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        192,
+        576,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 60,
+      "action": "Rest",
+      "index": 4,
+      "file": "Actions/Rest/Hero_Rest_04.png",
+      "atlas": "work",
+      "row": 0,
+      "column": 4,
+      "head_translation": [
+        -4,
+        5
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 20,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        256,
+        448,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        256,
+        576,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 61,
+      "action": "Rest",
+      "index": 5,
+      "file": "Actions/Rest/Hero_Rest_05.png",
+      "atlas": "work",
+      "row": 0,
+      "column": 5,
+      "head_translation": [
+        -4,
+        3
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 21,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        320,
+        448,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        320,
+        576,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 62,
+      "action": "Rest",
+      "index": 6,
+      "file": "Actions/Rest/Hero_Rest_06.png",
+      "atlas": "work",
+      "row": 0,
+      "column": 6,
+      "head_translation": [
+        -4,
+        6
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 22,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        384,
+        448,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        384,
+        576,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 63,
+      "action": "Rest",
+      "index": 7,
+      "file": "Actions/Rest/Hero_Rest_07.png",
+      "atlas": "work",
+      "row": 0,
+      "column": 7,
+      "head_translation": [
+        -4,
+        5
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 23,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        448,
+        448,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        448,
+        576,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 64,
+      "action": "AimGround",
+      "index": 0,
+      "file": "Actions/AimGround/Hero_AimGround_00.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        1,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        0,
+        512,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        0,
+        512,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 65,
+      "action": "AimGround",
+      "index": 1,
+      "file": "Actions/AimGround/Hero_AimGround_01.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        1,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        64,
+        512,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        64,
+        512,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 66,
+      "action": "AimGround",
+      "index": 2,
+      "file": "Actions/AimGround/Hero_AimGround_02.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        1,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        128,
+        512,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        128,
+        512,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 67,
+      "action": "AimGround",
+      "index": 3,
+      "file": "Actions/AimGround/Hero_AimGround_03.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        1,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        192,
+        512,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        192,
+        512,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 68,
+      "action": "AimGround",
+      "index": 4,
+      "file": "Actions/AimGround/Hero_AimGround_04.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        1,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        256,
+        512,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        256,
+        512,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 69,
+      "action": "AimGround",
+      "index": 5,
+      "file": "Actions/AimGround/Hero_AimGround_05.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        1,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        320,
+        512,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        320,
+        512,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 70,
+      "action": "AimGround",
+      "index": 6,
+      "file": "Actions/AimGround/Hero_AimGround_06.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        1,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        384,
+        512,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        384,
+        512,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 71,
+      "action": "AimGround",
+      "index": 7,
+      "file": "Actions/AimGround/Hero_AimGround_07.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        1,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        448,
+        512,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        448,
+        512,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 72,
+      "action": "FireGround",
+      "index": 0,
+      "file": "Actions/FireGround/Hero_FireGround_00.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        2,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        0,
+        576,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        0,
+        448,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 73,
+      "action": "FireGround",
+      "index": 1,
+      "file": "Actions/FireGround/Hero_FireGround_01.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        2,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        64,
+        576,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        64,
+        448,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 74,
+      "action": "FireGround",
+      "index": 2,
+      "file": "Actions/FireGround/Hero_FireGround_02.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        2,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        128,
+        576,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        128,
+        448,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 75,
+      "action": "FireGround",
+      "index": 3,
+      "file": "Actions/FireGround/Hero_FireGround_03.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        2,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        192,
+        576,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        192,
+        448,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 76,
+      "action": "FireGround",
+      "index": 4,
+      "file": "Actions/FireGround/Hero_FireGround_04.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        2,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        256,
+        576,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        256,
+        448,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 77,
+      "action": "FireGround",
+      "index": 5,
+      "file": "Actions/FireGround/Hero_FireGround_05.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        2,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        320,
+        576,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        320,
+        448,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 78,
+      "action": "FireGround",
+      "index": 6,
+      "file": "Actions/FireGround/Hero_FireGround_06.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        2,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        384,
+        576,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        384,
+        448,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 79,
+      "action": "FireGround",
+      "index": 7,
+      "file": "Actions/FireGround/Hero_FireGround_07.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        2,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        448,
+        576,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        448,
+        448,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 80,
+      "action": "AimUp",
+      "index": 0,
+      "file": "Actions/AimUp/Hero_AimUp_00.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        2,
+        -2
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        0,
+        640,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        0,
+        384,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 81,
+      "action": "AimUp",
+      "index": 1,
+      "file": "Actions/AimUp/Hero_AimUp_01.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        2,
+        -2
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        64,
+        640,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        64,
+        384,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 82,
+      "action": "AimUp",
+      "index": 2,
+      "file": "Actions/AimUp/Hero_AimUp_02.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        2,
+        -2
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        128,
+        640,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        128,
+        384,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 83,
+      "action": "AimUp",
+      "index": 3,
+      "file": "Actions/AimUp/Hero_AimUp_03.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        2,
+        -2
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        192,
+        640,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        192,
+        384,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 84,
+      "action": "AimUp",
+      "index": 4,
+      "file": "Actions/AimUp/Hero_AimUp_04.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        2,
+        -2
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        256,
+        640,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        256,
+        384,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 85,
+      "action": "AimUp",
+      "index": 5,
+      "file": "Actions/AimUp/Hero_AimUp_05.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        2,
+        -2
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        320,
+        640,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        320,
+        384,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 86,
+      "action": "AimUp",
+      "index": 6,
+      "file": "Actions/AimUp/Hero_AimUp_06.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        2,
+        -2
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        384,
+        640,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        384,
+        384,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 87,
+      "action": "AimUp",
+      "index": 7,
+      "file": "Actions/AimUp/Hero_AimUp_07.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        2,
+        -2
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        448,
+        640,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        448,
+        384,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 88,
+      "action": "FireUp",
+      "index": 0,
+      "file": "Actions/FireUp/Hero_FireUp_00.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        2,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        0,
+        704,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        0,
+        320,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 89,
+      "action": "FireUp",
+      "index": 1,
+      "file": "Actions/FireUp/Hero_FireUp_01.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        2,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        64,
+        704,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        64,
+        320,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 90,
+      "action": "FireUp",
+      "index": 2,
+      "file": "Actions/FireUp/Hero_FireUp_02.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        2,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        128,
+        704,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        128,
+        320,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 91,
+      "action": "FireUp",
+      "index": 3,
+      "file": "Actions/FireUp/Hero_FireUp_03.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        2,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        192,
+        704,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        192,
+        320,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 92,
+      "action": "FireUp",
+      "index": 4,
+      "file": "Actions/FireUp/Hero_FireUp_04.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        2,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        256,
+        704,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        256,
+        320,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 93,
+      "action": "FireUp",
+      "index": 5,
+      "file": "Actions/FireUp/Hero_FireUp_05.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        2,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        320,
+        704,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        320,
+        320,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 94,
+      "action": "FireUp",
+      "index": 6,
+      "file": "Actions/FireUp/Hero_FireUp_06.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        2,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        384,
+        704,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        384,
+        320,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 95,
+      "action": "FireUp",
+      "index": 7,
+      "file": "Actions/FireUp/Hero_FireUp_07.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        2,
+        -2
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        448,
+        704,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        448,
+        320,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 96,
+      "action": "Reload",
+      "index": 0,
+      "file": "Actions/Reload/Hero_Reload_00.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        0,
+        -2
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        0,
+        768,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        0,
+        256,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 97,
+      "action": "Reload",
+      "index": 1,
+      "file": "Actions/Reload/Hero_Reload_01.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        -1,
+        -2
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        64,
+        768,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        64,
+        256,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 98,
+      "action": "Reload",
+      "index": 2,
+      "file": "Actions/Reload/Hero_Reload_02.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        2,
+        -2
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        128,
+        768,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        128,
+        256,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 99,
+      "action": "Reload",
+      "index": 3,
+      "file": "Actions/Reload/Hero_Reload_03.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        2,
+        -2
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        192,
+        768,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        192,
+        256,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 100,
+      "action": "Reload",
+      "index": 4,
+      "file": "Actions/Reload/Hero_Reload_04.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        1,
+        -2
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        256,
+        768,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        256,
+        256,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 101,
+      "action": "Reload",
+      "index": 5,
+      "file": "Actions/Reload/Hero_Reload_05.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        1,
+        -2
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        320,
+        768,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        320,
+        256,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 102,
+      "action": "Reload",
+      "index": 6,
+      "file": "Actions/Reload/Hero_Reload_06.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        1,
+        -2
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        384,
+        768,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        384,
+        256,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 103,
+      "action": "Reload",
+      "index": 7,
+      "file": "Actions/Reload/Hero_Reload_07.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        1,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        448,
+        768,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        448,
+        256,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 104,
+      "action": "RaiseGun",
+      "index": 0,
+      "file": "Actions/RaiseGun/Hero_RaiseGun_00.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        -1,
+        -2
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        0,
+        832,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        0,
+        192,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 105,
+      "action": "RaiseGun",
+      "index": 1,
+      "file": "Actions/RaiseGun/Hero_RaiseGun_01.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        -2,
+        -2
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        64,
+        832,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        64,
+        192,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 106,
+      "action": "RaiseGun",
+      "index": 2,
+      "file": "Actions/RaiseGun/Hero_RaiseGun_02.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        0,
+        -2
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        128,
+        832,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        128,
+        192,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 107,
+      "action": "RaiseGun",
+      "index": 3,
+      "file": "Actions/RaiseGun/Hero_RaiseGun_03.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        0,
+        -2
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        192,
+        832,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        192,
+        192,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 108,
+      "action": "RaiseGun",
+      "index": 4,
+      "file": "Actions/RaiseGun/Hero_RaiseGun_04.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        0,
+        -2
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        256,
+        832,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        256,
+        192,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 109,
+      "action": "RaiseGun",
+      "index": 5,
+      "file": "Actions/RaiseGun/Hero_RaiseGun_05.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        0,
+        -2
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        320,
+        832,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        320,
+        192,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 110,
+      "action": "RaiseGun",
+      "index": 6,
+      "file": "Actions/RaiseGun/Hero_RaiseGun_06.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        0,
+        -2
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        384,
+        832,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        384,
+        192,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 111,
+      "action": "RaiseGun",
+      "index": 7,
+      "file": "Actions/RaiseGun/Hero_RaiseGun_07.png",
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_translation": [
+        1,
+        -2
+      ],
+      "head_mirrored": true,
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        448,
+        832,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        448,
+        192,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 112,
+      "action": "LowerGun",
+      "index": 0,
+      "file": "Actions/LowerGun/Hero_LowerGun_00.png",
+      "head_translation": [
+        1,
+        -1
+      ],
+      "head_mirrored": true,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        0,
+        896,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        0,
+        128,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 113,
+      "action": "LowerGun",
+      "index": 1,
+      "file": "Actions/LowerGun/Hero_LowerGun_01.png",
+      "atlas": "hold",
+      "row": 0,
+      "column": 1,
+      "head_translation": [
+        1,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 17,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        64,
+        896,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        64,
+        128,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 114,
+      "action": "LowerGun",
+      "index": 2,
+      "file": "Actions/LowerGun/Hero_LowerGun_02.png",
+      "atlas": "hold",
+      "row": 0,
+      "column": 2,
+      "head_translation": [
+        0,
+        0
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 18,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        128,
+        896,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        128,
+        128,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 115,
+      "action": "LowerGun",
+      "index": 3,
+      "file": "Actions/LowerGun/Hero_LowerGun_03.png",
+      "atlas": "hold",
+      "row": 0,
+      "column": 3,
+      "head_translation": [
+        0,
+        0
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 19,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        192,
+        896,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        192,
+        128,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 116,
+      "action": "LowerGun",
+      "index": 4,
+      "file": "Actions/LowerGun/Hero_LowerGun_04.png",
+      "atlas": "hold",
+      "row": 0,
+      "column": 4,
+      "head_translation": [
+        -1,
+        -2
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 20,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        256,
+        896,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        256,
+        128,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 117,
+      "action": "LowerGun",
+      "index": 5,
+      "file": "Actions/LowerGun/Hero_LowerGun_05.png",
+      "atlas": "hold",
+      "row": 0,
+      "column": 5,
+      "head_translation": [
+        -1,
+        -2
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 21,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        320,
+        896,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        320,
+        128,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 118,
+      "action": "LowerGun",
+      "index": 6,
+      "file": "Actions/LowerGun/Hero_LowerGun_06.png",
+      "atlas": "hold",
+      "row": 0,
+      "column": 6,
+      "head_translation": [
+        -1,
+        -2
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 22,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        384,
+        896,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        384,
+        128,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 119,
+      "action": "LowerGun",
+      "index": 7,
+      "file": "Actions/LowerGun/Hero_LowerGun_07.png",
+      "atlas": "hold",
+      "row": 0,
+      "column": 7,
+      "head_translation": [
+        -1,
+        -2
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 23,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        448,
+        896,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        448,
+        128,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 120,
+      "action": "EndingRemember",
+      "index": 0,
+      "file": "Actions/EndingRemember/Hero_EndingRemember_00.png",
+      "atlas": "ending",
+      "row": 0,
+      "column": 0,
+      "head_translation": [
+        -1,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 0,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        0,
+        960,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        0,
+        64,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 121,
+      "action": "EndingRemember",
+      "index": 1,
+      "file": "Actions/EndingRemember/Hero_EndingRemember_01.png",
+      "atlas": "ending",
+      "row": 0,
+      "column": 1,
+      "head_translation": [
+        -1,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 1,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        64,
+        960,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        64,
+        64,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 122,
+      "action": "EndingRemember",
+      "index": 2,
+      "file": "Actions/EndingRemember/Hero_EndingRemember_02.png",
+      "atlas": "ending",
+      "row": 0,
+      "column": 2,
+      "head_translation": [
+        -1,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 2,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        128,
+        960,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        128,
+        64,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 123,
+      "action": "EndingRemember",
+      "index": 3,
+      "file": "Actions/EndingRemember/Hero_EndingRemember_03.png",
+      "atlas": "ending",
+      "row": 0,
+      "column": 3,
+      "head_translation": [
+        -1,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 3,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        192,
+        960,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        192,
+        64,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 124,
+      "action": "EndingRemember",
+      "index": 4,
+      "file": "Actions/EndingRemember/Hero_EndingRemember_04.png",
+      "atlas": "ending",
+      "row": 0,
+      "column": 4,
+      "head_translation": [
+        -1,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 4,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        256,
+        960,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        256,
+        64,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 125,
+      "action": "EndingRemember",
+      "index": 5,
+      "file": "Actions/EndingRemember/Hero_EndingRemember_05.png",
+      "atlas": "ending",
+      "row": 0,
+      "column": 5,
+      "head_translation": [
+        -1,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 5,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        320,
+        960,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        320,
+        64,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 126,
+      "action": "EndingRemember",
+      "index": 6,
+      "file": "Actions/EndingRemember/Hero_EndingRemember_06.png",
+      "atlas": "ending",
+      "row": 0,
+      "column": 6,
+      "head_translation": [
+        -1,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 6,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        384,
+        960,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        384,
+        64,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 127,
+      "action": "EndingRemember",
+      "index": 7,
+      "file": "Actions/EndingRemember/Hero_EndingRemember_07.png",
+      "atlas": "ending",
+      "row": 0,
+      "column": 7,
+      "head_translation": [
+        -1,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 7,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        448,
+        960,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        448,
+        64,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 128,
+      "action": "EndingHope",
+      "index": 0,
+      "file": "Actions/EndingHope/Hero_EndingHope_00.png",
+      "atlas": "ending",
+      "row": 0,
+      "column": 7,
+      "head_translation": [
+        -1,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 7,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        0,
+        1024,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        0,
+        0,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 129,
+      "action": "EndingHope",
+      "index": 1,
+      "file": "Actions/EndingHope/Hero_EndingHope_01.png",
+      "atlas": "ending",
+      "row": 0,
+      "column": 1,
+      "head_translation": [
+        -1,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 9,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        64,
+        1024,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        64,
+        0,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 130,
+      "action": "EndingHope",
+      "index": 2,
+      "file": "Actions/EndingHope/Hero_EndingHope_02.png",
+      "atlas": "ending",
+      "row": 0,
+      "column": 2,
+      "head_translation": [
+        -1,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 10,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        128,
+        1024,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        128,
+        0,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 131,
+      "action": "EndingHope",
+      "index": 3,
+      "file": "Actions/EndingHope/Hero_EndingHope_03.png",
+      "atlas": "ending",
+      "row": 0,
+      "column": 3,
+      "head_translation": [
+        -1,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 11,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        192,
+        1024,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        192,
+        0,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 132,
+      "action": "EndingHope",
+      "index": 4,
+      "file": "Actions/EndingHope/Hero_EndingHope_04.png",
+      "atlas": "ending",
+      "row": 0,
+      "column": 4,
+      "head_translation": [
+        -1,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 12,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        256,
+        1024,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        256,
+        0,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 133,
+      "action": "EndingHope",
+      "index": 5,
+      "file": "Actions/EndingHope/Hero_EndingHope_05.png",
+      "atlas": "ending",
+      "row": 0,
+      "column": 5,
+      "head_translation": [
+        -1,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 13,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        320,
+        1024,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        320,
+        0,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 134,
+      "action": "EndingHope",
+      "index": 6,
+      "file": "Actions/EndingHope/Hero_EndingHope_06.png",
+      "atlas": "ending",
+      "row": 0,
+      "column": 6,
+      "head_translation": [
+        -1,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 14,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        384,
+        1024,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        384,
+        0,
+        64,
+        64
+      ]
+    },
+    {
+      "id": 135,
+      "action": "EndingHope",
+      "index": 7,
+      "file": "Actions/EndingHope/Hero_EndingHope_07.png",
+      "atlas": "ending",
+      "row": 0,
+      "column": 7,
+      "head_translation": [
+        -1,
+        -1
+      ],
+      "head_mirrored": true,
+      "head_pixel_count": 107,
+      "source_pose": 15,
+      "method": "沿用原动作，仅修补大衣下摆与鞋底轮廓",
+      "head_hat_original_pixels_preserved": true,
+      "sheet_rect_top_left": [
+        448,
+        1024,
+        64,
+        64
+      ],
+      "sheet_rect_unity_bottom_left": [
+        448,
+        0,
+        64,
+        64
+      ]
+    }
+  ],
+  "edge_repair": "仅补全大衣下摆与鞋底轮廓；原始精选重制版单独保留，动作、脸帽、64×64、帧率与帧数保持。",
+  "updated_actions": [
+    "Idle",
+    "IdleLeft",
+    "Walk",
+    "CarryWalk"
+  ],
+  "walking_cycle_distance": 0.875,
+  "carrying_cycle_distance": 0.75
+}

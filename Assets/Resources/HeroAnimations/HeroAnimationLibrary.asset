@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e2e0067f8c09f04baea789f132771bc, type: 3}
+  m_Name: HeroAnimationLibrary
+  m_EditorClassIdentifier: 
+  formatVersion: 3
+  controller: {fileID: 9100000, guid: 7a8ecff64b329204ca323723835738ac, type: 2}
+  actions:
+  - motion: 0
+    clip: {fileID: 7400000, guid: 3e1f671f43740044b905b18f28b37e1c, type: 2}
+    firstFrame: {fileID: 21300000, guid: 637bb010aae163241a802b44281cd196, type: 3}
+    fps: 3
+    duration: 2.6666667
+    loop: 1
+  - motion: 1
+    clip: {fileID: 7400000, guid: d010f4d8c5770344a9228fd04ed217f5, type: 2}
+    firstFrame: {fileID: 21300000, guid: d9db1cb4d1bd49c47848a5328a5c43a9, type: 3}
+    fps: 3
+    duration: 2.6666667
+    loop: 1
+  - motion: 2
+    clip: {fileID: 7400000, guid: 0295a456ce0866c4b81427d508c38608, type: 2}
+    firstFrame: {fileID: 21300000, guid: 0e4abb1168424ec4ba45fb9cf94a9064, type: 3}
+    fps: 8
+    duration: 1
+    loop: 1
+  - motion: 3
+    clip: {fileID: 7400000, guid: 85797b039e6b6534c98a0d4771a6b4c1, type: 2}
+    firstFrame: {fileID: 21300000, guid: ca5f6be9546c8f442990a0f2d547d95b, type: 3}
+    fps: 6
+    duration: 1.3333334
+    loop: 1
+  - motion: 4
+    clip: {fileID: 7400000, guid: f4d6f61de5d00374c806322ab7ec5095, type: 2}
+    firstFrame: {fileID: 21300000, guid: 44dcb32f1d8c76b499368bdc07df29d3, type: 3}
+    fps: 8
+    duration: 1
+    loop: 1
+  - motion: 5
+    clip: {fileID: 7400000, guid: 5acee6b25f3401c468539d0ca8c8d06b, type: 2}
+    firstFrame: {fileID: 21300000, guid: f57e54ec523cc0b408a59804ebc09f6a, type: 3}
+    fps: 8
+    duration: 1
+    loop: 0
+  - motion: 6
+    clip: {fileID: 7400000, guid: 096b3cede6066ab4885ca285a8cc88f1, type: 2}
+    firstFrame: {fileID: 21300000, guid: e8ea61cea05edb249bc3fd2bfa38070e, type: 3}
+    fps: 8
+    duration: 1
+    loop: 0
+  - motion: 7
+    clip: {fileID: 7400000, guid: 07cb7102e723e8e4fa13def4fe37b7d4, type: 2}
+    firstFrame: {fileID: 21300000, guid: 015f133a4a6de3845957040741201650, type: 3}
+    fps: 6
+    duration: 1.3333334
+    loop: 1
+  - motion: 8
+    clip: {fileID: 7400000, guid: cc9751aa0b627cd4c99a41dcbe31973d, type: 2}
+    firstFrame: {fileID: 21300000, guid: 08b955c09f5d0b34094a9f1662a49f6f, type: 3}
+    fps: 8
+    duration: 1
+    loop: 1
+  - motion: 9
+    clip: {fileID: 7400000, guid: db0ab9714d90918489949fd477344106, type: 2}
+    firstFrame: {fileID: 21300000, guid: 9c90f76bd6b29214e8248afc5c8b1103, type: 3}
+    fps: 16
+    duration: 0.5
+    loop: 0
+  - motion: 10
+    clip: {fileID: 7400000, guid: 55e084f8c350c634781665bb102e77ed, type: 2}
+    firstFrame: {fileID: 21300000, guid: 8e61295a5a5276640b91508fccca7e9a, type: 3}
+    fps: 8
+    duration: 1
+    loop: 1
+  - motion: 11
+    clip: {fileID: 7400000, guid: 958c94df2e431504b8bd3e2bd0339562, type: 2}
+    firstFrame: {fileID: 21300000, guid: c2c5663865f6d864280df951f3bb5462, type: 3}
+    fps: 16
+    duration: 0.5
+    loop: 0
+  - motion: 12
+    clip: {fileID: 7400000, guid: a06836fb1838b0041a119b591344b1f7, type: 2}
+    firstFrame: {fileID: 21300000, guid: 821805746dcd75a4c83c8f0d8502218f, type: 3}
+    fps: 8
+    duration: 1
+    loop: 0
+  - motion: 13
+    clip: {fileID: 7400000, guid: d90985a176615ec40be127774b1d9342, type: 2}
+    firstFrame: {fileID: 21300000, guid: ecf405150927aa34c97414fab7282a7e, type: 3}
+    fps: 12
+    duration: 0.6666667
+    loop: 0
+  - motion: 14
+    clip: {fileID: 7400000, guid: 49ee51a2a2aaf4a41ae1e1811d0276f4, type: 2}
+    firstFrame: {fileID: 21300000, guid: 009e2e3b3b597eb45a4801c8d4aeba96, type: 3}
+    fps: 12
+    duration: 0.6666667
+    loop: 0
+  - motion: 15
+    clip: {fileID: 7400000, guid: 83077becb78159c4b8a8f49835acbee8, type: 2}
+    firstFrame: {fileID: 21300000, guid: 89d4b45e2cd8a6d4db01dda4ff5d5f94, type: 3}
+    fps: 4
+    duration: 2
+    loop: 0
+  - motion: 16
+    clip: {fileID: 7400000, guid: bb82d445cca304b428aef7b2cf0c503a, type: 2}
+    firstFrame: {fileID: 21300000, guid: bef4711e55b008a4f9f49ea183b80c70, type: 3}
+    fps: 4
+    duration: 2
+    loop: 0
+  groundMuzzle: {x: -0.734375, y: 0.296875, z: 0}
+  upMuzzle: {x: -0.640625, y: 0.703125, z: 0}
+  walkingCycleDistance: 0.875
+  carryingCycleDistance: 0.75
