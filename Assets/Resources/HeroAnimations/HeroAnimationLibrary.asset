@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e2e0067f8c09f04baea789f132771bc, type: 3}
   m_Name: HeroAnimationLibrary
   m_EditorClassIdentifier: 
-  formatVersion: 3
+  formatVersion: 4
   controller: {fileID: 9100000, guid: 7a8ecff64b329204ca323723835738ac, type: 2}
   actions:
   - motion: 0
@@ -30,8 +30,8 @@ MonoBehaviour:
   - motion: 2
     clip: {fileID: 7400000, guid: 0295a456ce0866c4b81427d508c38608, type: 2}
     firstFrame: {fileID: 21300000, guid: 0e4abb1168424ec4ba45fb9cf94a9064, type: 3}
-    fps: 8
-    duration: 1
+    fps: 12
+    duration: 1.3333334
     loop: 1
   - motion: 3
     clip: {fileID: 7400000, guid: 85797b039e6b6534c98a0d4771a6b4c1, type: 2}
@@ -42,8 +42,8 @@ MonoBehaviour:
   - motion: 4
     clip: {fileID: 7400000, guid: f4d6f61de5d00374c806322ab7ec5095, type: 2}
     firstFrame: {fileID: 21300000, guid: 44dcb32f1d8c76b499368bdc07df29d3, type: 3}
-    fps: 8
-    duration: 1
+    fps: 12
+    duration: 1.3333334
     loop: 1
   - motion: 5
     clip: {fileID: 7400000, guid: 5acee6b25f3401c468539d0ca8c8d06b, type: 2}

@@ -1,7 +1,7 @@
 # 《街垒》项目交接文档
 
 > 面向接手的 AI 代理或开发者。读完这一份应该能独立改这个工程。
-> 核对于 2026-10-14 · Unity **2022.3.62f3c1** · 23 个脚本 · 2 个场景 · 4 个预制体
+> 最近整理于 2026-10-19 · Unity **2022.3.62f3c1** · Assets/Script 内 47 个脚本（39 个运行时、8 个编辑器）
 
 ---
 
@@ -31,7 +31,7 @@ Assets/
 ├─ Scenes/
 │  ├─ 1.unity          建造阶段（节奏 QTE，攒街垒血量）
 │  └─ 2.unity          抗击阶段（正式玩法）
-├─ Script/             全部脚本，扁平存放，无子目录
+├─ Script/             按功能分类；目录及用途见 Script/README.md 与本文末尾
 ├─ Resources/
 │  ├─ enemy/           Soldier.prefab  Leader.prefab
 │  └─ arrow/           Bullet.prefab   Bomb.prefab
@@ -662,3 +662,99 @@ maxSpawnRate: 100   leaderChance: 20   leaderUnlockTime: 30
 
 本文头部的“23 个脚本”已过时：`Assets/Script` 现有 36 个 `.cs`（含 `SfxPlayer`），`Assets/Script/Editor` 6 个，另有 `Assets/Test1.cs`。
 
+
+
+## 2026-10-18 用户指定行走图、呼吸与抱物袖子修正版导入
+
+- 本轮来源：用户剪贴板中的256×256行走图（4×4、每帧64×64），以及Codex输出“主角抱物搬运_袖子修正版”。Walk和CarryWalk均使用完整16帧，基准12fps，保留原有朝左坐标约定；Idle/IdleLeft各8帧3fps，呼吸约2.667秒。总数更新为17动作、152帧。
+- HeroAnimatorSetup版本4支持可变帧数。已有版本3配置完整时，只刷新Idle/IdleLeft/Walk/CarryWalk四组片段和动画库，不重建原状态机、场景或Timeline，不改任何运行时脚本和音效接口。HeroAnimatorVerification按实际fps×duration核对帧数，不再固定每动作8帧。
+- 音效检查基于当前SfxPlayer和HANDOVER末尾音效记录：26个编号已接入，但Resources/SFX暂无实际音频。脚步仍固定0.32秒；自主休息心脏分支没有HRT-01播放；换弹完成采用Update下降沿采样，极短Perfect免换弹路径可能漏播。此次仅记录检查结果，保留现有音效行为。完整调用位置、规范对应及缺资源清单见Codex输出“主角动画导入_16帧与音效检查”。
+- 核验看Library/HeroAnimatorSetupResult.json与HeroAnimatorVerification.json的版本4报告。安装器先保存被替换文件、原meta及现有主角生成资源；只由Unity原生Editor API写入导入参数和动画资产。
+
+### 本轮导入核验完成
+
+- Unity版本4实际生成与播放核验均success=true：17动作、152帧、2场景绑定、2次结尾Timeline采样；Walk/CarryWalk各16帧12fps，Idle/IdleLeft各8帧3fps。
+- 导入前后36个运行时脚本、两个场景、Hero.controller、Timeline和其他13组片段均保持哈希一致，SfxPlayer及全部29处音效调用保留。32个已有Sprite GUID保留，16个新增帧由Unity生成meta。
+- 当前音效仍缺实际音频文件。另确认BulletHit死亡时仍用ENM-02且ENM-03未接；SYS-03代码在过场开始触发，与文档结束时的描述存在差异。本轮仅记录接口审查，不改音效行为。
+- 本轮安装备份：C:\Users\ASUS\Documents\Codex\2026-10-14\e-unity-project-my-project-1\outputs\主角动画导入_16帧与音效检查\Backup-20261018-115953-504；原生资源备份：E:\Unity Project\My project (1)\AnimatorBackups\Hero-20261018-120255-466。
+
+
+## 2026-10-18 心跳声音、动画与Perfect统一相位
+
+- 当前工程已存在HRT-01三个0.55秒双心跳变体和HRT-04。本轮不覆盖这些原音频，整理出三个约90ms、主峰约2ms的单跳PCM，保存于Resources/SFX/HeartbeatPulse/Pulse-V1..V3。
+- Heartbeat不再在beattime重置或音乐相位回绕时播放整个双心跳。HeartbeatPulseTiming共用波形与峰值事件，自主/休息0.12和0.30、音乐窗口之间0.28和0.67，副跳55%音量。音乐只新增PulsePhase/PulseSeconds/PulseCycle/HasPulseInterval显示字段，原MusicBeatClock判定字段及交接算法保持。
+- Perfect静止时停止心跳专用AudioSource并清除旧峰事件；自主休息继续按原稳定周期跳动并发声。原有音乐结束后的周期平滑交接与自主加速保留。窄间隙不改Perfect来强行塞入声音，卡帧不追补旧拍。
+- Heartbeat在现有HeartSet上按需添加一个2D AudioSource，不新增GameObject或AudioListener，不占全局SfxPlayer池；默认enableHeartbeatSound=true、heartbeatVolume=.55，仍受SfxPlayer.MasterVolume控制。禁用组件即停声。F3在自主休息期间明确显示REST，而非把冻结raw perfecttime误标为Perfect可用。
+- 新增Editor/HeartbeatAudioSetup：停止运行后原生配置3个短音频导入参数，只读核验场景1/2和Perfect静音，报告Library/HeartbeatAudioSetupResult.json。Native导入状态以该报告为准；声音输出设备延迟未自动测量。
+- 工作区work/heartbeat_sync，输出“心跳声音画同步”。运行时/Editor编译通过，独立时序55402项对照断言通过，确认判定、计时、音乐交接不变。安装前备份由Apply.ps1保存。
+
+### 心跳声音画同步原生核验完成
+
+- Library/HeartbeatAudioSetupResult.json：success=true，3段90ms单跳音频与2个场景配置通过，1751个原生时序检查通过。最新运行时脚本已由Unity重新编译。
+- 独立新旧计时对照55402项断言通过；原录音、SfxPlayer、Tap/TapSec、音乐配置、场景和主角动画等439个保护文件哈希保持。实际音频设备延迟与主观听感未自动测量，可进入场景1/2试听。
+- 本轮安装前备份：C:\Users\ASUS\Documents\Codex\2026-10-14\e-unity-project-my-project-1\outputs\心跳声音画同步\Backup-20261018-232912-207。
+
+
+## 2026-10-18 心跳发声窗口纠正
+
+- 用户明确：beattime倒计时期间跳动并发声，perfecttime为无心跳声音的静止间歇。perfecttime在自主beattime期间保留初值，不代表Perfect已激活。
+- Heartbeat动画和声音统一在LateUpdate读取计时，F3使用同一份音乐采样，标明BEATTIME: HEARTBEAT / PERFECT: SILENT / STILL。只有实际beattime>0才允许播放；自主错按3秒休息仍继续搏动。
+- 普通单声源播放替代PlayOneShot，按剩余beattime用DSP定时截断最后一跳尾音，进入Perfect即停止声源、清相位并立即静止，不再用音乐交接缩放插值跨入Perfect。未修改判定窗口、BPM、音乐、场景或角色资源。
+- Editor/HeartbeatAudioSetup报告升为版本2，增加beattime/Perfect门控与尾音边界核验。原版脚本备份及离线测试在Codex工作区work/heartbeat_gate_fix。音频设备延迟和实际听感仍需运行试听确认。
+
+
+## 2026-10-19 蓝牙心跳输出延迟与排程改造（v3）
+
+- 用户实际症状：使用蓝牙耳机/音箱，在应该静止的Perfect期间仍听到心跳。v2报告只验证了逻辑门控，没有测量真实声学延迟。此前在动画峰值才PlayScheduled(dspTime)没有准备时间；当帧Stop也不能撤回已送往设备的声音。
+- 新增HeartbeatAudioTimeline与HeartbeatAudioOutput。心跳按未来峰值预排，主/副跳使用独立排程声源，读取PCM实际主峰位置补偿起音，不在峰值出现后补播。提前截断预计会进入Perfect的音频尾音。声源均在已有HeartSet，不新增GameObject。原WAV及meta不变。
+- RhythmManager新增输出延迟补偿：Unity缓冲队列粗估(bufferLength*(buffers-1)/sampleRate)加额外延迟，额外初值150ms仅针对本次用户蓝牙设备的试调起点，并非测量值。F3显示总估计，F6/F7每次减/加10ms，PlayerPrefs保存额外值跨场景/重启复用；换设备需重新校准。关闭compensateOutputLatency可回到0补偿。
+- 音乐原始DSP拍表不变；画面/输入判定共用每帧一次的dspTime-输出延迟采样，衔接到自主计时也用同一时间。音频心跳与背景音乐按原始DSP时间排程，避免重复补偿。歌曲BPM、Perfect窗口宽度和每拍领取规则不变；实际屏幕窗口整体随设备估计延迟平移。
+- 自主心跳按现有加速周期预测未来波形，休息仍继续。Perfect期间会提前提交下一段beattime的音频，不能根据AudioSource.isPlaying直接认定Perfect漏音，因为音频还在设备队列。正确比较预计可听时间与画面窗口。输入提前结束Perfect或重置倒计时时撤销尚未开始的旧预测，停止QTE或暂停时停止排程。已经进入蓝牙设备的声音无法追溯撤回。
+- Editor/HeartbeatAudioSetup报告版本3，增加补偿后可听尾音边界校验。新增Editor/HeartbeatPlaybackAudit：每次Play后8秒或提前退出时写Library/HeartbeatPlaybackAudit.json，含实际缓冲/采样率、补偿设置、最近100个已提交声音的DSP与预计可听时间；不是麦克风或设备实测。
+- 离线Unity2022运行时与Editor编译通过；5758门控检查、26562延迟/帧率/输入重置检查、55402原计时回归检查通过。原生导入与实际听感需刷新运行核验，不能以离线检查代替硬件试听。工作区work/heartbeat_latency，备份与使用说明在Codex输出“心跳蓝牙延迟修正”。
+
+### v3原生运行核验（2026-10-19）
+
+- Library/HeartbeatAudioSetupResult.json版本3，success=true；用户确认F3显示v3。
+- Library/HeartbeatPlaybackAudit.json实际runtimeVersion=3，场景2/TapSec。设备运行配置为1024采样×4缓冲、48000Hz；总输出延迟估计214ms（队列粗估64ms+额外150ms）。19次实际已提交排程的预计可听尾音全部早于相应Perfect边界，未发现预计尾音越界。
+- 硬件输出延迟仍未实测；214ms不是耳机测量结果。F6/F7按10ms校准额外值并保存。原生报告、实际排程及离线检查结果已保存到Codex输出“心跳蓝牙延迟修正”。
+
+## 2026-10-19 用户试听确认与后续开场调音待办
+
+- 用户在确认F3显示v3并实际运行后反馈：“声音与跳动、静止已基本同步”。当前214ms总补偿（缓冲估计64ms＋额外150ms）可作为此次蓝牙设备的保留基准；它是试听认可的设置，不是硬件实测值，也不应当作所有玩家设备的固定值。
+- 保持规则：beattime期间心脏跳动并发声；Perfect是心跳静止、心跳声停歇的间歇；错按后的三秒休息仍继续跳动。F6/F7按10ms调节额外补偿并保存，换设备后需要重新校准。
+
+### 待办：在游戏开头添加调音／声音延迟校准环节（尚未实现）
+
+- [ ] 在正式开场动画与玩法开始前提供简短调音环节，让玩家通过可视节拍／心脏动画与心跳试听校准声音延迟，尤其考虑蓝牙耳机或音箱。
+- [ ] 为玩家提供易懂的音量与延迟调节、试听和确认保存入口，复用现有延迟补偿与保存逻辑；不能只依赖开发用的F3、F6、F7。
+- [ ] 建议允许使用已有设置跳过，并在设置菜单提供重新调音入口，以便更换输出设备后重调。
+- 后续处理开场流程或设置菜单时，请提醒用户并安排此项；本轮只记录待办，没有创建调音界面或修改开场流程。
+
+
+## 2026-10-19 Script脚本按功能分类
+
+- 47个脚本已按下表整理。原文件名、类名及47份.meta/GUID保持；运行时39个、编辑器8个，Editor脚本全部保留在Editor路径内，不增加asmdef。
+- 仅HeroAnimatorSetup.cs两处脚本路径由Assets/Script/HeroConstructionDriver.cs、HeroCombatDriver.cs更新到Animation/Hero下的新位置；玩法、节奏和音频逻辑不改。历史记录里的旧路径应以本节与Script/README.md为准。
+- 三个旧脚本AiLeaderMove、LeaderEnemMove、SBomb保留于Legacy；本轮未找到其场景、预制体或资产引用，不作删除。Assets/Test1.cs不属于本轮Script目录范围，保持原位置。
+
+| 新目录（相对于Assets/Script） | 用途 | 脚本数 |
+| --- | --- | --- |
+| `Core/` | 全局数值、阶段流程、场景音乐衔接和通用跟随 | 4 |
+| `Rhythm/` | 玩家节奏、心脏动画、Perfect和音乐计时 | 3 |
+| `Audio/` | 全局音效、心跳音频排程与延迟计算 | 3 |
+| `Gameplay/Construction/` | 场景1的QTE与街垒建造 | 2 |
+| `Gameplay/Combat/` | 场景2的操作、开枪、弹道、伤害与手榴弹 | 7 |
+| `Enemies/` | 刷敌、敌人行为、血量与敌人组节奏 | 4 |
+| `Animation/Hero/` | 主角状态机、Animator驱动、建造/战斗动作与剧情播放 | 7 |
+| `Animation/Enemies/` | 敌人动画库、Animator驱动与掷弹兵原图骨架 | 3 |
+| `UI/` | 心脏血条、按键反馈和准星 | 3 |
+| `Legacy/` | 旧实现及占位脚本；目前未找到场景/预制体/资产引用，保留供回查 | 3 |
+| `Editor/Animation/` | 主角与敌人动画资产生成和绑定工具 | 2 |
+| `Editor/Audio/` | 心跳音频配置核验与实际排程记录 | 2 |
+| `Editor/Diagnostics/` | 动画导入、播放及场景2显示诊断 | 4 |
+
+- 完整旧路径→新路径清单、安装前脚本备份及GUID核验结果保存在Codex输出“脚本目录分类”。
+- 后续开场调音／声音延迟校准的待办继续保留，尚未实现。
+
+- 本轮整理核验：47份脚本meta逐字节保持、47个GUID无重复；46个脚本内容原样，只有HeroAnimatorSetup更新两处路径。531个其余资源文件哈希保持；整理后的运行时与Editor脚本分别通过Unity2022引用集的独立编译。
