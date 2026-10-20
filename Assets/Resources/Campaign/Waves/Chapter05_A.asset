@@ -1,0 +1,169 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c6f1823b2e448e9a07c49ea067e4fd0, type: 3}
+  m_Name: Chapter05_A
+  m_EditorClassIdentifier: 
+  chapter: 5
+  variant: "A"
+  relativeToDefense: 1
+  defenseBeats: 163
+  maxOnScreen: 8
+  maxEventsPerBeat: 2
+  laneCooldown: 2
+  requiredShellInterceptions: 0
+  shellTravelBeats: 3
+  auditDistance: 14.88
+  auditSoldierSpeed: 0.5
+  auditSquadSeconds: 14.3
+  auditShellSeconds: 1.5
+  squadImpactOffsets: 0a0000000f00000014000000
+  events:
+  - beat: 0
+    alignTo: -1
+    type: 0
+    lane: 2
+    advance: 8
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "opening"
+    lanes: 
+  - beat: 14
+    alignTo: -1
+    type: 0
+    lane: 1
+    advance: 6
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "Soldier-14"
+    lanes: 
+  - beat: 28
+    alignTo: -1
+    type: 0
+    lane: 3
+    advance: 7
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "Soldier-28"
+    lanes: 
+  - beat: 40
+    alignTo: -1
+    type: 3
+    lane: 2
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 30
+    tag: "javert-1"
+    lanes: 
+  - beat: 52
+    alignTo: -1
+    type: 0
+    lane: 1
+    advance: 5
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "Soldier-52"
+    lanes: 
+  - beat: 66
+    alignTo: -1
+    type: 1
+    lane: 3
+    advance: 3
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "Squad-66"
+    lanes: 
+  - beat: 70
+    alignTo: -1
+    type: 0
+    lane: 2
+    advance: 5
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "Soldier-70"
+    lanes: 
+  - beat: 92
+    alignTo: -1
+    type: 0
+    lane: 1
+    advance: 8
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "Soldier-92"
+    lanes: 
+  - beat: 100
+    alignTo: -1
+    type: 3
+    lane: 1
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 25
+    tag: "javert-2"
+    lanes: 
+  - beat: 104
+    alignTo: -1
+    type: 0
+    lane: 2
+    advance: 4
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "Soldier-104"
+    lanes: 
+  - beat: 118
+    alignTo: -1
+    type: 0
+    lane: 3
+    advance: 6
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "Soldier-118"
+    lanes: 
+  - beat: 130
+    alignTo: -1
+    type: 1
+    lane: 2
+    advance: 2
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "Squad-130"
+    lanes: 
+  - beat: 126
+    alignTo: -1
+    type: 0
+    lane: 1
+    advance: 8
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "Soldier-126"
+    lanes: 
+  - beat: 134
+    alignTo: -1
+    type: 0
+    lane: 2
+    advance: 8
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "Soldier-134"
+    lanes: 

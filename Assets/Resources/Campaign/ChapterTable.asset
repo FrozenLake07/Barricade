@@ -1,0 +1,863 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f3f97317cbf44efb9c62f856940351b, type: 3}
+  m_Name: ChapterTable
+  m_EditorClassIdentifier: 
+  chapters:
+  - number: 1
+    title: "葬礼"
+    introduction: "六月五日。拉马克将军的灵车经过这里。"
+    preparationBeats: 183
+    defenseBeats: 0
+    choiceBeats: 0
+    epilogueBeats: 0
+    startingWait: 0.85
+    accelerate: 0
+    lines:
+    - beat: 1
+      text: "六月五日。拉马克将军的灵车经过这里。"
+    - beat: 61
+      text: "有人爬上了马车。有人开始唱歌。"
+    - beat: 121
+      text: "到今晚为止，这条街不归国王管。"
+    waves: []
+    waveA: {fileID: 0}
+    waveB: {fileID: 0}
+    entry:
+      cinematicPrefab: {fileID: 0}
+      timeline: {fileID: 0}
+      audio: {fileID: 0}
+      placeholderSeconds: 10
+      allowSkip: 1
+      waitForSignal: 0
+    prepareToDefense:
+      cinematicPrefab: {fileID: 0}
+      timeline: {fileID: 0}
+      audio: {fileID: 0}
+      placeholderSeconds: 4
+      allowSkip: 1
+      waitForSignal: 0
+    exit:
+      cinematicPrefab: {fileID: 0}
+      timeline: {fileID: 0}
+      audio: {fileID: 0}
+      placeholderSeconds: 2
+      allowSkip: 1
+      waitForSignal: 0
+  - number: 2
+    title: "筑垒"
+    introduction: "把马车翻过来。把桶搬上来。"
+    preparationBeats: 120
+    defenseBeats: 63
+    choiceBeats: 0
+    epilogueBeats: 0
+    startingWait: 0.85
+    accelerate: 1
+    lines:
+    - beat: 1
+      text: "把马车翻过来。把桶搬上来。"
+    waves:
+    - beat: 0
+      kind: 0
+      lane: 1
+      count: 1
+    - beat: 20
+      kind: 0
+      lane: 1
+      count: 1
+    - beat: 38
+      kind: 0
+      lane: 2
+      count: 1
+    waveA: {fileID: 11400000, guid: 9ae91893e26d471dba4e2cc726c960b0, type: 2}
+    waveB: {fileID: 11400000, guid: 374b6b772329428588ea9517223e3e55, type: 2}
+    entry:
+      cinematicPrefab: {fileID: 0}
+      timeline: {fileID: 0}
+      audio: {fileID: 0}
+      placeholderSeconds: 10
+      allowSkip: 1
+      waitForSignal: 0
+    prepareToDefense:
+      cinematicPrefab: {fileID: 0}
+      timeline: {fileID: 0}
+      audio: {fileID: 0}
+      placeholderSeconds: 4
+      allowSkip: 1
+      waitForSignal: 0
+    exit:
+      cinematicPrefab: {fileID: 0}
+      timeline: {fileID: 0}
+      audio: {fileID: 0}
+      placeholderSeconds: 2
+      allowSkip: 1
+      waitForSignal: 0
+  - number: 3
+    title: "第一次进攻"
+    introduction: "第一排枪之后，街垒还在。"
+    preparationBeats: 20
+    defenseBeats: 163
+    choiceBeats: 0
+    epilogueBeats: 0
+    startingWait: 0.85
+    accelerate: 1
+    lines:
+    - beat: 1
+      text: "第一排枪之后，街垒还在。"
+    waves:
+    - beat: 0
+      kind: 0
+      lane: 0
+      count: 1
+    - beat: 8
+      kind: 0
+      lane: 2
+      count: 1
+    - beat: 20
+      kind: 1
+      lane: 1
+      count: 3
+    - beat: 34
+      kind: 0
+      lane: 0
+      count: 1
+    - beat: 46
+      kind: 0
+      lane: 2
+      count: 1
+    - beat: 46
+      kind: 0
+      lane: 0
+      count: 1
+    - beat: 58
+      kind: 0
+      lane: 1
+      count: 1
+    - beat: 76
+      kind: 0
+      lane: 1
+      count: 1
+    - beat: 76
+      kind: 0
+      lane: 2
+      count: 1
+    - beat: 92
+      kind: 0
+      lane: 0
+      count: 1
+    - beat: 104
+      kind: 0
+      lane: 0
+      count: 1
+    - beat: 104
+      kind: 0
+      lane: 2
+      count: 1
+    - beat: 128
+      kind: 0
+      lane: 2
+      count: 1
+    - beat: 126
+      kind: 0
+      lane: 1
+      count: 1
+    waveA: {fileID: 11400000, guid: 8c87ffd0c4d54cdbb1e6e5ac5cdc92be, type: 2}
+    waveB: {fileID: 11400000, guid: 427bcad97dae4e46be401f97885d8d01, type: 2}
+    entry:
+      cinematicPrefab: {fileID: 0}
+      timeline: {fileID: 0}
+      audio: {fileID: 0}
+      placeholderSeconds: 10
+      allowSkip: 1
+      waitForSignal: 0
+    prepareToDefense:
+      cinematicPrefab: {fileID: 0}
+      timeline: {fileID: 0}
+      audio: {fileID: 0}
+      placeholderSeconds: 4
+      allowSkip: 1
+      waitForSignal: 0
+    exit:
+      cinematicPrefab: {fileID: 0}
+      timeline: {fileID: 0}
+      audio: {fileID: 0}
+      placeholderSeconds: 2
+      allowSkip: 1
+      waitForSignal: 0
+  - number: 4
+    title: "加弗罗什"
+    introduction: "他跑出去了。没有人命令他。"
+    preparationBeats: 20
+    defenseBeats: 163
+    choiceBeats: 0
+    epilogueBeats: 0
+    startingWait: 0.85
+    accelerate: 1
+    lines:
+    - beat: 1
+      text: "他跑出去了。没有人命令他。"
+    waves:
+    - beat: 0
+      kind: 0
+      lane: 0
+      count: 1
+    - beat: 0
+      kind: 0
+      lane: 2
+      count: 1
+    - beat: 12
+      kind: 0
+      lane: 1
+      count: 1
+    - beat: 30
+      kind: 3
+      lane: 1
+      count: 1
+    - beat: 49
+      kind: 0
+      lane: 0
+      count: 1
+    - beat: 70
+      kind: 3
+      lane: 0
+      count: 1
+    - beat: 94
+      kind: 0
+      lane: 1
+      count: 1
+    - beat: 104
+      kind: 1
+      lane: 2
+      count: 3
+    - beat: 110
+      kind: 3
+      lane: 1
+      count: 1
+    - beat: 118
+      kind: 0
+      lane: 2
+      count: 1
+    - beat: 130
+      kind: 0
+      lane: 1
+      count: 1
+    waveA: {fileID: 11400000, guid: 4cbb1df7e4c34add86796c21dbde3f59, type: 2}
+    waveB: {fileID: 11400000, guid: d01ccf54849e4f88b6cebb5cd1cb82b9, type: 2}
+    entry:
+      cinematicPrefab: {fileID: 0}
+      timeline: {fileID: 0}
+      audio: {fileID: 0}
+      placeholderSeconds: 10
+      allowSkip: 1
+      waitForSignal: 0
+    prepareToDefense:
+      cinematicPrefab: {fileID: 0}
+      timeline: {fileID: 0}
+      audio: {fileID: 0}
+      placeholderSeconds: 4
+      allowSkip: 1
+      waitForSignal: 0
+    exit:
+      cinematicPrefab: {fileID: 0}
+      timeline: {fileID: 0}
+      audio: {fileID: 0}
+      placeholderSeconds: 2
+      allowSkip: 1
+      waitForSignal: 0
+  - number: 5
+    title: "沙威"
+    introduction: "一个穿制服的人被认了出来。"
+    preparationBeats: 20
+    defenseBeats: 163
+    choiceBeats: 0
+    epilogueBeats: 0
+    startingWait: 0.85
+    accelerate: 1
+    lines:
+    - beat: 1
+      text: "一个穿制服的人被认了出来。"
+    waves:
+    - beat: 0
+      kind: 0
+      lane: 1
+      count: 1
+    - beat: 14
+      kind: 0
+      lane: 0
+      count: 1
+    - beat: 28
+      kind: 0
+      lane: 2
+      count: 1
+    - beat: 40
+      kind: 4
+      lane: 1
+      count: 1
+    - beat: 52
+      kind: 0
+      lane: 0
+      count: 1
+    - beat: 66
+      kind: 1
+      lane: 2
+      count: 3
+    - beat: 70
+      kind: 0
+      lane: 1
+      count: 1
+    - beat: 92
+      kind: 0
+      lane: 0
+      count: 1
+    - beat: 100
+      kind: 4
+      lane: 0
+      count: 1
+    - beat: 104
+      kind: 0
+      lane: 1
+      count: 1
+    - beat: 118
+      kind: 0
+      lane: 2
+      count: 1
+    - beat: 130
+      kind: 1
+      lane: 1
+      count: 3
+    - beat: 126
+      kind: 0
+      lane: 0
+      count: 1
+    - beat: 134
+      kind: 0
+      lane: 1
+      count: 1
+    waveA: {fileID: 11400000, guid: 9802b1b769a94fdd847ab77ac0ec89d1, type: 2}
+    waveB: {fileID: 11400000, guid: 48f859635b434a3bbbb4f8a411ec4ea6, type: 2}
+    entry:
+      cinematicPrefab: {fileID: 0}
+      timeline: {fileID: 0}
+      audio: {fileID: 0}
+      placeholderSeconds: 10
+      allowSkip: 1
+      waitForSignal: 0
+    prepareToDefense:
+      cinematicPrefab: {fileID: 0}
+      timeline: {fileID: 0}
+      audio: {fileID: 0}
+      placeholderSeconds: 4
+      allowSkip: 1
+      waitForSignal: 0
+    exit:
+      cinematicPrefab: {fileID: 0}
+      timeline: {fileID: 0}
+      audio: {fileID: 0}
+      placeholderSeconds: 2
+      allowSkip: 1
+      waitForSignal: 0
+  - number: 6
+    title: "夜袭"
+    introduction: "有人把火把扔了过来。"
+    preparationBeats: 20
+    defenseBeats: 163
+    choiceBeats: 0
+    epilogueBeats: 0
+    startingWait: 0.85
+    accelerate: 1
+    lines:
+    - beat: 1
+      text: "有人把火把扔了过来。"
+    waves:
+    - beat: 0
+      kind: 0
+      lane: 0
+      count: 1
+    - beat: 0
+      kind: 0
+      lane: 2
+      count: 1
+    - beat: 20
+      kind: 0
+      lane: 1
+      count: 1
+    - beat: 40
+      kind: 1
+      lane: 0
+      count: 3
+    - beat: 48
+      kind: 0
+      lane: 1
+      count: 1
+    - beat: 48
+      kind: 0
+      lane: 2
+      count: 1
+    - beat: 70
+      kind: 0
+      lane: 0
+      count: 1
+    - beat: 88
+      kind: 1
+      lane: 2
+      count: 3
+    - beat: 96
+      kind: 0
+      lane: 0
+      count: 1
+    - beat: 96
+      kind: 0
+      lane: 1
+      count: 1
+    - beat: 120
+      kind: 0
+      lane: 2
+      count: 1
+    - beat: 130
+      kind: 0
+      lane: 1
+      count: 1
+    waveA: {fileID: 11400000, guid: d85d3246841849ac8f262dfead396987, type: 2}
+    waveB: {fileID: 11400000, guid: 67592a3bbeaa4d1388e85503e1019b83, type: 2}
+    entry:
+      cinematicPrefab: {fileID: 0}
+      timeline: {fileID: 0}
+      audio: {fileID: 0}
+      placeholderSeconds: 10
+      allowSkip: 1
+      waitForSignal: 0
+    prepareToDefense:
+      cinematicPrefab: {fileID: 0}
+      timeline: {fileID: 0}
+      audio: {fileID: 0}
+      placeholderSeconds: 4
+      allowSkip: 1
+      waitForSignal: 0
+    exit:
+      cinematicPrefab: {fileID: 0}
+      timeline: {fileID: 0}
+      audio: {fileID: 0}
+      placeholderSeconds: 2
+      allowSkip: 1
+      waitForSignal: 0
+  - number: 7
+    title: "瓦让"
+    introduction: "处决间谍的枪，递到了他手里。"
+    preparationBeats: 0
+    defenseBeats: 120
+    choiceBeats: 63
+    epilogueBeats: 0
+    startingWait: 0.85
+    accelerate: 1
+    lines:
+    - beat: 1
+      text: "处决间谍的枪，递到了他手里。"
+    waves:
+    - beat: 0
+      kind: 0
+      lane: 0
+      count: 1
+    - beat: 0
+      kind: 0
+      lane: 1
+      count: 1
+    - beat: 18
+      kind: 0
+      lane: 2
+      count: 1
+    - beat: 34
+      kind: 1
+      lane: 1
+      count: 3
+    - beat: 46
+      kind: 0
+      lane: 0
+      count: 1
+    - beat: 62
+      kind: 0
+      lane: 1
+      count: 1
+    - beat: 62
+      kind: 0
+      lane: 2
+      count: 1
+    - beat: 80
+      kind: 0
+      lane: 0
+      count: 1
+    - beat: 74
+      kind: 0
+      lane: 1
+      count: 1
+    waveA: {fileID: 11400000, guid: 47cbbc9debb54c13996f9e013cd44a65, type: 2}
+    waveB: {fileID: 11400000, guid: f02ace83b073442d8e0e7bbe2ef34830, type: 2}
+    entry:
+      cinematicPrefab: {fileID: 0}
+      timeline: {fileID: 0}
+      audio: {fileID: 0}
+      placeholderSeconds: 10
+      allowSkip: 1
+      waitForSignal: 0
+    prepareToDefense:
+      cinematicPrefab: {fileID: 0}
+      timeline: {fileID: 0}
+      audio: {fileID: 0}
+      placeholderSeconds: 4
+      allowSkip: 1
+      waitForSignal: 0
+    exit:
+      cinematicPrefab: {fileID: 0}
+      timeline: {fileID: 0}
+      audio: {fileID: 0}
+      placeholderSeconds: 2
+      allowSkip: 1
+      waitForSignal: 0
+  - number: 8
+    title: "火炮"
+    introduction: "他们把炮推上来了。"
+    preparationBeats: 20
+    defenseBeats: 163
+    choiceBeats: 0
+    epilogueBeats: 0
+    startingWait: 0.85
+    accelerate: 1
+    lines:
+    - beat: 1
+      text: "他们把炮推上来了。"
+    waves:
+    - beat: 0
+      kind: 0
+      lane: 0
+      count: 1
+    - beat: 0
+      kind: 0
+      lane: 2
+      count: 1
+    - beat: 20
+      kind: 0
+      lane: 1
+      count: 1
+    - beat: 40
+      kind: 5
+      lane: 1
+      count: 1
+    - beat: 70
+      kind: 6
+      lane: 1
+      count: 1
+    - beat: 76
+      kind: 0
+      lane: 0
+      count: 1
+    - beat: 76
+      kind: 0
+      lane: 2
+      count: 1
+    - beat: 100
+      kind: 6
+      lane: 1
+      count: 1
+    - beat: 104
+      kind: 1
+      lane: 2
+      count: 3
+    - beat: 130
+      kind: 6
+      lane: 1
+      count: 1
+    - beat: 126
+      kind: 0
+      lane: 0
+      count: 1
+    - beat: 126
+      kind: 0
+      lane: 1
+      count: 1
+    - beat: 152
+      kind: 6
+      lane: 1
+      count: 1
+    waveA: {fileID: 11400000, guid: 3e8385041e1244519b790af6c080586e, type: 2}
+    waveB: {fileID: 11400000, guid: b81a10f63df9476ca962e6439ec1ae34, type: 2}
+    entry:
+      cinematicPrefab: {fileID: 0}
+      timeline: {fileID: 0}
+      audio: {fileID: 0}
+      placeholderSeconds: 10
+      allowSkip: 1
+      waitForSignal: 0
+    prepareToDefense:
+      cinematicPrefab: {fileID: 0}
+      timeline: {fileID: 0}
+      audio: {fileID: 0}
+      placeholderSeconds: 4
+      allowSkip: 1
+      waitForSignal: 0
+    exit:
+      cinematicPrefab: {fileID: 0}
+      timeline: {fileID: 0}
+      audio: {fileID: 0}
+      placeholderSeconds: 2
+      allowSkip: 1
+      waitForSignal: 0
+  - number: 9
+    title: "最后总攻"
+    introduction: "这是最后的斗争。"
+    preparationBeats: 20
+    defenseBeats: 163
+    choiceBeats: 0
+    epilogueBeats: 0
+    startingWait: 0.5
+    accelerate: 0
+    lines:
+    - beat: 1
+      text: "这是最后的斗争。"
+    waves:
+    - beat: 0
+      kind: 5
+      lane: 1
+      count: 1
+    - beat: 0
+      kind: 0
+      lane: 0
+      count: 1
+    - beat: 8
+      kind: 0
+      lane: 1
+      count: 1
+    - beat: 16
+      kind: 0
+      lane: 2
+      count: 1
+    - beat: 24
+      kind: 0
+      lane: 0
+      count: 1
+    - beat: 32
+      kind: 0
+      lane: 1
+      count: 1
+    - beat: 40
+      kind: 1
+      lane: 0
+      count: 3
+    - beat: 40
+      kind: 1
+      lane: 2
+      count: 3
+    - beat: 41
+      kind: 1
+      lane: 0
+      count: 3
+    - beat: 41
+      kind: 1
+      lane: 2
+      count: 3
+    - beat: 42
+      kind: 6
+      lane: 0
+      count: 1
+    - beat: 43
+      kind: 6
+      lane: 2
+      count: 1
+    - beat: 48
+      kind: 0
+      lane: 0
+      count: 1
+    - beat: 56
+      kind: 0
+      lane: 1
+      count: 1
+    - beat: 64
+      kind: 0
+      lane: 2
+      count: 1
+    - beat: 72
+      kind: 0
+      lane: 0
+      count: 1
+    - beat: 80
+      kind: 0
+      lane: 1
+      count: 1
+    - beat: 88
+      kind: 0
+      lane: 2
+      count: 1
+    - beat: 90
+      kind: 1
+      lane: 0
+      count: 3
+    - beat: 90
+      kind: 1
+      lane: 2
+      count: 3
+    - beat: 91
+      kind: 1
+      lane: 0
+      count: 3
+    - beat: 91
+      kind: 1
+      lane: 2
+      count: 3
+    - beat: 92
+      kind: 6
+      lane: 0
+      count: 1
+    - beat: 93
+      kind: 6
+      lane: 2
+      count: 1
+    - beat: 98
+      kind: 0
+      lane: 0
+      count: 1
+    - beat: 106
+      kind: 0
+      lane: 1
+      count: 1
+    - beat: 114
+      kind: 0
+      lane: 2
+      count: 1
+    - beat: 122
+      kind: 0
+      lane: 0
+      count: 1
+    - beat: 130
+      kind: 1
+      lane: 0
+      count: 3
+    - beat: 130
+      kind: 1
+      lane: 2
+      count: 3
+    - beat: 131
+      kind: 1
+      lane: 0
+      count: 3
+    - beat: 131
+      kind: 1
+      lane: 2
+      count: 3
+    - beat: 133
+      kind: 6
+      lane: 0
+      count: 1
+    - beat: 134
+      kind: 6
+      lane: 2
+      count: 1
+    - beat: 138
+      kind: 0
+      lane: 0
+      count: 1
+    - beat: 138
+      kind: 0
+      lane: 2
+      count: 1
+    - beat: 146
+      kind: 0
+      lane: 0
+      count: 1
+    - beat: 146
+      kind: 0
+      lane: 2
+      count: 1
+    - beat: 154
+      kind: 0
+      lane: 0
+      count: 1
+    - beat: 154
+      kind: 0
+      lane: 2
+      count: 1
+    waveA: {fileID: 11400000, guid: 2548f9aa3abe405cbb1eb08018ce437b, type: 2}
+    waveB: {fileID: 11400000, guid: cbaf4415434549e989b60f9333ead6e6, type: 2}
+    entry:
+      cinematicPrefab: {fileID: 0}
+      timeline: {fileID: 0}
+      audio: {fileID: 0}
+      placeholderSeconds: 10
+      allowSkip: 1
+      waitForSignal: 0
+    prepareToDefense:
+      cinematicPrefab: {fileID: 0}
+      timeline: {fileID: 0}
+      audio: {fileID: 0}
+      placeholderSeconds: 4
+      allowSkip: 1
+      waitForSignal: 0
+    exit:
+      cinematicPrefab: {fileID: 0}
+      timeline: {fileID: 0}
+      audio: {fileID: 0}
+      placeholderSeconds: 2
+      allowSkip: 1
+      waitForSignal: 0
+  - number: 10
+    title: "街垒之后"
+    introduction: "街垒陷落。马里乌斯活了下来。"
+    preparationBeats: 0
+    defenseBeats: 0
+    choiceBeats: 0
+    epilogueBeats: 183
+    startingWait: 0.5
+    accelerate: 0
+    lines:
+    - beat: 1
+      text: "街垒陷落。马里乌斯活了下来。"
+    waves: []
+    waveA: {fileID: 0}
+    waveB: {fileID: 0}
+    entry:
+      cinematicPrefab: {fileID: 0}
+      timeline: {fileID: 0}
+      audio: {fileID: 0}
+      placeholderSeconds: 10
+      allowSkip: 1
+      waitForSignal: 0
+    prepareToDefense:
+      cinematicPrefab: {fileID: 0}
+      timeline: {fileID: 0}
+      audio: {fileID: 0}
+      placeholderSeconds: 4
+      allowSkip: 1
+      waitForSignal: 0
+    exit:
+      cinematicPrefab: {fileID: 0}
+      timeline: {fileID: 0}
+      audio: {fileID: 0}
+      placeholderSeconds: 2
+      allowSkip: 1
+      waitForSignal: 0
+  constructionLimit: 600
+  lastChancesPerChapter: 2
+  chordMaxGap: 0.12
+  chordPerfectHP: 15
+  chordOrdinaryHP: 5
+  perfectWindow: 0.5
+  opening:
+    cinematicPrefab: {fileID: 0}
+    timeline: {fileID: 0}
+    audio: {fileID: 0}
+    placeholderSeconds: 0.85
+    allowSkip: 1
+    waitForSignal: 0
+  ending:
+    cinematicPrefab: {fileID: 0}
+    timeline: {fileID: 0}
+    audio: {fileID: 0}
+    placeholderSeconds: 4
+    allowSkip: 1
+    waitForSignal: 0

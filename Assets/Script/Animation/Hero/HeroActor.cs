@@ -63,6 +63,7 @@ public sealed class HeroActor : MonoBehaviour
 
     void Update()
     {
+        if (CampaignSession.Suspended) return;
         if (!EnsureReady()) return;
         float speed = Time.deltaTime > 0f ? Vector3.Distance(transform.position, previousPosition) / Time.deltaTime : 0f;
         previousPosition = transform.position;

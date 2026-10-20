@@ -98,6 +98,9 @@ public class Heartbeat : MonoBehaviour
     void Start()
     {
         if (enableHeartbeatSound) audioOutput = new HeartbeatAudioOutput(gameObject);
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+        if (StoryDirector.Active) showPerfectTimer = false;
+#endif
         timingTap = FindFirstObjectByType<Tap>();
         timingTapSec = FindFirstObjectByType<TapSec>();
         if (source != BeatSource.Auto) return;
@@ -111,6 +114,14 @@ public class Heartbeat : MonoBehaviour
 
     void LateUpdate()
     {
+        if (CampaignSession.Suspended)
+        {
+            audioOutput?.Stop();
+            transform.localScale=CampaignSession.Counting?baseScale*(1f+maxAmplitude*Pulse(CampaignSession.CountPhase)):baseScale*restScale;
+            return;
+        }
+        if (StoryDirector.Active && !StoryDirector.HeartbeatRunning)
+        { audioOutput?.Stop(); transform.localScale = baseScale * restScale; return; }
         UpdateHeartbeat();
         UpdateAudioPlan();
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
@@ -242,8 +253,9 @@ public class Heartbeat : MonoBehaviour
 
     void OnGUI()
     {
+        if (StoryDirector.Active && !StoryDirector.GameplayRunning) return;
         if (!showPerfectTimer || string.IsNullOrEmpty(debugTimerText)) return;
-        if (debugTimerStyle == null) debugTimerStyle = new GUIStyle(GUI.skin.label);
+        if (debugTimerStyle == null) debugTimerStyle = new GUIStyle(GUI.skin.label) { font = GameFont.Silver };
         debugTimerStyle.fontSize = perfectTimerFontSize;
         debugTimerStyle.wordWrap = true;
         debugTimerStyle.normal.textColor = debugPerfectActive ? new Color(0.4f, 1f, 0.5f) : Color.white;

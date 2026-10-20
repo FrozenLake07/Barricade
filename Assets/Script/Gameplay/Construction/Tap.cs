@@ -20,7 +20,7 @@ public class Tap : MonoBehaviour
 
     static readonly KeyCode[] QteKeys = { KeyCode.A, KeyCode.D, KeyCode.W, KeyCode.S };
     static Tap activeTap;
-    public static bool IsResting => activeTap != null && activeTap.isActiveAndEnabled && activeTap.restTimer > 0f;
+    public static bool IsResting => (StoryDirector.Active && StoryDirector.Current.IsConstructionResting) || activeTap != null && activeTap.isActiveAndEnabled && activeTap.restTimer > 0f;
 
     float restTimer;
     KeyCode previousPromptKey;
@@ -76,8 +76,16 @@ public class Tap : MonoBehaviour
     static bool HasQteInput() => Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D)
         || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.Space);
 
+    public void NotifyCampaignInput(bool perfect,float pitch=1f)
+    {
+        if (perfect) cnt++;
+        ShowCount(); InputAccepted?.Invoke(perfect);
+        SfxPlayer.Play(perfect ? "SFX-QTE-01" : "SFX-QTE-02", .5f,pitch);
+    }
+
     void Update()
     {
+        if (StoryDirector.Active) { StoryDirector.Current.ConstructionInput(this); return; }
         if (!ConstructionStageFlow.CanAcceptInput(this)) return;
         previousPromptGrace = Mathf.Max(0f, previousPromptGrace - Time.deltaTime);
         ShowCount();

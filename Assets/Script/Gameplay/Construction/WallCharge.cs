@@ -18,6 +18,7 @@ public class WallCharge : MonoBehaviour
 
     void Start()
     {
+        if (StoryDirector.Active) return;
         GameManager.WallHP = Mathf.Clamp(startHP, 0, GameManager.WallMaxHP);
     }
 

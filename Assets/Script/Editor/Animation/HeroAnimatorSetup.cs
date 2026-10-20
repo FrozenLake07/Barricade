@@ -429,8 +429,11 @@ public static class HeroAnimatorSetup
             }
             driver.qte = tap; driver.flow = flow;
             if (Mathf.Approximately(driver.moveSpeed, 1.7f)) driver.moveSpeed = 1.05f;
-            driver.homePoint = Child(driver.transform, "MaterialPickupPoint", new Vector3(1.8f, -2.7f, 0f));
-            driver.buildPoint = Child(driver.transform, "MaterialPlacePoint", new Vector3(-1.8f, -2.7f, 0f));
+            // 搬运点由场景构图决定，重建动画时保留已经编辑好的路径。
+            if (driver.homePoint == null) driver.homePoint = driver.transform.Find("MaterialPickupPoint");
+            if (driver.buildPoint == null) driver.buildPoint = driver.transform.Find("MaterialPlacePoint");
+            if (driver.homePoint == null) driver.homePoint = Child(driver.transform, "MaterialPickupPoint", new Vector3(1.8f, -2.7f, 0f));
+            if (driver.buildPoint == null) driver.buildPoint = Child(driver.transform, "MaterialPlacePoint", new Vector3(-1.8f, -2.7f, 0f));
             driver.actor.transform.position = driver.homePoint.position;
             driver.homeCrate = Crate(driver.transform, "HomeCrate", driver.homePoint.position + driver.crateGroundOffset, true);
             driver.placedCrate = Crate(driver.transform, "PlacedCrate", driver.buildPoint.position + driver.crateGroundOffset, false);

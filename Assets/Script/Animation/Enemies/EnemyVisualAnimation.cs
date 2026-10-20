@@ -82,6 +82,7 @@ public sealed class EnemyVisualAnimation : MonoBehaviour
 
     void Update()
     {
+        if (CampaignSession.Suspended) return;
         EnsureInitialized();
         if (!ready || animator == null) return;
         if (enemy == null || !enemy.enabled) { animator.enabled = false; return; }

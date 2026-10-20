@@ -26,6 +26,7 @@ public class HeartFill : MonoBehaviour
     {
         // 分母取"进场时的血量"——场景 1 攒到多少，场景 2 就以它为满格。
         // 所以攒到 300 进来，血条就是 100% 起步，后面挨打再往下掉。
+        if (StoryDirector.Active) maxWallHP = GameManager.WallMaxHP;
         maxHP = maxWallHP > 0 ? maxWallHP : Mathf.Max(1, GameManager.WallHP);
 
         shown = Ratio();   // 开局直接就位，不要从满格慢慢滑下来

@@ -7,6 +7,7 @@ public class EnemyMove : MonoBehaviour
     public Role role = Role.Soldier;
     [Header("移动")]
     public float speed = 0.5f;
+    [HideInInspector] public bool waveControlled;
     public float settleTime = 2.5f;
     public float bulletSpeed = 20f;
     [Header("Leader 投弹")]
@@ -16,6 +17,7 @@ public class EnemyMove : MonoBehaviour
     public float leaderWindup = 1f;
     public float leaderRoundInterval = 3.5f;
     public float leaderRecovery = 1f;
+    public int leaderRoundCount = 3;
     public Transform target;
     [HideInInspector] public int groupId;
 
@@ -58,7 +60,7 @@ public class EnemyMove : MonoBehaviour
     {
         groupId = id;
         target = wall;
-        if (role != Role.Leader) return;
+        if (role != Role.Leader || waveControlled) return;
         if (!squads.TryGetValue(id, out squad))
         {
             squad = new LeaderSquad();
@@ -75,7 +77,7 @@ public class EnemyMove : MonoBehaviour
             enabled = false;
             return;
         }
-        if (role == Role.Leader && squad == null)
+        if (role == Role.Leader && !waveControlled && squad == null)
             ConfigureSpawn(Spawn.NewGroupId(), target);
     }
 
@@ -90,7 +92,15 @@ public class EnemyMove : MonoBehaviour
 
     void Update()
     {
+        if (CampaignSession.Suspended) return;
+        if (StoryDirector.Active && StoryDirector.Current.EnemiesFrozen)
+        { if (rb != null) rb.velocity = Vector2.zero; return; }
         if (!Alive) { pendingFire = false; return; }
+        if (waveControlled)
+        {
+            if(role==Role.Soldier)rb.velocity=Vector2.right*speed;
+            return; // 小队投弹由WaveSquad控制，单兵不随机开枪。
+        }
         // 发射时间由战斗脚本负责，卡帧或节拍窗口结束都不会漏发、重发。
         if (pendingFire && Time.timeSinceLevelLoad >= pendingFireAt)
         {
@@ -139,7 +149,11 @@ public class EnemyMove : MonoBehaviour
         SfxPlayer.PlayVariants("SFX-ENM-01", 3, 0.35f, 0.04f);
         GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
         Rigidbody2D body = bullet.GetComponent<Rigidbody2D>();
-        if (body != null) body.velocity = Vector2.right * bulletSpeed;
+        if (body != null)
+        {
+            Vector2 direction = Vector2.right;
+            body.velocity = direction * bulletSpeed;
+        }
     }
 
     bool HasBombSetup => target != null && bombPrefab != null
@@ -182,10 +196,22 @@ public class EnemyMove : MonoBehaviour
         return true;
     }
 
+    public void BeginWaveThrow(){if(visuals!=null)visuals.BeginThrow(Time.timeSinceLevelLoad);}
+    public void ThrowWaveBomb(WaveDirector owner,int lane,int impactBeat,string label)
+    {
+        if(bombPrefab==null)return;
+        var bomb=Instantiate(bombPrefab,transform.position,Quaternion.identity);
+        bomb.GetComponent<BombHP>().Configure(Spawn.NewGroupId(),owner.LaneY(lane));
+        bomb.AddComponent<WaveThreat>().Initialize(owner,WaveEventType.Squad,lane,impactBeat,label);
+        SfxPlayer.Play("SFX-BMB-01",.45f);
+        if(RunState.Chapter==6)SfxPlayer.Play("SFX-BMB-02",.6f);
+    }
+
     void ThrowBomb()
     {
         if (!TryBombVelocity(out Vector2 velocity)) return;
         SfxPlayer.Play("SFX-BMB-01", 0.45f);
+        if (StoryDirector.Active && RunState.Chapter == 6) SfxPlayer.Play("SFX-BMB-02", .6f);
         GameObject bomb = Instantiate(bombPrefab, transform.position,
             Quaternion.Euler(0f, 0f, Mathf.Atan2(velocity.y, velocity.x) * Mathf.Rad2Deg));
         bomb.GetComponent<Rigidbody2D>().velocity = velocity;
@@ -287,7 +313,7 @@ public class EnemyMove : MonoBehaviour
             foreach (EnemyMove enemy in members)
                 if (enemy != null && enemy.Alive) enemy.ThrowBomb();
             rounds++;
-            if (rounds >= 3)
+            if (rounds >= Mathf.Max(1, first.leaderRoundCount))
             {
                 phase = Phase.Recovery;
                 nextAction = Time.timeSinceLevelLoad + Mathf.Max(0f, first.leaderRecovery);

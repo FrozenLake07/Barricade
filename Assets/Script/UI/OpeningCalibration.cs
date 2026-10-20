@@ -1,0 +1,47 @@
+using System;
+using System.Collections;
+using UnityEngine;
+
+// 开场可跳过的音量/延迟试听，复用既有心跳排程与保存接口。
+public static class OpeningCalibration
+{
+    public static IEnumerator Run(CampaignUI ui,Transform parent)
+    {
+        var host=new GameObject("CalibrationHeartbeat");host.transform.SetParent(parent,false);
+        var output=new HeartbeatAudioOutput(host);
+        float size=ui.Main.fontSize;ui.Card("声音校准");
+        AudioListener.volume=PlayerPrefs.GetFloat("Barricade.MasterVolume",.8f);
+        double origin=AudioSettings.dspTime+Math.Max(.4,RhythmManager.OutputDelaySeconds+.2);
+        float entered=Time.unscaledTime;
+        try
+        {
+            while(true)
+            {
+                double now=AudioSettings.dspTime;
+                output.BeginFrame(now,RhythmManager.OutputDelaySeconds,.55f);
+                long cycle=(long)Math.Floor((now-origin)/1.35);
+                for(long n=Math.Max(0,cycle);n<=cycle+2;n++)
+                {
+                    double start=origin+n*1.35,end=start+.85;
+                    output.Submit(1,n,1,false,start+.18,end,1);
+                    output.Submit(1,n,2,false,start+.48,end,1);
+                }
+                double phase=now<origin?-1:(now-origin)%1.35;
+                double pulse=Math.Max(Math.Exp(-Math.Abs(phase-.18)*30),Math.Exp(-Math.Abs(phase-.48)*30));
+                ui.Main.text=phase<0?"声音校准":phase>=.85?"静止":"心跳";
+                ui.Main.fontSize=(int)(48+pulse*8);
+                ui.Detail.text=$"让听到的心跳与文字跳动同步\n← / → 调整音量：{AudioListener.volume:P0}   A / D 调整声音延迟：{RhythmManager.ExtraOutputDelayMs:F0} ms\nEnter 保存并继续   Esc 使用当前设置跳过";
+                if(Input.GetKeyDown(KeyCode.LeftArrow))AudioListener.volume=Mathf.Max(0,AudioListener.volume-.05f);
+                if(Input.GetKeyDown(KeyCode.RightArrow))AudioListener.volume=Mathf.Min(1,AudioListener.volume+.05f);
+                if(Input.GetKeyDown(KeyCode.A)){RhythmManager.AdjustOutputDelay(-10);output.Stop();}
+                if(Input.GetKeyDown(KeyCode.D)){RhythmManager.AdjustOutputDelay(10);output.Stop();}
+                if(Time.unscaledTime>entered+.3f&&(Input.GetKeyDown(KeyCode.Return)||Input.GetKeyDown(KeyCode.Escape)))break;
+                yield return null;
+            }
+            PlayerPrefs.SetFloat("Barricade.MasterVolume",AudioListener.volume);
+            PlayerPrefs.SetInt("Barricade.CalibrationReady",1);PlayerPrefs.Save();
+        }
+        finally
+        {output.Dispose();UnityEngine.Object.Destroy(host);ui.Main.fontSize=(int)size;}
+    }
+}

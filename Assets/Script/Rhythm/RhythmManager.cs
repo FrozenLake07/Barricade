@@ -73,10 +73,12 @@ public class RhythmManager : MonoBehaviour
     int musicVersion;
     long claimedPerfectBeat = -1;
 
+    public static bool JudgementFromMusic = false;
+
     public static bool IsFollowingMusic => TryGetMusicFrame(out _);
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
-    static void ResetRun() => current = null;
+    static void ResetRun() { current = null; JudgementFromMusic = false; }
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     static void Bootstrap() => EnsureInstance();
@@ -130,6 +132,7 @@ public class RhythmManager : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if (mode != LoadSceneMode.Single) return;
+        if (StoryDirector.Active) { StopMusic(); return; }
         loading = false;
         bool prepared = preparedScene == scene.name;
         preparedScene = null;
@@ -241,6 +244,7 @@ public class RhythmManager : MonoBehaviour
     public static bool TryGetMusicFrame(out MusicBeatFrame frame)
     {
         frame = default;
+        if (!JudgementFromMusic) return false;
         if (current == null) return false;
         current.RefreshMusic();
         if (current.sampledFrame == Time.frameCount)
@@ -272,7 +276,7 @@ public class RhythmManager : MonoBehaviour
     public static bool ApplyHandoff(string sceneName, ref int seenVersion,
         ref float beatTime, ref float setBeatTime, ref float perfectTime, float window)
     {
-        if (current == null) return false;
+        if (!JudgementFromMusic || current == null) return false;
         current.RefreshMusic();
         if (current.clock != null || current.finishedClock == null
             || current.targetScene != sceneName || seenVersion == current.musicVersion) return false;
@@ -280,6 +284,13 @@ public class RhythmManager : MonoBehaviour
         current.finishedClock.GetFreeTimers(AudioSettings.dspTime - OutputDelaySeconds, window,
             out beatTime, out setBeatTime, out perfectTime);
         return true;
+    }
+
+    public static void StopMusic()
+    {
+        if (current == null) return;
+        current.musicSource.Stop(); current.clock = current.finishedClock = null;
+        current.sampledFrame = -1;
     }
 
     /// 提前几拍调用，让音乐真正跨过场景边界；稍后切场景时不重播。

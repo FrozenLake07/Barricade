@@ -23,8 +23,11 @@ public class TapSec : MonoBehaviour
             Debug.LogWarning("[TapSec] 未指定 sbullet，场景 2 无法开枪。");
     }
 
+    public void CampaignSetAim(string mode) => SetAimMode(mode);
+
     void Update()
     {
+        if (StoryDirector.Active) { StoryDirector.Current.CombatInput(this); return; }
         // 选目标与换轨都是准备动作，不推进节拍；同帧切换后按 Space 也会禁射。
         if (Input.GetKeyDown(KeyCode.W)) SetAimMode("Up");
         else if (Input.GetKeyDown(KeyCode.S)) SetAimMode("Down");

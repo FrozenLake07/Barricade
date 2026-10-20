@@ -1,0 +1,399 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c6f1823b2e448e9a07c49ea067e4fd0, type: 3}
+  m_Name: Chapter09_A
+  m_EditorClassIdentifier: 
+  chapter: 9
+  variant: "A"
+  relativeToDefense: 1
+  defenseBeats: 163
+  maxOnScreen: 12
+  maxEventsPerBeat: 2
+  laneCooldown: 1
+  requiredShellInterceptions: 0
+  shellTravelBeats: 3
+  auditDistance: 14.88
+  auditSoldierSpeed: 0.5
+  auditSquadSeconds: 14.3
+  auditShellSeconds: 1.5
+  squadImpactOffsets: 0a0000000f00000014000000
+  events:
+  - beat: 0
+    alignTo: -1
+    type: 5
+    lane: 2
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "cannon-persist"
+    lanes: 
+  - beat: 0
+    alignTo: -1
+    type: 0
+    lane: 1
+    advance: 9
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "opening"
+    lanes: 
+  - beat: 8
+    alignTo: -1
+    type: 0
+    lane: 2
+    advance: 9
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "scatter-8"
+    lanes: 
+  - beat: 16
+    alignTo: -1
+    type: 0
+    lane: 3
+    advance: 9
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "scatter-16"
+    lanes: 
+  - beat: 24
+    alignTo: -1
+    type: 0
+    lane: 1
+    advance: 9
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "scatter-24"
+    lanes: 
+  - beat: 32
+    alignTo: -1
+    type: 0
+    lane: 2
+    advance: 9
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "scatter-32"
+    lanes: 
+  - beat: 40
+    alignTo: -1
+    type: 1
+    lane: 1
+    advance: 3
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "saturation-40-40-1"
+    lanes: 
+  - beat: 40
+    alignTo: -1
+    type: 1
+    lane: 3
+    advance: 3
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "saturation-40-40-3"
+    lanes: 
+  - beat: 41
+    alignTo: -1
+    type: 1
+    lane: 1
+    advance: 3
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "saturation-40-41-1"
+    lanes: 
+  - beat: 41
+    alignTo: -1
+    type: 1
+    lane: 3
+    advance: 3
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "saturation-40-41-3"
+    lanes: 
+  - beat: 42
+    alignTo: -1
+    type: 2
+    lane: 1
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "saturation-shell-42"
+    lanes: 
+  - beat: 43
+    alignTo: -1
+    type: 2
+    lane: 3
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "saturation-shell-43"
+    lanes: 
+  - beat: 48
+    alignTo: -1
+    type: 0
+    lane: 1
+    advance: 6
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "scatter-48"
+    lanes: 
+  - beat: 56
+    alignTo: -1
+    type: 0
+    lane: 2
+    advance: 6
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "scatter-56"
+    lanes: 
+  - beat: 64
+    alignTo: -1
+    type: 0
+    lane: 3
+    advance: 6
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "scatter-64"
+    lanes: 
+  - beat: 72
+    alignTo: -1
+    type: 0
+    lane: 1
+    advance: 6
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "scatter-72"
+    lanes: 
+  - beat: 80
+    alignTo: -1
+    type: 0
+    lane: 2
+    advance: 6
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "scatter-80"
+    lanes: 
+  - beat: 88
+    alignTo: -1
+    type: 0
+    lane: 3
+    advance: 6
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "scatter-88"
+    lanes: 
+  - beat: 90
+    alignTo: -1
+    type: 1
+    lane: 1
+    advance: 3
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "saturation-90-90-1"
+    lanes: 
+  - beat: 90
+    alignTo: -1
+    type: 1
+    lane: 3
+    advance: 3
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "saturation-90-90-3"
+    lanes: 
+  - beat: 91
+    alignTo: -1
+    type: 1
+    lane: 1
+    advance: 3
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "saturation-90-91-1"
+    lanes: 
+  - beat: 91
+    alignTo: -1
+    type: 1
+    lane: 3
+    advance: 3
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "saturation-90-91-3"
+    lanes: 
+  - beat: 92
+    alignTo: -1
+    type: 2
+    lane: 1
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "saturation-shell-92"
+    lanes: 
+  - beat: 93
+    alignTo: -1
+    type: 2
+    lane: 3
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "saturation-shell-93"
+    lanes: 
+  - beat: 98
+    alignTo: -1
+    type: 0
+    lane: 1
+    advance: 5
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "scatter-98"
+    lanes: 
+  - beat: 106
+    alignTo: -1
+    type: 0
+    lane: 2
+    advance: 5
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "scatter-106"
+    lanes: 
+  - beat: 114
+    alignTo: -1
+    type: 0
+    lane: 3
+    advance: 5
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "scatter-114"
+    lanes: 
+  - beat: 122
+    alignTo: -1
+    type: 0
+    lane: 1
+    advance: 5
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "scatter-122"
+    lanes: 
+  - beat: 130
+    alignTo: -1
+    type: 1
+    lane: 1
+    advance: 3
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "saturation-130-130-1"
+    lanes: 
+  - beat: 130
+    alignTo: -1
+    type: 1
+    lane: 3
+    advance: 3
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "saturation-130-130-3"
+    lanes: 
+  - beat: 131
+    alignTo: -1
+    type: 1
+    lane: 1
+    advance: 3
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "saturation-130-131-1"
+    lanes: 
+  - beat: 131
+    alignTo: -1
+    type: 1
+    lane: 3
+    advance: 3
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "saturation-130-131-3"
+    lanes: 
+  - beat: 133
+    alignTo: -1
+    type: 2
+    lane: 1
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "saturation-shell-133"
+    lanes: 
+  - beat: 134
+    alignTo: -1
+    type: 2
+    lane: 3
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "saturation-shell-134"
+    lanes: 
+  - beat: 138
+    alignTo: -1
+    type: 0
+    lane: 1
+    advance: 9
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "final-soldiers-138"
+    lanes: 0100000003000000
+  - beat: 146
+    alignTo: -1
+    type: 0
+    lane: 1
+    advance: 9
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "final-soldiers-146"
+    lanes: 0100000003000000
+  - beat: 154
+    alignTo: -1
+    type: 0
+    lane: 1
+    advance: 9
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "final-soldiers-154"
+    lanes: 0100000003000000

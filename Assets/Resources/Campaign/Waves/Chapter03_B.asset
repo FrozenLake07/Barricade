@@ -1,0 +1,139 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c6f1823b2e448e9a07c49ea067e4fd0, type: 3}
+  m_Name: Chapter03_B
+  m_EditorClassIdentifier: 
+  chapter: 3
+  variant: "B"
+  relativeToDefense: 1
+  defenseBeats: 163
+  maxOnScreen: 8
+  maxEventsPerBeat: 2
+  laneCooldown: 2
+  requiredShellInterceptions: 0
+  shellTravelBeats: 3
+  auditDistance: 14.88
+  auditSoldierSpeed: 0.5
+  auditSquadSeconds: 14.3
+  auditShellSeconds: 1.5
+  squadImpactOffsets: 0a0000000f00000014000000
+  events:
+  - beat: 0
+    alignTo: -1
+    type: 0
+    lane: 3
+    advance: 9
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "opening"
+    lanes: 
+  - beat: 8
+    alignTo: -1
+    type: 0
+    lane: 1
+    advance: 7
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "Soldier-8"
+    lanes: 
+  - beat: 20
+    alignTo: -1
+    type: 1
+    lane: 2
+    advance: 3
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "first-bomb"
+    lanes: 
+  - beat: 34
+    alignTo: -1
+    type: 0
+    lane: 3
+    advance: 6
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "Soldier-34"
+    lanes: 
+  - beat: 46
+    alignTo: 80
+    type: 0
+    lane: 1
+    advance: 4
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "dilemma-A"
+    lanes: 0100000003000000
+  - beat: 58
+    alignTo: 80
+    type: 0
+    lane: 2
+    advance: 8
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "dilemma-A"
+    lanes: 
+  - beat: 76
+    alignTo: -1
+    type: 0
+    lane: 2
+    advance: 6
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "Soldier-76"
+    lanes: 0200000001000000
+  - beat: 92
+    alignTo: -1
+    type: 0
+    lane: 3
+    advance: 5
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "Soldier-92"
+    lanes: 
+  - beat: 104
+    alignTo: -1
+    type: 0
+    lane: 3
+    advance: 3
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "Soldier-104"
+    lanes: 0300000001000000
+  - beat: 128
+    alignTo: -1
+    type: 0
+    lane: 1
+    advance: 8
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "Soldier-128"
+    lanes: 
+  - beat: 126
+    alignTo: -1
+    type: 0
+    lane: 2
+    advance: 6
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "Soldier-126"
+    lanes: 

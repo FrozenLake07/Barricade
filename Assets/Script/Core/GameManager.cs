@@ -28,8 +28,13 @@ public class GameManager : MonoBehaviour
     /// 撞墙扣血（下限 0）
     public static void DamageWall(Kind kind)
     {
-        WallHP -= WallDamageByKind[(int)kind];
-        if (WallHP < 0) WallHP = 0;
+        DamageWallAmount(WallDamageByKind[(int)kind], kind == Kind.Bomb);
+    }
+
+    public static void DamageWallAmount(int amount, bool explosion = false)
+    {
+        if (StoryDirector.Active && !StoryDirector.CombatRunning) return;
+        WallHP = Mathf.Max(0, WallHP - Mathf.Max(0, amount));
     }
 
     /// 给街垒回血（上限为 WallMaxHP）。场景 1 每次完美按键就调它

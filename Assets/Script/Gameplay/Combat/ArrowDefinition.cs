@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class ArrowDefinition : MonoBehaviour
 {
+    float remainingLifetime=-1f;
+    void Start(){if(remainingLifetime<0)remainingLifetime=fromPlayer?12f:20f;}
+    void Update(){if(CampaignSession.Suspended)return;remainingLifetime-=Time.deltaTime;if(remainingLifetime<=0)Destroy(gameObject);}
+
     // Start is called before the first frame update
     public int Damage;
+    [System.NonSerialized] public int pierceRemaining;
     public float Speed=10f;
 
     [Tooltip("是不是玩家的子弹。只有玩家的子弹会造成伤害（敌人的子弹不会打到自己人）")]

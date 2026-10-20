@@ -32,6 +32,7 @@ public sealed class HeroCombatDriver : MonoBehaviour
     }
     void Update()
     {
+        if (CampaignSession.Suspended) return;
         Subscribe();
         if (actor == null || actor.IsStoryControlled) return;
         actor.SetAimUp(TapSec.ShootStatu == "Up");

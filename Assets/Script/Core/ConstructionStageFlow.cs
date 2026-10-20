@@ -30,6 +30,7 @@ public class ConstructionStageFlow : MonoBehaviour
 
     void Awake()
     {
+        if (StoryDirector.Active) { enabled = false; return; }
         if (gameObject.scene.name != "1")
         {
             Debug.LogWarning("[ConstructionStageFlow] 仅用于场景1，已禁用。");

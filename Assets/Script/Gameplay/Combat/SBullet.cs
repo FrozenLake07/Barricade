@@ -25,9 +25,38 @@ public class SBullet : MonoBehaviour
     float reloadReadyTime;
     int latestShotId;
     bool wasReloading;
-    public bool IsReloading => Time.timeSinceLevelLoad < reloadReadyTime;
-    public float ReloadRemaining => Mathf.Max(0f, reloadReadyTime - Time.timeSinceLevelLoad);
-    public bool CanFire => bulletPrefab != null && !CapsuleTrack.IsSwitching && !IsReloading;
+    readonly CampaignMagazine magazine=new CampaignMagazine();
+    bool perfectReloadHint;
+    public float ReloadFlashUntil {get;private set;}
+    public float EffectiveReloadTime=>reloadTime*RunState.ReloadMultiplier;
+    public int CampaignCapacity=>3+RunState.AmmoBonus;
+    bool Unlimited=>StoryDirector.Active&&RunState.Chapter==9;
+    double BeatPosition=>StoryDirector.Active?WaveTiming.Position(StoryDirector.Current.Clock.Completed,StoryDirector.Current.Clock.Elapsed,StoryDirector.Current.Clock.Wait,StoryDirector.Current.Clock.Window):0;
+    bool Finale=>WaveDirector.Current!=null&&WaveDirector.Current.FinaleStarted;
+    void RefreshCampaignReload(){if(StoryDirector.Active)magazine.Tick(BeatPosition,Time.timeSinceLevelLoad,CampaignCapacity);}
+    public int CampaignAmmo{get{RefreshCampaignReload();return magazine.Ammo(CampaignCapacity,Unlimited);}}
+    public void BeginCampaignReload()
+    {
+        if(!StoryDirector.CombatRunning||Unlimited||Finale)return;
+        RefreshCampaignReload();bool perfect=StoryDirector.Current.Clock.IsPerfect;
+        if(!magazine.Reload(perfect,false,CampaignCapacity,BeatPosition,Time.timeSinceLevelLoad,RunState.Chapter==4?EffectiveReloadTime:-1))return;
+        if(perfect)
+        {
+            ReloadFlashUntil=Time.unscaledTime+.2f;SfxPlayer.Play("SFX-PLY-04",.4f,1.12f);
+            if(!perfectReloadHint){perfectReloadHint=true;StoryDirector.Current.ShowCaption("完美换弹");}
+        }
+        else SfxPlayer.Play("SFX-PLY-03",.5f);
+    }
+    public bool IsReloading{get{if(StoryDirector.Active){RefreshCampaignReload();return magazine.IsReloading;}return Time.timeSinceLevelLoad<reloadReadyTime;}}
+    public float ReloadRemaining=>StoryDirector.Active?(float)magazine.Remaining(BeatPosition,Time.timeSinceLevelLoad,StoryDirector.Current.Clock.Period):Mathf.Max(0,reloadReadyTime-Time.timeSinceLevelLoad);
+    public bool CanFire
+    {
+        get
+        {
+            if(bulletPrefab==null||CapsuleTrack.IsSwitching||IsReloading)return false;
+            return !StoryDirector.Active||(StoryDirector.CombatRunning&&!Finale&&magazine.CanFire(StoryDirector.Current.Clock.Completed,CampaignCapacity,Unlimited));
+        }
+    }
 
     void Awake()
     {
@@ -46,13 +75,14 @@ public class SBullet : MonoBehaviour
     public void Fire(string dir, bool perf)
     {
         if (!CanFire) return;
+        if(StoryDirector.Active&&!magazine.ReserveShot(StoryDirector.Current.Clock.Completed,CampaignCapacity,Unlimited))return;
         activeAimUp = dir == "Up";
         int dam = perf ? 100 : 50;   // 和 TapSec 一致的 perfecttime 奖励
 
         // ————— Up：只瞄手榴弹 —————
         if (dir == "Up")
         {
-            BombHP bomb = PickBomb();
+            Component bomb = PickBomb();
             if (bomb == null) { Penalty(); return; }
 
             Shoot(AimAtBomb(bomb), dam,
@@ -74,7 +104,7 @@ public class SBullet : MonoBehaviour
     {
         if (TapSec.ShootStatu == "Up")
         {
-            BombHP bomb = PickBomb();
+            Component bomb = PickBomb();
             return bomb != null ? bomb.transform : null;
         }
 
@@ -102,9 +132,9 @@ public class SBullet : MonoBehaviour
     }
 
     // 攻击轨道上离玩家最近的手榴弹
-    BombHP PickBomb()
+    Component PickBomb()
     {
-        BombHP best = null;
+        Component best = null;
         float bestDist = float.MaxValue;
 
         foreach (BombHP b in FindObjectsByType<BombHP>(FindObjectsSortMode.None))
@@ -114,6 +144,13 @@ public class SBullet : MonoBehaviour
 
             float dist = Vector2.Distance(b.transform.position, transform.position);
             if (dist < bestDist) { best = b; bestDist = dist; }
+        }
+        // 火炮弹与手榴弹共用空中瞄准，按出生轨道筛选，不参与手榴弹连锁。
+        foreach (CannonShell shell in FindObjectsByType<CannonShell>(FindObjectsSortMode.None))
+        {
+            if (shell == null || !shell.IsAlive || !OnAttackTrack(shell.AttackTrackY)) continue;
+            float dist = Vector2.Distance(shell.transform.position, transform.position);
+            if (dist < bestDist) { best = shell; bestDist = dist; }
         }
         return best;
     }
@@ -134,11 +171,13 @@ public class SBullet : MonoBehaviour
     }
 
     // 慢速手榴弹的飞行时间更长，瞄准必须把重力加速度一起算进去。
-    Vector2 AimAtBomb(BombHP bomb)
+    Vector2 AimAtBomb(Component bomb)
     {
         Rigidbody2D body = bomb.GetComponent<Rigidbody2D>();
         Vector2 velocity = body != null ? body.velocity : Vector2.zero;
         Vector2 acceleration = body != null ? Physics2D.gravity * body.gravityScale : Vector2.zero;
+        // 高速直线炮弹用二次方程拦截；手榴弹仍沿用原重力迭代。
+        if (bomb is CannonShell || bomb is CampaignProjectile) return AimAt(bomb.transform.position, velocity);
         Vector2 distance = (Vector2)bomb.transform.position - ShotOrigin;
         float flightTime = distance.magnitude / Mathf.Max(0.01f, bulletSpeed);
         Vector2 aim = distance;
@@ -218,7 +257,9 @@ public class SBullet : MonoBehaviour
         var t = Instantiate(bulletPrefab, (Vector3)ShotOrigin,
                             Quaternion.Euler(0f, 0f, Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg));
         latestShotId++;
-        reloadReadyTime = Time.timeSinceLevelLoad + Mathf.Max(0f, reloadTime);
+        reloadReadyTime = StoryDirector.Active ? 0f : Time.timeSinceLevelLoad + Mathf.Max(0f, reloadTime);
+        if(StoryDirector.Active)
+        {magazine.Consume(Unlimited);}
 
         var rb = t.GetComponent<Rigidbody2D>();
         if (rb != null) rb.velocity = dir * bulletSpeed;
@@ -244,11 +285,15 @@ public class SBullet : MonoBehaviour
     {
         // 远处旧子弹可能在下一发射出后才命中，不能替新的一发免换弹。
         if (shotId == latestShotId)
+        {
             reloadReadyTime = Time.timeSinceLevelLoad;
+            if(StoryDirector.Active&&IsReloading)magazine.Finish(CampaignCapacity);
+        }
     }
 
     void Update()
     {
+        if (CampaignSession.Suspended) return;
         if (player == null) return;
         transform.position = player.transform.position;   // 炮口跟着玩家
         if (wasReloading && !IsReloading) SfxPlayer.Play("SFX-PLY-04", 0.35f);

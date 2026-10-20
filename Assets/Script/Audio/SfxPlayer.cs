@@ -26,6 +26,7 @@ public static class SfxPlayer
 
     public static void Play(string id, float volume = 1f, float pitch = 1f)
     {
+        if (StoryDirector.Active && RunState.Chapter == 9) return;
         if (string.IsNullOrEmpty(id)) return;
         AudioClip clip = Resolve(id);
         if (clip == null) return;
@@ -41,6 +42,7 @@ public static class SfxPlayer
     /// 没有对应变体文件时回退到基础文件，只放一个也能响。
     public static void PlayVariants(string id, int variants, float volume = 1f, float pitchJitter = 0f)
     {
+        if (StoryDirector.Active && RunState.Chapter == 9) return;
         float pitch = 1f + Random.Range(-pitchJitter, pitchJitter);
         if (variants > 1)
         {

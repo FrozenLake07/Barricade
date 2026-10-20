@@ -25,13 +25,22 @@ public class Spawn : MonoBehaviour
     public float leaderCooldown = 18f;
     public float leaderSpacing = 0.9f;
 
+    [Header("终局火炮（全场一门；三个Spawn保持相同解锁时间）")]
+    public bool enableCannon = true;
+    [Tooltip("按策划：第二幕开始28分钟后部署；测试可改为较小秒数")]
+    [Min(0f)] public float cannonUnlockTime = 28f * 60f;
+    [Tooltip("相对镜头左边缘的初始偏移，负值从画面外入场；最终由炮车可见比例限制行程")]
+    public float cannonScreenInset = -.9f;
+    [Tooltip("炮车根节点是脚底，与现有士兵的轨道脚底对齐")]
+    public float cannonFootOffset = -0.59375f;
+
     [Header("阶段与节拍接口")]
     public float lateGameTime = 180f;
     public int beatsPerSpawn = 4;
     [Tooltip("投向街垒：在场景中拖 Wall 的 Transform")]
     public Transform target;
 
-    GameObject soldierPrefab, leaderPrefab;
+    GameObject soldierPrefab, leaderPrefab, cannonPrefab;
     int beatCount;
     bool wasAtBeat;
     static int nextGroupId = 1;
@@ -39,6 +48,7 @@ public class Spawn : MonoBehaviour
     static float lastSpawnTime = float.NegativeInfinity;
     static float nextLeaderTime;
     static bool leaderWasBusy;
+    static bool cannonDeployed, cannonWarning;
     const int LeaderCount = 3;
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
@@ -54,6 +64,8 @@ public class Spawn : MonoBehaviour
         lastSpawnTime = float.NegativeInfinity;
         nextLeaderTime = 0f;
         leaderWasBusy = false;
+        cannonDeployed = false;
+        cannonWarning = false;
     }
 
     void Awake()
@@ -98,12 +110,87 @@ public class Spawn : MonoBehaviour
         return count;
     }
 
+    public float WaveSpeed
+    {
+        get {var source=Resources.Load<GameObject>("enemy/Soldier");var move=source!=null?source.GetComponent<EnemyMove>():null;return move!=null?move.speed:.5f;}
+    }
+    // 调度与节流由WaveDirector负责；此入口只执行一个原子批次。
+    public GameObject[] SpawnAt(WaveEventType type,float advance,int count=1)
+    {
+        var source=Resources.Load<GameObject>(type==WaveEventType.Squad?"enemy/Leader":"enemy/Soldier");
+        if(source==null)return new GameObject[0];
+        int id=NewGroupId();var result=new GameObject[Mathf.Max(1,count)];
+        for(int i=0;i<result.Length;i++)
+        {
+            Vector3 position=transform.position+Vector3.right*Mathf.Clamp(advance,0,10)-Vector3.right*(i*.9f);
+            result[i]=Instantiate(source,position,Quaternion.identity);
+            var move=result[i].GetComponent<EnemyMove>();
+            move.waveControlled=true;move.ConfigureSpawn(id,target);
+        }
+        return result;
+    }
+
     void CreateEnemy(GameObject prefab, Vector3 position, int id)
     {
         GameObject go = Instantiate(prefab, position, Quaternion.identity);
         EnemyMove movement = go.GetComponent<EnemyMove>();
         if (movement != null) movement.ConfigureSpawn(id, target);
         else Debug.LogWarning("[Spawn] 敌人预制体没有 EnemyMove。");
+    }
+
+    [ContextMenu("立即部署终局火炮（运行中，全场一门）")]
+    public void DeployCannonNow()
+    {
+        if (Application.isPlaying && isActiveAndEnabled && gameObject.scene.name == "2")
+            TryDeployCannon(true);
+    }
+
+    void TryDeployCannon(bool immediate = false)
+    {
+        if (cannonDeployed || gameObject.scene.name != "2") return;
+        if (cannonPrefab == null) cannonPrefab = Resources.Load<GameObject>("enemy/Cannon");
+        if (!immediate && (!enableCannon || Time.timeSinceLevelLoad < Mathf.Max(0f, cannonUnlockTime))) return;
+        // 手动放入场景的炮车也算一门，不因到了解锁时刻再叠一门。
+        foreach (var existing in FindObjectsByType<Cannon>(FindObjectsSortMode.None))
+            if (existing.gameObject.scene == gameObject.scene)
+            { cannonDeployed = true; return; }
+        if (cannonPrefab == null || cannonPrefab.GetComponent<Cannon>() == null)
+        {
+            if (!cannonWarning) Debug.LogWarning("[Spawn] 缺少有效的enemy/Cannon预制体，无法部署终局火炮。", this);
+            cannonWarning = true;
+            return;
+        }
+        var lanes = new System.Collections.Generic.List<Spawn>();
+        foreach (var spawn in FindObjectsByType<Spawn>(FindObjectsSortMode.None))
+            if (spawn.isActiveAndEnabled && spawn.gameObject.scene == gameObject.scene) lanes.Add(spawn);
+        lanes.Sort((a, b) => a.transform.position.y.CompareTo(b.transform.position.y));
+        Spawn middle = lanes.Count > 0 ? lanes[lanes.Count / 2] : this;
+        Collider2D wall = middle.target != null ? middle.target.GetComponent<Collider2D>() : null;
+        if (wall == null || !wall.enabled || !GameManager.IsWall(wall))
+        {
+            wall = null;
+            foreach (var collider in FindObjectsByType<Collider2D>(FindObjectsSortMode.None))
+                if (collider.enabled && collider.gameObject.scene == gameObject.scene && GameManager.IsWall(collider))
+                { wall = collider; break; }
+        }
+        if (wall == null)
+        {
+            if (!cannonWarning) Debug.LogWarning("[Spawn] 未找到场景2街垒，等待后再部署火炮。", this);
+            cannonWarning = true;
+            return;
+        }
+        Vector3 position = middle.transform.position;
+        Camera camera = Camera.main;
+        if (camera != null && camera.orthographic && camera.gameObject.scene == gameObject.scene)
+            position.x = Mathf.Max(position.x, camera.transform.position.x - camera.orthographicSize * camera.aspect
+                + Mathf.Clamp(middle.cannonScreenInset, -2f, 0f));
+        position.y += middle.cannonFootOffset;
+        position.z = 0f;
+        // 先占共享名额；Instantiate的Awake/OnEnable可能触发其他脚本。
+        cannonDeployed = true;
+        GameObject instance = Instantiate(cannonPrefab, position, Quaternion.identity);
+        instance.GetComponent<Cannon>().ConfigureSpawn(wall);
+        Debug.Log(StoryDirector.Active?"[Spawn] 火炮已部署，由波次表控制炮击。":"[Spawn] 终局火炮已部署，首发将在30秒后发射。", instance);
     }
 
     void SpawnOneOrSquad()
@@ -145,8 +232,10 @@ public class Spawn : MonoBehaviour
 
     void Start()
     {
+        if (StoryDirector.Active) return;
         soldierPrefab = Resources.Load<GameObject>("enemy/Soldier");
         leaderPrefab = Resources.Load<GameObject>("enemy/Leader");
+        cannonPrefab = Resources.Load<GameObject>("enemy/Cannon");
         if (soldierPrefab == null) Debug.LogWarning("[Spawn] 找不到 enemy/Soldier。");
         if (target == null) Debug.LogWarning("[Spawn] 未指定街垒落点，Leader 会跳过投弹。");
         StartCoroutine(SpawnLoop());
@@ -154,9 +243,12 @@ public class Spawn : MonoBehaviour
 
     void Update()
     {
+        if (StoryDirector.Active) return;
+        TryDeployCannon();
         RefreshLeaderGate();
         bool atBeat = TapSec.beattime <= 0f;
         if (atBeat && !wasAtBeat) beatCount++;
         wasAtBeat = atBeat;
     }
 }
+

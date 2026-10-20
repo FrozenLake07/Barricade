@@ -10,10 +10,10 @@ using UnityEngine;
 [InitializeOnLoad]
 public static class EnemyAnimatorSetup
 {
-    public const int Version = 2;
+    public const int Version = 3;
     public const string Folder = "Assets/Resources/EnemyAnimations/Animator";
     public const string LibraryPath = Folder + "/EnemyAnimationLibrary.asset";
-    const string AttemptedKey = "StreetBarricade.EnemyAnimatorSetup.Attempted.v3";
+    const string AttemptedKey = "StreetBarricade.EnemyAnimatorSetup.Attempted.v4";
     static readonly string[] PrefabPaths = {
         "Assets/Resources/enemy/Soldier.prefab", "Assets/Resources/enemy/Leader.prefab"
     };
@@ -288,8 +288,10 @@ public static class EnemyAnimatorSetup
 
     static void FloatCurve(AnimationClip clip, string path, Type type, string property, float[] values, float fps, bool loop)
     {
-        var keys = new Keyframe[values.Length];
+        // 浮点曲线不享受Sprite对象引用曲线的末帧延长；补持值端点，尤其避免Idle单帧长度为0。
+        var keys = new Keyframe[values.Length+1];
         for (int i = 0; i < values.Length; i++) keys[i] = new Keyframe(i / fps, values[i]);
+        keys[values.Length]=new Keyframe(values.Length/fps,values[values.Length-1]);
         var curve = new AnimationCurve(keys);
         for (int i = 0; i < keys.Length; i++)
         {

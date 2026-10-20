@@ -41,7 +41,7 @@ public class BombHP : MonoBehaviour
                 chained++;
             }
         if (chained > 0) SfxPlayer.Play("SFX-BMB-05", 0.5f);
-        if (hitWall) GameManager.DamageWall(GameManager.Kind.Bomb);
+        if (hitWall){GetComponent<WaveThreat>()?.RecordImpact();GameManager.DamageWall(GameManager.Kind.Bomb);}
     }
 
     void BeginExplosion()

@@ -105,6 +105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   role: 0
   speed: 0.5
+  waveControlled: 0
   settleTime: 2
   bulletSpeed: 20
   bombSpeed: 5
@@ -112,6 +113,7 @@ MonoBehaviour:
   leaderWindup: 1
   leaderRoundInterval: 3.5
   leaderRecovery: 1
+  leaderRoundCount: 3
   target: {fileID: 0}
   groupId: 0
 --- !u!50 &6886164158229999383

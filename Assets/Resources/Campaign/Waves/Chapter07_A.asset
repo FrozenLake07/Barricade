@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c6f1823b2e448e9a07c49ea067e4fd0, type: 3}
+  m_Name: Chapter07_A
+  m_EditorClassIdentifier: 
+  chapter: 7
+  variant: "A"
+  relativeToDefense: 1
+  defenseBeats: 120
+  maxOnScreen: 8
+  maxEventsPerBeat: 2
+  laneCooldown: 2
+  requiredShellInterceptions: 0
+  shellTravelBeats: 3
+  auditDistance: 14.88
+  auditSoldierSpeed: 0.5
+  auditSquadSeconds: 14.3
+  auditShellSeconds: 1.5
+  squadImpactOffsets: 0a0000000f00000014000000
+  events:
+  - beat: 0
+    alignTo: -1
+    type: 0
+    lane: 1
+    advance: 8
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "opening"
+    lanes: 0100000002000000
+  - beat: 18
+    alignTo: -1
+    type: 0
+    lane: 3
+    advance: 6
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "Soldier-18"
+    lanes: 
+  - beat: 34
+    alignTo: -1
+    type: 1
+    lane: 2
+    advance: 3
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "Squad-34"
+    lanes: 
+  - beat: 46
+    alignTo: -1
+    type: 0
+    lane: 1
+    advance: 5
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "Soldier-46"
+    lanes: 
+  - beat: 62
+    alignTo: -1
+    type: 0
+    lane: 2
+    advance: 4
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "Soldier-62"
+    lanes: 0200000003000000
+  - beat: 80
+    alignTo: -1
+    type: 0
+    lane: 1
+    advance: 6
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "Soldier-80"
+    lanes: 
+  - beat: 74
+    alignTo: -1
+    type: 0
+    lane: 2
+    advance: 6
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: "Soldier-74"
+    lanes: 

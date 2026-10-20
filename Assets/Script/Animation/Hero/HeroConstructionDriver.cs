@@ -56,15 +56,36 @@ public sealed class HeroConstructionDriver : MonoBehaviour
         }
     }
 
+    // 章节模式已停用独立场景计时，必须以 StoryDirector 的阶段为准。
+    bool IsBuilding => StoryDirector.Active
+        ? StoryDirector.Current.Phase == CampaignPhase.Preparation
+        : flow == null || flow.IsBuilding;
+
     void OnAccepted(bool perfect)
     {
         // A visual work cycle can span several QTEs. Do not delay, queue or rescore inputs.
-        if (!cutscene && (flow == null || flow.IsBuilding)) pendingWork = true;
+        if (!cutscene && IsBuilding) pendingWork = true;
     }
 
     void Update()
     {
+        if (CampaignSession.Suspended) return;
         if (actor == null || cutscene || actor.IsStoryControlled) return;
+        if (!IsBuilding)
+        {
+            // 章节过场不经过旧流程的 CutsceneStarting，主动收起未完成的搬运。
+            if (phase != Phase.Idle || pendingWork || wasResting)
+            {
+                pendingWork = wasResting = resumeAfterRest = false;
+                phase = Phase.Idle;
+                actor.SetMoving(false);
+                actor.SetCarrying(false);
+                actor.SetResting(false);
+                actor.CancelAction();
+                Show(droppedCrate, false);
+            }
+            return;
+        }
         bool resting = Tap.IsResting;
         if (resting && !wasResting)
         {

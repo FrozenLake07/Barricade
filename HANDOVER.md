@@ -758,3 +758,149 @@ maxSpawnRate: 100   leaderChance: 20   leaderUnlockTime: 30
 - 后续开场调音／声音延迟校准的待办继续保留，尚未实现。
 
 - 本轮整理核验：47份脚本meta逐字节保持、47个GUID无重复；46个脚本内容原样，只有HeroAnimatorSetup更新两处路径。531个其余资源文件哈希保持；整理后的运行时与Editor脚本分别通过Unity2022引用集的独立编译。
+
+## 2026-10-19 第二幕三张街景素材接入
+
+- 用户提供的三张PNG原样导入Assets/Environment/Act2：Cobblestone（石板路）、Buildings（透明建筑）、Barricade（透明街垒）。不改原始像素，Point、无MipMap、无压缩、Single、FullRect、中心Pivot、94.1 PPU。
+- Assets/Scenes/2.unity新增Act2Environment及三个同名SpriteRenderer子物体，位置(0,0,0)、缩放1；排序分别-30/-20/2。原图按完整画布叠合，约16:9构图对应原摄像机高度10，未改摄像机投影或引入PixelPerfectCamera。
+- 原Wall只关闭SpriteRenderer；原Wall的Transform、旋转、缩放、Collider2D和Wall标签保持，三个Spawn/轨道及所有玩法、动画、音乐、心跳逻辑不改。美术街垒独立于原旋转碰撞根物体；本轮保留现有碰撞位置，原图中的石块轮廓不等同于碰撞边界。街垒排序2，角色/敌人显示在它前面。
+- 当前没有可连接的Unity2022 Pipeline；后台原生Unity2022启动均退出140063且没有日志，未完成原生导入与实机画面核验。配置以离线方式保存，结构比对确认既有场景仅改变Wall渲染开关和SceneRoots列表，新增4个美术对象；其余659个既有资源/设置文件哈希保持。不可把素材叠层预览当作实机截图。
+- 新增Editor/Scene2EnvironmentSetup.cs，使用工程Unity2022引用集独立编译通过。菜单“街垒/场景/配置第二幕街景”可通过Unity原生API重新导入、保存并校验碰撞/轨道，报告和摄像机预览写Library/Scene2EnvironmentSetup；未自动改动其他场景。
+- 修改前场景与HANDOVER、配置说明、离线核验与美术叠层预览：C:/Users/ASUS/Documents/Codex/2026-10-19/e-unity-project-my-project-1/outputs/第二幕场景配置。
+- 开场调音/声音延迟校准、敌人动画Grenadier_Idle时长核验、归零结算等既有待办保持。
+
+## 2026-10-19 火炮与炮弹独立Prefab
+
+- 用户请求新建火炮Prefab，参考桌面“杂项/作品/策划案/策划案.docx”，美术指定E:/ArtAsset/街垒动画资源_12帧_64x64/.火炮。策划原文：每30秒炮击，扣街垒最大生命值25%，炮弹极快、几乎不可拦截；第28分钟后出现火炮是阶段规则，本轮未接自动刷出。
+- 新增Resources/enemy/Cannon.prefab、Resources/arrow/CannonShell.prefab。Cannon根节点是脚底，默认向右部署1.5单位（.4单位/秒）后停住；启用后首发30秒，之后每30秒实际出弹。第三帧火光对应2/12秒出弹延时；禁用取消待发炮弹，重启重新计时，卡帧不追补多发。
+- Cannon脚本位于Script/Enemies，自动查找启用的Wall碰撞体，也可ConfigureSpawn(Collider2D)注入。炮车本体没有EnemyHP，不是地面可击杀目标，不占普通兵数量配额；策划没有炮车血量，本轮未新增该设计。右键组件“立即试射（运行中）”可快速测试。
+- CannonShell脚本位于Script/Gameplay/Combat。炮弹默认80单位/秒、100HP、5秒寿命，无重力、Trigger、Continuous，额外CircleCast扫墙防高速漏撞。撞墙扣CeilToInt(GameManager.WallMaxHP*.25)，当前1000上限即250；与当前剩余血量、HeartFill进场分母无关，最低扣至0。一弹只结算一次，不叠加Bomb/Bullet固定伤害。
+- SBullet和BulletHit最小扩展：W空中选择最近的手榴弹或炮弹，保留轨道隔离、Perfect一枪/普通两枪和Perfect实际命中免换弹；炮弹直线预判使用原二次方程，手榴弹重力迭代保持。炮弹没有BombHP，不参加手榴弹连锁；其他兵种、Down射击及准星逻辑保持。
+- Resources/CannonAnimations含36张原始64x64透明PNG及2个controller、4个clip。Move/Fire来自用户指定.火炮，Fly来自同包炮弹/飞行；三组各12帧12fps、1秒，Move/Fly循环，Fire单次；Idle复用Move首帧。炮车32PPU、脚底pivot(32,8)，炮弹64PPU、弹体pivot(44,32)；Point、无MipMap、无压缩。原图字节与来源哈希已核对。
+- SFX-ART-01部署、02开炮、03飞行、04撞墙已接SfxPlayer接口，未生成音效文件，缺失只警告一次。
+- 本轮后台启动Unity被自动审批拒绝，工具返回需本会话未开放的审批权限；未完成原生导入、Animator播放或真实物理试玩。Prefab/动画以离线文件配置保存，224处本地/外部引用检查通过，GUID无重复。
+- Assets/Script下41个运行时源文件及新增CannonPrefabVerification编辑器脚本使用Unity2022程序集引用独立编译通过。49项实际Cannon/CannonShell源码行为检查通过，Unity时间/查询接口为测试替身，不等同于原生物理通过。
+- 新增Editor/Diagnostics/CannonPrefabVerification.cs；菜单“街垒/检查火炮预制体”只检查资源和隔离对象中的36帧原生采样，不打开或保存场景，报告Library/CannonPrefabVerification.json。尚未在本轮运行该原生入口。
+- 第二幕场景、现有Spawn、其他资源和音频配置保持；仅修改既有SBullet/BulletHit两份运行时代码，保留其meta/GUID。新增两份运行时脚本、一份编辑器核验脚本，未增加asmdef。
+- 说明、素材预览、原始来源清单、离线报告、修改前SBullet/BulletHit/HANDOVER备份：C:/Users/ASUS/Documents/Codex/2026-10-19/e-unity-project-my-project-1/outputs/火炮预制体。工具与行为检查源码在work/cannon。
+
+## 2026-10-19 火炮接入第二幕实际刷出流程
+
+- 用户要求“把火炮写入项目”，本轮将既有独立Cannon.prefab接入现有Spawn运行流程，覆盖上节“未自动刷出”的状态。没有增加场景物体或修改场景文件，场景2现有三个Spawn通过新增字段默认值启用此分支。
+- 默认enableCannon=true，cannonUnlockTime=1680秒，按策划第28分钟部署。三个Spawn共用cannonDeployed标记，随现有场景局部计时重置；只部署一门，不受普通兵概率、数量上限及Leader锁影响。场景中已有启用火炮则视为已部署，不叠加。只在场景名2运行。
+- 从启用Spawn中按y排序选择中间轨道，脚底偏移-0.59375。若本场景存在正交Camera.main，初始x至少为镜头左边缘向内1单位；保持原炮车部署1.5单位、启用后30秒首发和每30秒炮击规则。Wall碰撞体由中轨Spawn.target或同场景Wall查询获得后注入。
+- Spawn组件右键新增“立即部署终局火炮（运行中，全场一门）”，跳过阶段等待和自动开关但仍防重复，只对场景2生效。生成后可在Cannon组件右键“立即试射（运行中）”快速测试。正式解锁时间可改三个Spawn的Cannon Unlock Time，保持数值一致。不要Reset整个Spawn组件，以免覆盖原刷怪调优。
+- 缺少Cannon资源或Wall时全场只警告一次，不占部署名额；Wall之后出现可恢复部署。Resources预制体按enemy/Cannon名字加载，无LoadAll下标依赖。
+- 仅修改Assets/Script/Enemies/Spawn.cs，原meta/GUID不变，场景、两份Cannon prefab、动画、音频及其他现有玩法代码未改。
+- 全部41个Script运行时源文件使用Unity2022引用集独立编译通过；15项实际Spawn源码部署检查通过，Unity接口使用替身，不等同于原生实机通过。本轮未运行Unity原生编辑器检查，既有编辑器启动/审批限制仍未解除。
+- 使用说明及修改前Spawn/HANDOVER备份：C:/Users/ASUS/Documents/Codex/2026-10-19/e-unity-project-my-project-1/outputs/火炮接入第二幕；实际源码行为检查位于work/cannon_integration。
+
+## 2026-10-19 火炮尺寸、入场、单门限制与街垒判定修正
+
+- 用户要求四项：开炮/行走大小一致；只走到露出大部分；只生成一门；Wall判定移植到街垒。
+- 原始行走炮车本体约55x36像素，开炮无烟火帧约41x28。Cannon新增fireBodyScale=(55/41,36/28)，LateUpdate读取Animator实际Base Layer.Fire状态时校正显示比例，Idle/Move还原Awake时的原缩放。脚底pivot不变，不把火光/烟雾外框计入本体。原PNG及所有meta/GUID原样保留，没有重新生图或改SpriteRect。
+- Spawn初始屏幕偏移默认-.9，实际值限制在[-2,0]，兼容此前Inspector正偏移。Cannon新增deploymentVisibleFraction=.8，在Start按当前正交镜头左边缘和SpriteRenderer完整边界限制remainingAdvance，约八成画布入画即停止；advanceDistance仍为上限。炮车停留左侧，不向中央推进。
+- Cannon.Awake按场景handle登记唯一所有者，重复实例立即SetActive(false)并Destroy，FireNow/Update均不能绕过。OnDestroy只释放自身登记；SubsystemRegistration清理跨局静态状态。Spawn原全场一次部署标记继续保留，避免原炮销毁后自动重刷。
+- 场景2的Act2Environment/Barricade现有物体已设置Wall标签并挂24点PolygonCollider2D，按木板/石块实体轮廓近似，不包括旗帜或透明画布。三个轨道y=-4.5/-2/.5均穿过该碰撞主体。
+- 原Wall取消Wall标签、禁用原BoxCollider2D并禁用物体，原Transform留存供回退。三个Spawn.target全部由旧Wall Transform改指Barricade。GameManager.IsWall和敌人/敌弹/炸弹/炮弹碰撞接口无需改动。注意历史第7节等旧位置描述已过时，新的有效碰撞边界位于街垒图上。
+- Scene2EnvironmentSetup已同步上述迁移，重跑街景配置也会将碰撞/目标保留在Barricade，不会复活旧Wall判定。CannonPrefabVerification新增尺寸参数、单一Wall、PolygonCollider24点和3个目标引用检查；只读附加场景2核对后关闭，不保存用户场景。
+- 41份运行时源码和两份编辑器工具分别使用Unity2022引用集编译通过。57项实际Cannon/CannonShell源码行为检查通过（含尺寸还原、不同入口重复炮车、跨场景和80%入画停止），15项Spawn部署检查通过。测试中Unity接口为替身，未完成原生动画/画面/物理试玩。
+- 离线核对场景引用、唯一Wall标签、旧墙失效及3条轨道交点；全部PNG和meta/GUID哈希保持，765个其他既有资源/设置文件保持。本轮只改Cannon/Spawn、Cannon.prefab、场景2和两份Editor工具，另追加本交接记录。
+- 使用说明、离线结果与修改前文件：C:/Users/ASUS/Documents/Codex/2026-10-19/e-unity-project-my-project-1/outputs/火炮与街垒修正；脚本与逻辑检查位于work/cannon_wall_fix。
+- 部署时间仍用三个Spawn的Cannon Unlock Time调整。30秒炮击、25%最大血量伤害、拦截规则和音乐/心跳保持。
+
+## 2026-10-19 街垒X轴水平镜像
+
+- 按用户要求将场景2的Act2Environment/Barricade沿X轴翻转，localScale=(-1,1,1)。源图有大片左侧透明留白，因此以24点实体碰撞轮廓的水平中心为镜像轴，Transform.x由0补偿到8.59723698，使主体整体仍留在画面右侧、左右边界约2.051至6.546保持。
+- 使用Transform负X缩放同时镜像SpriteRenderer与PolygonCollider2D，没有仅翻图而漏翻判定。Wall标签、三个Spawn.target引用、街垒Y/Z及原PNG/meta/GUID保持。
+- Scene2EnvironmentSetup同步主体中心镜像逻辑，重新配置街景不会恢复原朝向；CannonPrefabVerification新增X镜像状态检查。两份编辑器工具按Unity2022引用集独立编译通过，离线核对镜像前后主体水平边界保持；本轮未做原生实机画面/碰撞核验。
+- 修改前场景/工具/HANDOVER及边界核对结果：C:/Users/ASUS/Documents/Codex/2026-10-19/e-unity-project-my-project-1/outputs/街垒水平翻转。
+
+## 2026-10-20 第二幕新版像素建筑、街垒与路面接入
+
+- 用户确认采用新版建筑/街垒，并修改新版石板路。Assets/Environment/Act2/Buildings.png、Barricade.png已原位替换为用户提供的新版PNG，图片字节保持；原meta/GUID保留。Cobblestone.png使用内置image_gen编辑新版路面：石块缩小、黑缝/亮边减弱、上密下疏的轻微透视，输出1672x941不透明PNG。
+- 场景2中Buildings上提52/94.1世界单位，使建筑街边高度接近原版。新版街垒更高，改为等比0.85并保留X轴镜像，localScale=(-.85,.85,.85)，position约(8.16471838,-.828108395,0)，脚底落在原地面附近，主体中心保持画面右侧。历史上一节的scale=-1和x=8.597已被本节覆盖。
+- 24点PolygonCollider2D已按新版木石主体重配，避开旗帜；碰撞随Transform等比缩放和镜像。三个Spawn.target仍指向Barricade，Wall标签唯一、旧Wall继续停用。y=-4.5/-2/.5三轨均与新主体相交。
+- Scene2EnvironmentSetup同步新轮廓、建筑上提与街垒缩放/地面锚点；CannonPrefabVerification更新新版镜像比例检查。两份编辑器工具通过Unity2022引用集独立编译。
+- 运行时玩法、火炮、刷怪、音乐与心跳脚本全部未改，所有原meta/GUID保持；765个其他既有资源/配置文件哈希保持。新图原位替换继续沿用既有Sprite引用。
+- 本轮未完成Unity原生导入、实机画面或物理运行核验。输出预览为按素材/场景坐标离线重建，不含角色/UI，不应当作实机截图。原生资源与街垒检查入口仍是“街垒/检查火炮预制体”。
+- 修改前素材、场景、工具和HANDOVER备份、最终路面PNG、布局预览、生成提示词及离线报告：C:/Users/ASUS/Documents/Codex/2026-10-19/e-unity-project-my-project-1/outputs/第二幕像素美术更新；工作文件在work/art_refresh。路面使用内置image_gen编辑模式，未使用API/CLI回退。
+
+
+## 2026-10-20 十章战役、过场接口与黑屏开始界面
+
+- 按用户提供《街垒_剧情与关卡设计_20261020.md》配置10章，每章183拍，开场/结尾各1拍。用户明确选择保留现有0.5秒Perfect窗口；周期仍为等待+窗口，章节时长长于文档估算。音乐默认不参与判定。
+- 新增Title.unity为Build Settings第一场景，黑屏任意键开始；UI为Assets/UI/Campaign/StartScreen.prefab，Silver中文字体。运行从Title开始；直开旧1/2仍保留调试流程。
+- 新增Resources/Campaign/ChapterTable.asset（10章/214项波次）和CampaignRoot.prefab。StoryDirector持久化管理准备/防守/选择/抢救/结算/尾声，复用旧场景而非复制10份场景。进入战役时关闭旧100秒准备、随机刷怪和音乐判定驱动；旧说明中的28分钟火炮/30秒自动炮击只适用于非战役调试。
+- 第4章护送、第5章间谍、第6章夜袭、第7章选择及后果、第8章火炮40拍部署与70/100/130/160拍开炮、第9章3弹无换弹/仅心跳/失败进10、第10章渐慢心跳和回忆文字已接入。护送采用现有无武器小型角色替身，专用儿童素材待补。
+- 新增CampaignBeatClock、RunState、CampaignWaves、CampaignActor、CampaignProjectile；现有脚本接入3弹弹匣、按拍换弹、连击、三种建造资源、章节耐久600、一次最后一拍抢救及章末统计。战役不再被旧WallCharge/ConstructionStageFlow初始化覆盖。
+- ChapterTransition为开场/结尾/每章entry/prepareToDefense/exit预留cinematicPrefab、Timeline、AudioClip、时长、跳过和完成信号。CampaignTransitionRelay可由动画事件或Signal调用完成/音效/字幕；尚无正式过场时显示文字占位。现有结尾预制体已绑定。
+- 运行时50份与编辑器11份源码使用Unity2022引用集独立编译通过；实际时钟/章节表/状态源码7595项断言通过；321个序列化引用、214个波次和1830+2拍核对通过。既有场景1/2、纹理/音频/字体和原meta哈希保持。尚未做Unity原生导入与完整战役试玩。
+- Unity核验菜单：街垒/战役/检查十章配置与开始界面；报告Library/CampaignVerification.json。实际音效仍以心跳为主，夜袭引信等需补音频。长按/切分尚未实现，本轮使用单键、休止、双键。开场音频延迟仍待实际设备校准，现有补偿保留。
+- 完整使用/插槽说明、章节JSON、离线核验、开始界面离线布局预览、设计原件及修改前Script/ProjectSettings/HANDOVER备份：C:/Users/ASUS/Documents/Codex/2026-10-19/e-unity-project-my-project-1/outputs/十章关卡与开始界面。工作脚本在work/campaign，部分为一次性补丁，请勿直接重复运行。
+
+
+## 2026-10-20 文档核对、完整波次与现行机制落地
+
+- 用户要求先核对桌面“街垒_工程文档”，申请所需权限后完成项目；已读14份文档，核对并记录数值/时间/状态错误。桌面文档、工程、Unity本地目录与许可证联网权限已获会话授权。
+- 完整规则与运行说明见桌面“街垒_本轮实施与验收_20261020.md”，本节覆盖上一轮的资源、连击、190血、休止、9章3发、炮击160拍等说明。
+- 新增16份WaveScript A/B资产、WaveDirector、WaveTiming/WaveThreat/WaveSquad/WaveAudit/WaveDefaults/WaveExitVisual；共202事件，A/B仅镜像轨道，按完整周期和实际几何生成，F4调试，上限一般8、第9章12。第8章70/100/130/152炮击，155末炮命中；9章章首恢复炮车。
+- 第4章3次护送：30中20拍、70低25拍、110中25拍；104高轨小队仅与第三次交叠，exam标记；同轨士兵接触判伤，弹丸无害/不挡弹，不再发护送专用敌弹。3次全活×0.8、死亡×1.5封顶2，进入下一章重置。
+- 删除所有建造道具/连击/连击穿透，保留分数与失误。双键为跨手、边沿、120ms、基础15/5；移除休止/长按/切分，保留3秒REST。ConstructionJudgement为纯输入状态，可直接测试。
+- CampaignMagazine为纯弹匣状态；所有战役每拍一次尝试，完整2拍普通换弹，4章按秒/倍率。Perfect R可打断换弹且不占射击资格，HUD闪金色；最新Perfect实际命中仍可取消正在换弹。第9章无限弹与21兵/12小队/6炮弹，无胜利/最后一拍分支。
+- 短章建造收益比例放大，满Perfect可达600，防守上限固定600；2次最后一拍补偿（9章除外）。第7章63拍超时放走，处决回血保留至8章起始。
+- 最后4拍齐射100伤、拦空中弹丸、停步/转身/淡出；归零优先失败，不发Perfect/分数，禁玩家开火。末拍章节卡继续两拍心跳；实际总拍数包括转场/抢救/重试，不强填1832。
+- 修复跨阶段与同拍判定覆盖、漏拍回弹、诱饵残留、玩家弹丸寿命、无目标重复尝试、延迟出生即伤、9章转场音乐、转场台词、信号等待超时等；开场增加可跳过的音量/延迟试听，标题F2重调，复用原补偿保存与心跳排程。
+- 修正EnemyAnimatorSetup浮点曲线末帧持值，版本3，避免单帧Idle长度0，保留备份机制；尚未在Unity原生重建。新增导入/保存校验WaveValidation与ProjectVerification.Run/BuildWindows菜单/批处理入口。
+- 62份运行时、14份Editor源码使用Unity2022引用集独立编译0错误/0警告；131365项实际源数据/时钟/判定/弹匣断言通过；16资产逐字段一致，421处引用通过，639既有图像/音频/字体/meta/场景哈希保持，Silver关键中文/∞/箭头覆盖通过。末端审计0错误，2警告是9章154拍双轨末兵，由齐射收场。
+- 原生Unity启动退出140063，无指定日志；本地版本启动亦无输出，Windows事件日志读取无系统权限。没有原生导入、物理/音频设备/完整战役试玩或Windows构建，不应称为实机完成。没有写伪造Library成功报告。
+- 输出：C:/Users/ASUS/Documents/Codex/2026-10-19/e-unity-project-my-project-1/outputs/波次配置更新，包含实施/验收说明、原始问题逐项状态、数据JSON、离线引用/末端报告、修改前Script/Campaign/HANDOVER/桌面文档备份。工作脚本在work/waves，多数安装脚本为一次性，请勿重复运行。
+
+- 最终补充：为保持第8章“至少拦截2炮”目标，A/B资产requiredShellInterceptions=2，HUD显示实际击落进度；抢救不会绕过目标，齐射不计入；未达成时收场前本章失败。其他章目标0。
+
+
+## 2026-10-20 街垒生命三阶段
+
+- 用户图一/图二分别导入Assets/Environment/Act2/Barricade_Stage1.png、Barricade_Stage2.png，PNG字节原样，原Barricade.png保留为第三阶段。新增BarricadeHealthVisual并绑定场景2 Act2Environment/Barricade，按WallHP/WallMaxHP即时切换：<33%图一，>=33%且<66%图二，>=66%原图。600上限阈值198/396，整数比较避免float边界误差。
+- 两张新图继承原街垒负X缩放-.85，Renderer.flipX保持false，镜像一次。自定义pivot将可见主体中心与原图脚底对齐；第二图1671宽也已补偿。不改原图、Transform、24点PolygonCollider、Wall标签或Spawn目标。
+- Scene2EnvironmentSetup同步新增素材与组件配置；重新配置街景也保留此功能。编辑状态满血图，运行时实时响应伤害/回血/抢救。
+- 说明、图片哈希/锚点、核验及修改前备份：C:/Users/ASUS/Documents/Codex/2026-10-19/e-unity-project-my-project-1/outputs/街垒生命三阶段。独立源码编译/阈值检查通过，未做Unity原生画面试玩。
+
+
+## 2026-10-20：统一 Silver 字体与可编辑开始页
+
+- 用户要求所有字体使用工程内字体，并让开始页易于编辑。实际字体为 Assets/TTF/Silver.ttf。
+- 新 GameFont.cs 与 Resources/Campaign/GameFont.asset 引用原字体；准备场景 2 处默认字体替换为 Silver，战役/波次/心跳调试文字统一使用 Silver，移除 StoryDirector 的系统字体回退。
+- Title.unity 放置 StartScreen.prefab 实例，编辑态即可调整。新 TitlePage/Prompt、Subtitle、Background 独立于关卡 MainText/Detail/HUD；StartScreenView 提供呼吸开关/频率/最低透明度。
+- CampaignUI 首次进入时接管场景实例，通关返回重新接管并销毁旧画布；开始页原文案与样式不会被校准/章节文字覆盖。开始输入与 F2 校准保持原入口。
+- CampaignVerification 允许自定义开始文字和背景，同时检查新界面绑定与 Silver 引用。
+- 编辑说明见根目录 START_SCREEN_EDITING.md；备份/修改.diff/核验结果.json 在工作区 outputs/字体与开始页。
+- 验证：65 个运行时脚本与 14 个编辑器脚本离线编译通过，8 个序列化 Text 均为 Silver、UI/场景引用静态检查通过。原生 Unity 导入/运行/视觉检查仍未完成，不能标为 Play 测试通过。
+
+
+## 2026-10-20：建造场景右侧街景与向左搬运
+
+场景 `Assets/Scenes/1.unity` 已放置 `ConstructionEnvironment`，包含石板地面、用户长街图和街垒。长街原 PNG 原样导入为 `Assets/Environment/Act2/StreetPanorama.png`，采用 Point、无 Mipmap、无压缩，未裁剪或镜像建筑。
+
+街垒沿用场景2的世界位置 `(8.16471838, -0.828108395, 0)`、缩放 `(-0.85, 0.85, 0.85)`、Sprite 和 33% / 66% 生命阶段。建造阶段显示三阶段随生命增长的效果，仅复制视觉组件；战斗场景保持原样。
+
+建造相机向右移至 `X=8.697083`，正交大小仍为5，以16:9为参考取长街右侧约 `669～2038` 像素范围。建筑可见高度、街边基线与战斗背景对齐，石板地面覆盖视口。
+
+主角在画面约71%的取料点拿起材料，向左移动到约43%的放置点，紧邻街垒右缘，然后返回。街垒主体位于画面约12%～39%。原有主角大小、移动速度、搬运/放下动画、QTE判定和章节计时沿用原设置。
+
+可在 Hierarchy 的 `HeroConstructionStage / MaterialPickupPoint` 和 `MaterialPlacePoint` 调整路径，在 `ConstructionEnvironment` 调整美术；相机是场景1内的 prefab 实例覆盖，不会改变共享相机 prefab 或战斗相机。主角动画工具完整重建时会保留已经编辑的搬运点。
+
+验证：引用与空间布局静态核验通过，14个编辑器脚本离线编译通过；原图字节与战斗场景文件哈希保持。当前没有可连接的Unity Editor，原生导入、Play模式和实际画面效果仍待在Unity内确认。
+
+
+## 2026-10-20：修复章节建造环节搬运动画不触发
+
+根因：章节模式在 ConstructionStageFlow.Awake 中停用旧的独立计时流程，该流程 IsBuilding 始终为 false；HeroConstructionDriver 的输入回调却仍检查它，因此 Tap.NotifyCampaignInput 已发出事件、街垒耐久正常增长，主角搬运动画却从未启动。
+
+修复：章节模式读取 StoryDirector 的 Preparation 状态；单独运行场景1继续使用旧的独立计时判断。正确的普通/Perfect 输入触发拿起、向左搬运、放下、向右返回。章节离开建造时清理待执行搬运、移动/搬运/休息状态和掉落箱，不继续在过场或尾声中搬运。保留原 Timeline 控制权及原有三秒错按休息逻辑。
+
+验证：同一回归用例运行修复前源码，稳定停在“章节模式输入应启动 PickUp”断言；修复后使用实际 Tap、搬运驱动、HeroActor 和状态机等源码通过3003项断言，覆盖完整往返、朝向、Animator Motion参数、休息恢复、章节边界、单独场景及过场控制。Unity引擎API由确定性的.NET测试宿主代替，这证明逻辑链路，不代表原生动画帧渲染验收。65个运行时脚本和14个编辑器脚本离线编译通过。
+
+没有改动上一轮的右侧长街构图、街垒位置、搬运路径、移动速度或QTE收益。当前未完成Unity内Play模式实际播放核验。
+
+核验记录与修改前备份：工作区 outputs/建造搬运动画修复。
