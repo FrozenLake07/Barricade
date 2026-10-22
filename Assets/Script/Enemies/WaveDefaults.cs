@@ -5,17 +5,11 @@ public static class WaveDefaults
 {
     public static WaveScript Create(int chapter,bool mirror=false)
     {
-        if(chapter<2||chapter>9)return null;
+        if(chapter<3||chapter>9)return null;
         var result=ScriptableObject.CreateInstance<WaveScript>();
-        result.chapter=chapter;result.variant=mirror?"B":"A";result.defenseBeats=chapter==2?63:chapter==7?120:163;
+        result.chapter=chapter;result.variant=mirror?"B":"A";result.defenseBeats=CampaignRevisionRules.DefenseBeats(chapter);
         switch(chapter)
         {
-            case 2: result.events=new WaveEvent[]
-            {
-                new WaveEvent{beat=0,alignTo=-1,type=WaveEventType.Soldier,lane=2,advance=9f,count=1,spacing=4,duration=0,tag="opening",lanes=new int[]{}},
-                new WaveEvent{beat=20,alignTo=-1,type=WaveEventType.Soldier,lane=2,advance=9f,count=1,spacing=4,duration=0,tag="Soldier-20",lanes=new int[]{}},
-                new WaveEvent{beat=38,alignTo=-1,type=WaveEventType.Soldier,lane=3,advance=9f,count=1,spacing=4,duration=0,tag="Soldier-38",lanes=new int[]{}},
-            };break;
             case 3: result.events=new WaveEvent[]
             {
                 new WaveEvent{beat=0,alignTo=-1,type=WaveEventType.Soldier,lane=1,advance=9f,count=1,spacing=4,duration=0,tag="opening",lanes=new int[]{}},
@@ -136,9 +130,16 @@ public static class WaveDefaults
                 new WaveEvent{beat=154,alignTo=-1,type=WaveEventType.Soldier,lane=1,advance=9f,count=1,spacing=4,duration=0,tag="final-soldiers-154",lanes=new int[]{1,3}},
             };break;
         }
+        var extended=new WaveEvent[result.events.Length+1];
+        System.Array.Copy(result.events,extended,result.events.Length);
+        extended[extended.Length-1]=new WaveEvent{beat=result.defenseBeats-24,alignTo=result.defenseBeats-10,
+            type=WaveEventType.Soldier,lane=chapter%3+1,advance=9f,count=1,spacing=4,duration=0,
+            tag="choice-time-redistributed",lanes=new int[0]};
+        result.events=extended;
         if(chapter==9){result.maxOnScreen=12;result.laneCooldown=1;}
         if(chapter==8)result.requiredShellInterceptions=2;
         if(mirror)foreach(var e in result.events){e.lane=4-e.lane;for(int i=0;i<e.lanes.Length;i++)e.lanes[i]=4-e.lanes[i];}
+        CombatPressureRules.Apply(result);
         return result;
     }
     public static ChapterWave[] Legacy(WaveScript source)

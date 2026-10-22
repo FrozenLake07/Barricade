@@ -53,7 +53,7 @@ public sealed class HeartbeatAudioOutput : IDisposable
 
     public void BeginFrame(double dsp, double outputDelay, float masterVolume)
     {
-        now = dsp; delay = outputDelay; volume = Mathf.Clamp01(masterVolume);
+        now = dsp; delay = outputDelay; volume = CampaignDebug.Value.muteHeartbeat?0:Mathf.Clamp01(masterVolume);
         AudioSettings.GetDSPBufferSize(out int size, out _);
         lead = Math.Max(.02d, (double)size / Math.Max(1, AudioSettings.outputSampleRate) * 2d);
         foreach (var voice in voices) if (voice.Source != null) voice.Source.volume = volume * voice.Gain;

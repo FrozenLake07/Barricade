@@ -5,7 +5,7 @@ using UnityEngine;
 
 // 波次节流、到达反推与诊断集中在这里；Spawn仅执行资源生成。
 [DefaultExecutionOrder(-200)]
-public sealed class WaveDirector : MonoBehaviour
+public sealed partial class WaveDirector : MonoBehaviour
 {
     sealed class Pending
     {
@@ -27,10 +27,11 @@ public sealed class WaveDirector : MonoBehaviour
     Spawn[] spawns;
     Cannon cannon;
     int eventsBeat=-1,eventsThisBeat,reducedIndex;
+    float debugDensityCarry;
     bool debug;
     public bool FinaleStarted {get;private set;}
     public int ShellInterceptions {get;private set;}
-    public void RecordShellInterception(){if(!FinaleStarted&&StoryDirector.CombatRunning)ShellInterceptions++;}
+    public void RecordShellInterception(){if(!FinaleStarted&&StoryDirector.CombatRunning){ShellInterceptions++;CampaignTelemetry.Current?.Record("shell_intercept");}}
     int lastVolleyBeat=-1;
     UnityEngine.UI.Text debugText;
     GameObject debugCanvas;
@@ -52,6 +53,7 @@ public sealed class WaveDirector : MonoBehaviour
         if(Script==null)Script=chapter.waveA;
         if(Script==null)throw new InvalidOperationException("未配置本章波次脚本："+chapter.number);
         Script.Validate();
+        if(CampaignTelemetry.Current?.Metrics.Current!=null)CampaignTelemetry.Current.Metrics.Current.waveVariant=Script.variant;
         spawns=FindObjectsByType<Spawn>(FindObjectsSortMode.None).Where(s=>s.isActiveAndEnabled).OrderBy(s=>s.transform.position.y).ToArray();
         Wall=FindObjectsByType<Collider2D>(FindObjectsSortMode.None).FirstOrDefault(c=>c.enabled&&GameManager.IsWall(c));
         if(spawns.Length!=3||Wall==null)throw new InvalidOperationException("波次需要三轨生成点和启用的街垒碰撞体。");
@@ -90,7 +92,14 @@ public sealed class WaveDirector : MonoBehaviour
             if(hit.collider==Wall)return hit.point.x;
         return Wall.bounds.min.x;
     }
-    float StartX(Pending p)=>Mathf.Min(spawns[p.lane-1].transform.position.x+p.source.advance,WallX(p.lane)-.6f);
+    bool OpeningShortcut(Pending p)=>Script.chapter==3&&p.beat==0&&p.source.tag=="opening";
+    float StartX(Pending p)=>spawns[p.lane-1].WaveEntryX(OpeningShortcut(p),p.source.advance);
+    public float SquadThrowX(int lane)
+    {
+        var camera=Camera.main;
+        float left=camera!=null&&camera.orthographic?camera.transform.position.x-camera.orthographicSize*camera.aspect:spawns[lane-1].transform.position.x;
+        return Mathf.Min(WallX(lane)-4,left+3);
+    }
     float Speed(Pending p)=>spawns[p.lane-1].WaveSpeed;
     public int ImpactBeat(int beat)=>beat;
     public void Beat(int beat){if(story!=null&&StoryDirector.CombatRunning)Tick();}
@@ -99,8 +108,8 @@ public sealed class WaveDirector : MonoBehaviour
         if(story==null)return;
         if(CampaignSession.Suspended){if(debugCanvas!=null)debugCanvas.SetActive(false);return;}
         if(debugCanvas!=null)debugCanvas.SetActive(debug);
-        if(Input.GetKeyDown(KeyCode.F4)){debug=!debug;if(debugCanvas==null)CreateDebugUI();debugCanvas.SetActive(debug);}
-        if(StoryDirector.CombatRunning)Tick();
+        if(!DebugConsole.CapturingInput&&Input.GetKeyDown(KeyCode.F4)){debug=!debug;if(debugCanvas==null)CreateDebugUI();debugCanvas.SetActive(debug);}
+        if(StoryDirector.CombatRunning&&!DebugConsole.SimulationPaused)Tick();
         if(debug&&debugText!=null)DrawDebug();
     }
     public void Tick()
@@ -129,12 +138,15 @@ public sealed class WaveDirector : MonoBehaviour
             {
                 if(lanes.Any(l=>laneLast.TryGetValue(l,out int last)&&now-last<Script.laneCooldown))continue;
                 if(p.source.type==WaveEventType.Escort&&CampaignActor.ActiveEscort!=null)continue;
-                if(ActiveCount()+Cost(p)>Script.maxOnScreen)continue;
+                int repeats=p.source.type==WaveEventType.Soldier?Mathf.FloorToInt(debugDensityCarry+CampaignDebug.Value.density):1;
+                if(ActiveCount()+Cost(p)*repeats>DebugCap)continue;
             }
             p.done=true;
             eventsThisBeat++;
             if(entity)foreach(int lane in lanes)laneLast[lane]=now;
-            Execute(p,lanes);
+            int copies=1;
+            if(p.source.type==WaveEventType.Soldier){debugDensityCarry+=CampaignDebug.Value.density;copies=Mathf.FloorToInt(debugDensityCarry);debugDensityCarry-=copies;}
+            for(int copy=0;copy<copies;copy++)Execute(p,lanes);
             Log($"{Position:F1} 生成 {p.source.type} {p.source.tag}");
         }
     }
@@ -155,22 +167,24 @@ public sealed class WaveDirector : MonoBehaviour
         if(e.type==WaveEventType.Decoy||e.type==WaveEventType.Escort){Actor(p);return;}
         if(e.type==WaveEventType.Squad)
         {
-            var members=spawns[p.lane-1].SpawnAt(e.type,e.advance,3);
+            var members=spawns[p.lane-1].SpawnAt(e.type,e.advance,3,OpeningShortcut(p));
             var group=new GameObject("WaveSquad_"+e.tag);group.transform.SetParent(transform,false);
             int baseBeat=Math.Max(p.beat,(int)Math.Ceiling(Position+3-Script.squadImpactOffsets.Min()));
             group.AddComponent<WaveSquad>().Initialize(this,members,p.lane,baseBeat,e.tag);
+            CampaignTelemetry.Current?.Record("enemy_spawn",$"Squad;count={members.Length};lane={p.lane};tag={e.tag}");
             return;
         }
         foreach(int lane in lanes)
         {
             if(ReducedSoldier(e.tag))continue;
-            var members=spawns[lane-1].SpawnAt(WaveEventType.Soldier,e.advance,1);
+            var members=spawns[lane-1].SpawnAt(WaveEventType.Soldier,e.advance,1,OpeningShortcut(p));
             if(members.Length==0)continue;
             var threat=members[0].AddComponent<WaveThreat>();
             int target=p.alignTo;
             if(target>=0&&target<Position+2)
             {int original=target;target=(int)Math.Ceiling(Position+2);Log($"节流后重排 {e.tag} 到达{original}→{target}，保留反应时间");}
             threat.Initialize(this,WaveEventType.Soldier,lane,target,e.tag);
+            CampaignTelemetry.Current?.Record("enemy_spawn",$"Soldier;count={members.Length};lane={lane};tag={e.tag}");
         }
     }
     void EnsureCannon(bool persist=false)
@@ -200,7 +214,7 @@ public sealed class WaveDirector : MonoBehaviour
         if(!escort)go.AddComponent<EnemyHP>();
         else
         {
-            story.ShowCaption("他跑出去了。没有人命令他。\n清理他这条轨上的士兵（S：地面瞄准）；炸弹不会伤到他。");
+            story.ShowGameplayHint("护送：清理同轨士兵（S：地面瞄准）；炸弹不会伤到护送目标。");
         }
     }
     public void Arrival(string tag,int lane,double target)
@@ -212,7 +226,7 @@ public sealed class WaveDirector : MonoBehaviour
         if(beat>=Script.defenseBeats||beat==lastVolleyBeat)return;
         lastVolleyBeat=beat;FinaleStarted=true;
         if(cannon!=null&&Script.chapter==8)carriedCannon=cannon.transform.position;
-        story.ShowCaption("街垒上传来一轮齐射。");
+
         SfxPlayer.PlayVariants("SFX-PLY-01",3,.7f);
         foreach(var hp in FindObjectsByType<EnemyHP>(FindObjectsSortMode.None))
         {

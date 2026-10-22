@@ -1,0 +1,439 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eb214dc14414dbf9f2d6138f4616c99, type: 3}
+  m_Name: Cinematics
+  m_EditorClassIdentifier: 
+  enabled: 1
+  crossfadeSeconds: 0.6
+  openingSubtitle: 
+  openingSubtitleSeconds: 5
+  firstChapterAnnouncementSeconds: 3
+  openingAllowSkip: 1
+  chapterAnnouncementSeconds: 3
+  chapterAnnouncementAllowSkip: 1
+  routes:
+  - chapter: 2
+    key: chapter-entry
+    decision: 0
+    ending: 0
+    shots:
+    - image: {fileID: 21300000, guid: fa469e4ea5ff4877a5e610dd9225424b, type: 3}
+      seconds: 5
+      subtitle: 
+      triggerHopeFinale: 0
+      voiceOver: {fileID: 0}
+      voiceDelaySeconds: 0
+      panFrom: {x: -1, y: 0}
+      panTo: {x: 1, y: 0}
+    - image: {fileID: 21300000, guid: 0bcd040f76ae4bd9b01e284ff2399cce, type: 3}
+      seconds: 5
+      subtitle: 
+      triggerHopeFinale: 0
+      voiceOver: {fileID: 0}
+      voiceDelaySeconds: 0
+      panFrom: {x: -1, y: 0}
+      panTo: {x: 1, y: 0}
+    - image: {fileID: 21300000, guid: b852c55e1c994d7798d9693ebe7f7429, type: 3}
+      seconds: 6
+      subtitle: 
+      triggerHopeFinale: 0
+      voiceOver: {fileID: 0}
+      voiceDelaySeconds: 0
+      panFrom: {x: -1, y: 0}
+      panTo: {x: 1, y: 0}
+    nameAfterShot: 1
+  - chapter: 3
+    key: chapter-entry
+    decision: 0
+    ending: 0
+    shots:
+    - image: {fileID: 21300000, guid: 6f4c5c5aacc54fc697b35be2e07edf89, type: 3}
+      seconds: 6
+      subtitle: 
+      triggerHopeFinale: 0
+      voiceOver: {fileID: 0}
+      voiceDelaySeconds: 0
+      panFrom: {x: -1, y: 0}
+      panTo: {x: 1, y: 0}
+    nameAfterShot: -1
+  - chapter: 3
+    key: chapter-exit
+    decision: 0
+    ending: 0
+    shots:
+    - image: {fileID: 21300000, guid: e1c42544a589496c912649762865776d, type: 3}
+      seconds: 4
+      subtitle: 
+      triggerHopeFinale: 0
+      voiceOver: {fileID: 0}
+      voiceDelaySeconds: 0
+      panFrom: {x: -1, y: 0}
+      panTo: {x: 1, y: 0}
+    nameAfterShot: -1
+  - chapter: 4
+    key: chapter-entry
+    decision: 0
+    ending: 0
+    shots:
+    - image: {fileID: 21300000, guid: 1f01dd37f5934548a2311ffd936b167e, type: 3}
+      seconds: 3.5
+      subtitle: 
+      triggerHopeFinale: 0
+      voiceOver: {fileID: 0}
+      voiceDelaySeconds: 0
+      panFrom: {x: -1, y: 0}
+      panTo: {x: 1, y: 0}
+    - image: {fileID: 21300000, guid: 201c45cbf9034dcaa624f92a4938512a, type: 3}
+      seconds: 3.5
+      subtitle: 
+      triggerHopeFinale: 0
+      voiceOver: {fileID: 0}
+      voiceDelaySeconds: 0
+      panFrom: {x: -1, y: 0}
+      panTo: {x: 1, y: 0}
+    - image: {fileID: 21300000, guid: bebb4cd72ffa44cbbb6846d9d5caa07f, type: 3}
+      seconds: 3
+      subtitle: 
+      triggerHopeFinale: 0
+      voiceOver: {fileID: 0}
+      voiceDelaySeconds: 0
+      panFrom: {x: -1, y: 0}
+      panTo: {x: 1, y: 0}
+    nameAfterShot: -1
+  - chapter: 5
+    key: chapter-entry
+    decision: 0
+    ending: 0
+    shots:
+    - image: {fileID: 21300000, guid: b760951aa9b44ddaba601e278c7cff79, type: 3}
+      seconds: 3.5
+      subtitle: 
+      triggerHopeFinale: 0
+      voiceOver: {fileID: 0}
+      voiceDelaySeconds: 0
+      panFrom: {x: -1, y: 0}
+      panTo: {x: 1, y: 0}
+    - image: {fileID: 21300000, guid: 78344f9af7714f679af0e3e77f3ad24f, type: 3}
+      seconds: 3.5
+      subtitle: 
+      triggerHopeFinale: 0
+      voiceOver: {fileID: 0}
+      voiceDelaySeconds: 0
+      panFrom: {x: -1, y: 0}
+      panTo: {x: 1, y: 0}
+    - image: {fileID: 21300000, guid: 2dcd89a5630044129147c8e132df6618, type: 3}
+      seconds: 3
+      subtitle: 
+      triggerHopeFinale: 0
+      voiceOver: {fileID: 0}
+      voiceDelaySeconds: 0
+      panFrom: {x: -1, y: 0}
+      panTo: {x: 1, y: 0}
+    nameAfterShot: -1
+  - chapter: 6
+    key: chapter-entry
+    decision: 0
+    ending: 0
+    shots:
+    - image: {fileID: 21300000, guid: 6f3be6c70a94435699e83e23ace63800, type: 3}
+      seconds: 3.5
+      subtitle: 
+      triggerHopeFinale: 0
+      voiceOver: {fileID: 0}
+      voiceDelaySeconds: 0
+      panFrom: {x: -1, y: 0}
+      panTo: {x: 1, y: 0}
+    - image: {fileID: 21300000, guid: 2d791001b542452d909b5d09f83c5987, type: 3}
+      seconds: 3.5
+      subtitle: 
+      triggerHopeFinale: 0
+      voiceOver: {fileID: 0}
+      voiceDelaySeconds: 0
+      panFrom: {x: -1, y: 0}
+      panTo: {x: 1, y: 0}
+    - image: {fileID: 21300000, guid: 68c7e96104f44d668bac5880c4f94e50, type: 3}
+      seconds: 3
+      subtitle: 
+      triggerHopeFinale: 0
+      voiceOver: {fileID: 0}
+      voiceDelaySeconds: 0
+      panFrom: {x: -1, y: 0}
+      panTo: {x: 1, y: 0}
+    nameAfterShot: -1
+  - chapter: 8
+    key: chapter-entry
+    decision: 0
+    ending: 0
+    shots:
+    - image: {fileID: 21300000, guid: 684a302a283145c88291f22151f92232, type: 3}
+      seconds: 3.5
+      subtitle: 
+      triggerHopeFinale: 0
+      voiceOver: {fileID: 0}
+      voiceDelaySeconds: 0
+      panFrom: {x: -1, y: 0}
+      panTo: {x: 1, y: 0}
+    - image: {fileID: 21300000, guid: d13c299e0a184bc28bcb714b9711800b, type: 3}
+      seconds: 3.5
+      subtitle: 
+      triggerHopeFinale: 0
+      voiceOver: {fileID: 0}
+      voiceDelaySeconds: 0
+      panFrom: {x: -1, y: 0}
+      panTo: {x: 1, y: 0}
+    - image: {fileID: 21300000, guid: ac636a2f66e34313b32f2c0ff04c349e, type: 3}
+      seconds: 3
+      subtitle: 
+      triggerHopeFinale: 0
+      voiceOver: {fileID: 0}
+      voiceDelaySeconds: 0
+      panFrom: {x: -1, y: 0}
+      panTo: {x: 1, y: 0}
+    nameAfterShot: -1
+  - chapter: 9
+    key: chapter-entry
+    decision: 0
+    ending: 0
+    shots:
+    - image: {fileID: 21300000, guid: a0de8ba31139443db308bddf897be99b, type: 3}
+      seconds: 3.5
+      subtitle: 
+      triggerHopeFinale: 0
+      voiceOver: {fileID: 0}
+      voiceDelaySeconds: 0
+      panFrom: {x: -1, y: 0}
+      panTo: {x: 1, y: 0}
+    - image: {fileID: 21300000, guid: cd946d08ec514636870143c59c5a6e89, type: 3}
+      seconds: 3.5
+      subtitle: 
+      triggerHopeFinale: 0
+      voiceOver: {fileID: 0}
+      voiceDelaySeconds: 0
+      panFrom: {x: -1, y: 0}
+      panTo: {x: 1, y: 0}
+    - image: {fileID: 21300000, guid: 6f6c703ea8534309bdceefff10a7c1db, type: 3}
+      seconds: 3
+      subtitle: 
+      triggerHopeFinale: 0
+      voiceOver: {fileID: 0}
+      voiceDelaySeconds: 0
+      panFrom: {x: -1, y: 0}
+      panTo: {x: 1, y: 0}
+    nameAfterShot: -1
+  - chapter: 7
+    key: chapter-entry
+    decision: 0
+    ending: 0
+    shots:
+    - image: {fileID: 21300000, guid: 75501f20972f48e2a64bfe5eae3959a0, type: 3}
+      seconds: 5
+      subtitle: 
+      triggerHopeFinale: 0
+      voiceOver: {fileID: 0}
+      voiceDelaySeconds: 0
+      panFrom: {x: -1, y: 0}
+      panTo: {x: 1, y: 0}
+    nameAfterShot: -1
+  - chapter: 7
+    key: before-choice
+    decision: 0
+    ending: 0
+    shots:
+    - image: {fileID: 21300000, guid: ca0f9e92bddd4eb18052d13becda8b86, type: 3}
+      seconds: 4
+      subtitle: 
+      triggerHopeFinale: 0
+      voiceOver: {fileID: 0}
+      voiceDelaySeconds: 0
+      panFrom: {x: -1, y: 0}
+      panTo: {x: 1, y: 0}
+    nameAfterShot: -1
+  - chapter: 7
+    key: chapter-exit
+    decision: 1
+    ending: 0
+    shots:
+    - image: {fileID: 21300000, guid: d100e27eeb7a4c54bafe862823ddd6e5, type: 3}
+      seconds: 3
+      subtitle: 
+      triggerHopeFinale: 0
+      voiceOver: {fileID: 0}
+      voiceDelaySeconds: 0
+      panFrom: {x: -1, y: 0}
+      panTo: {x: 1, y: 0}
+    - image: {fileID: 21300000, guid: b7b3203e10064df39eca540104b3c0ba, type: 3}
+      seconds: 3
+      subtitle: 
+      triggerHopeFinale: 0
+      voiceOver: {fileID: 0}
+      voiceDelaySeconds: 0
+      panFrom: {x: -1, y: 0}
+      panTo: {x: 1, y: 0}
+    - image: {fileID: 21300000, guid: a104832b80b1486dbb39485896f4904e, type: 3}
+      seconds: 3
+      subtitle: 
+      triggerHopeFinale: 0
+      voiceOver: {fileID: 0}
+      voiceDelaySeconds: 0
+      panFrom: {x: -1, y: 0}
+      panTo: {x: 1, y: 0}
+    nameAfterShot: -1
+  - chapter: 7
+    key: chapter-exit
+    decision: 2
+    ending: 0
+    shots:
+    - image: {fileID: 21300000, guid: be2b209f57514734b703d02630076487, type: 3}
+      seconds: 3
+      subtitle: 
+      triggerHopeFinale: 0
+      voiceOver: {fileID: 0}
+      voiceDelaySeconds: 0
+      panFrom: {x: -1, y: 0}
+      panTo: {x: 1, y: 0}
+    - image: {fileID: 21300000, guid: 1f6e15f3b6c44d298455c8b662d444bb, type: 3}
+      seconds: 3
+      subtitle: 
+      triggerHopeFinale: 0
+      voiceOver: {fileID: 0}
+      voiceDelaySeconds: 0
+      panFrom: {x: -1, y: 0}
+      panTo: {x: 1, y: 0}
+    - image: {fileID: 21300000, guid: a104832b80b1486dbb39485896f4904e, type: 3}
+      seconds: 3
+      subtitle: 
+      triggerHopeFinale: 0
+      voiceOver: {fileID: 0}
+      voiceDelaySeconds: 0
+      panFrom: {x: -1, y: 0}
+      panTo: {x: 1, y: 0}
+    nameAfterShot: -1
+  - chapter: 10
+    key: chapter-entry
+    decision: 0
+    ending: 2
+    shots:
+    - image: {fileID: 21300000, guid: 337039a296c348e88b05ea26eaece4f5, type: 3}
+      seconds: 4
+      subtitle: 
+      triggerHopeFinale: 0
+      voiceOver: {fileID: 0}
+      voiceDelaySeconds: 0
+      panFrom: {x: -1, y: 0}
+      panTo: {x: 1, y: 0}
+    - image: {fileID: 21300000, guid: 64abc4739045430386401ee65b791507, type: 3}
+      seconds: 4
+      subtitle: 
+      triggerHopeFinale: 0
+      voiceOver: {fileID: 0}
+      voiceDelaySeconds: 0
+      panFrom: {x: -1, y: 0}
+      panTo: {x: 1, y: 0}
+    - image: {fileID: 21300000, guid: 606f349ea694441b88cba27b17aaec9e, type: 3}
+      seconds: 4
+      subtitle: 
+      triggerHopeFinale: 0
+      voiceOver: {fileID: 0}
+      voiceDelaySeconds: 0
+      panFrom: {x: -1, y: 0}
+      panTo: {x: 1, y: 0}
+    - image: {fileID: 21300000, guid: ae57ef9ffefb4d72aad6d2df3b0777a2, type: 3}
+      seconds: 4
+      subtitle: 
+      triggerHopeFinale: 1
+      voiceOver: {fileID: 0}
+      voiceDelaySeconds: 0
+      panFrom: {x: -1, y: 0}
+      panTo: {x: 1, y: 0}
+    nameAfterShot: -1
+  - chapter: 10
+    key: ending
+    decision: 0
+    ending: 2
+    shots:
+    - image: {fileID: 21300000, guid: afe91480d57f4b17836be8ec1fb444e7, type: 3}
+      seconds: 4
+      subtitle: 
+      triggerHopeFinale: 0
+      voiceOver: {fileID: 0}
+      voiceDelaySeconds: 0
+      panFrom: {x: -1, y: 0}
+      panTo: {x: 1, y: 0}
+    - image: {fileID: 21300000, guid: 3385d6490dfe49119ee97e675b2c185c, type: 3}
+      seconds: 4
+      subtitle: 
+      triggerHopeFinale: 0
+      voiceOver: {fileID: 0}
+      voiceDelaySeconds: 0
+      panFrom: {x: -1, y: 0}
+      panTo: {x: 1, y: 0}
+    - image: {fileID: 21300000, guid: 772eb4cfb2ad4303aabb2fffd236411d, type: 3}
+      seconds: 4
+      subtitle: 
+      triggerHopeFinale: 0
+      voiceOver: {fileID: 0}
+      voiceDelaySeconds: 0
+      panFrom: {x: -1, y: 0}
+      panTo: {x: 1, y: 0}
+    nameAfterShot: -1
+  - chapter: 10
+    key: chapter-entry
+    decision: 0
+    ending: 1
+    shots:
+    - image: {fileID: 21300000, guid: 337039a296c348e88b05ea26eaece4f5, type: 3}
+      seconds: 4
+      subtitle: 
+      triggerHopeFinale: 0
+      voiceOver: {fileID: 0}
+      voiceDelaySeconds: 0
+      panFrom: {x: -1, y: 0}
+      panTo: {x: 1, y: 0}
+    - image: {fileID: 21300000, guid: 64abc4739045430386401ee65b791507, type: 3}
+      seconds: 4
+      subtitle: 
+      triggerHopeFinale: 0
+      voiceOver: {fileID: 0}
+      voiceDelaySeconds: 0
+      panFrom: {x: -1, y: 0}
+      panTo: {x: 1, y: 0}
+    - image: {fileID: 21300000, guid: 606f349ea694441b88cba27b17aaec9e, type: 3}
+      seconds: 4
+      subtitle: 
+      triggerHopeFinale: 0
+      voiceOver: {fileID: 0}
+      voiceDelaySeconds: 0
+      panFrom: {x: -1, y: 0}
+      panTo: {x: 1, y: 0}
+    nameAfterShot: -1
+  - chapter: 10
+    key: ending
+    decision: 0
+    ending: 1
+    shots:
+    - image: {fileID: 21300000, guid: 606f349ea694441b88cba27b17aaec9e, type: 3}
+      seconds: 4
+      subtitle: 
+      triggerHopeFinale: 0
+      voiceOver: {fileID: 0}
+      voiceDelaySeconds: 0
+      panFrom: {x: -1, y: 0}
+      panTo: {x: 1, y: 0}
+    nameAfterShot: -1
+  namePrompt: "\u59D3\u540D"
+  namePlaceholder: 
+  confirmLabel: "\u786E\u8BA4"
+  continueUnnamedLabel: "\u6682\u4E0D\u547D\u540D"
+  invalidNameMessage: "\u8BF7\u8F93\u51651\u81F312\u4E2A\u5B57\u7B26\uFF0C\u4E0D\u542B\u6362\u884C\u6216\u63A7\u5236\u5B57\u7B26\u3002"
+  skipLabel: "\u7A7A\u683C\uFF1A\u8DF3\u8FC7\u753B\u9762"
+  nameResponseTemplate: 
+  nameResponseVoice: {fileID: 0}

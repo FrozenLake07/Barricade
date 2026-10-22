@@ -1,0 +1,7 @@
+# 第9章调试：不改变设计资产
+ch 9 hard
+hp max 600; hp set 600
+cap 16; density 1.5
+beat; wave
+assert hp == 600
+# 可继续手动输入time 0暂停，或save siege9保存调试槽。

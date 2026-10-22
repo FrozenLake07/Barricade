@@ -12,9 +12,10 @@ public static class WaveVerification
     {
         var table=AssetDatabase.LoadAssetAtPath<ChapterTable>("Assets/Resources/Campaign/ChapterTable.asset");
         if(table==null)throw new InvalidOperationException("缺少战役表。");
-        table.Validate();int events=0;
+        table.Validate();int events=0,scripts=0;
         foreach(var chapter in table.chapters.Where(c=>c.defenseBeats>0))
         {
+            scripts+=2;
             var a=chapter.waveA;var b=chapter.waveB;
             if(a==null||b==null||a.chapter!=chapter.number||b.chapter!=chapter.number||a.defenseBeats!=chapter.defenseBeats||b.defenseBeats!=chapter.defenseBeats)
                 throw new InvalidOperationException("波次引用或防守拍数不符："+chapter.number);
@@ -34,8 +35,8 @@ public static class WaveVerification
             if(prefab==null||prefab.GetComponent<EnemyMove>()==null||prefab.GetComponent<Rigidbody2D>()==null)
                 throw new InvalidOperationException("缺少刷怪预制体或移动/物理组件："+path);
         }
-        File.WriteAllText("Library/WaveVerification.json","{\"success\":true,\"scripts\":16,\"events\":"+events+",\"nativePlayVerified\":false}");
-        Debug.Log("[WaveVerification] 16份A/B配置通过，事件总计"+events+"。从Title运行，防守按F4核验实际到达和节流。");
+        File.WriteAllText("Library/WaveVerification.json","{\"success\":true,\"scripts\":"+scripts+",\"events\":"+events+",\"nativePlayVerified\":false}");
+        Debug.Log("[WaveVerification] "+scripts+"份启用的A/B配置通过，事件总计"+events+"。从Title运行，防守按F4核验实际到达和节流。");
     }
 }
 #endif

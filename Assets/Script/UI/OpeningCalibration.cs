@@ -5,8 +5,10 @@ using UnityEngine;
 // 开场可跳过的音量/延迟试听，复用既有心跳排程与保存接口。
 public static class OpeningCalibration
 {
+    public static bool DebugSkip;
     public static IEnumerator Run(CampaignUI ui,Transform parent)
     {
+        DebugSkip=false;
         var host=new GameObject("CalibrationHeartbeat");host.transform.SetParent(parent,false);
         var output=new HeartbeatAudioOutput(host);
         float size=ui.Main.fontSize;ui.Card("声音校准");
@@ -17,6 +19,8 @@ public static class OpeningCalibration
         {
             while(true)
             {
+                if(DebugSkip)break;
+                if(DebugConsole.SimulationPaused){yield return null;continue;}
                 double now=AudioSettings.dspTime;
                 output.BeginFrame(now,RhythmManager.OutputDelaySeconds,.55f);
                 long cycle=(long)Math.Floor((now-origin)/1.35);
@@ -31,6 +35,8 @@ public static class OpeningCalibration
                 ui.Main.text=phase<0?"声音校准":phase>=.85?"静止":"心跳";
                 ui.Main.fontSize=(int)(48+pulse*8);
                 ui.Detail.text=$"让听到的心跳与文字跳动同步\n← / → 调整音量：{AudioListener.volume:P0}   A / D 调整声音延迟：{RhythmManager.ExtraOutputDelayMs:F0} ms\nEnter 保存并继续   Esc 使用当前设置跳过";
+                if(DebugSkip)break;
+                if(DebugConsole.CapturingInput){yield return null;continue;}
                 if(Input.GetKeyDown(KeyCode.LeftArrow))AudioListener.volume=Mathf.Max(0,AudioListener.volume-.05f);
                 if(Input.GetKeyDown(KeyCode.RightArrow))AudioListener.volume=Mathf.Min(1,AudioListener.volume+.05f);
                 if(Input.GetKeyDown(KeyCode.A)){RhythmManager.AdjustOutputDelay(-10);output.Stop();}
@@ -38,6 +44,7 @@ public static class OpeningCalibration
                 if(Time.unscaledTime>entered+.3f&&(Input.GetKeyDown(KeyCode.Return)||Input.GetKeyDown(KeyCode.Escape)))break;
                 yield return null;
             }
+            CampaignTelemetry.Current?.Record("calibration",$"volume={AudioListener.volume:F2};delay_ms={RhythmManager.ExtraOutputDelayMs:F0}");
             PlayerPrefs.SetFloat("Barricade.MasterVolume",AudioListener.volume);
             PlayerPrefs.SetInt("Barricade.CalibrationReady",1);PlayerPrefs.Save();
         }

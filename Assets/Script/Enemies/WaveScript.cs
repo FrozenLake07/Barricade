@@ -12,7 +12,7 @@ public sealed class WaveEvent
     public int alignTo = -1;
     public WaveEventType type;
     [Range(1,3)] public int lane = 2;
-    [Range(0,10)] public float advance;
+    [Range(0,10),Tooltip("仅第3章战斗第一波opening允许画内起点；其他敌人固定从左侧画外入场。")] public float advance;
     [Min(1)] public int count = 1;
     [Min(0)] public int spacing = 4;
     [Min(0)] public int duration;
@@ -28,7 +28,7 @@ public sealed class WaveScript : ScriptableObject
     public string variant = "A";
     public bool relativeToDefense=true;
     [Min(1)] public int defenseBeats = 163;
-    [Range(1,12)] public int maxOnScreen = 8;
+    [Range(1,16)] public int maxOnScreen = 12;
     [Min(1)] public int maxEventsPerBeat = 2;
     [Min(0)] public int laneCooldown = 2;
     [Min(1)] public int shellTravelBeats = 3;
@@ -39,13 +39,15 @@ public sealed class WaveScript : ScriptableObject
 
     public void Validate()
     {
-        if(chapter<2||chapter>9||defenseBeats<1||maxOnScreen<1||maxOnScreen>(chapter==9?12:8)||!relativeToDefense)
+        if(chapter<2||chapter>9||defenseBeats<1||maxOnScreen<1||maxOnScreen>16||!relativeToDefense)
             throw new InvalidOperationException("波次章节、拍数或屏上上限无效："+name);
         if(squadImpactOffsets==null||squadImpactOffsets.Length!=3)throw new InvalidOperationException("小队需要三个命中偏移。");
         foreach(var e in events)
         {
             if(e==null||e.beat<0||e.beat>=defenseBeats||e.alignTo < -1||e.lane<1||e.lane>3||e.advance<0||e.advance>10||e.count<1||e.spacing<0)
                 throw new InvalidOperationException("波次事件越界："+name);
+            if(e.advance>0&&!(chapter==3&&e.beat==0&&e.tag=="opening"))
+                throw new InvalidOperationException("只有首次战斗第一波允许画内生成："+e.tag);
             if(e.alignTo>defenseBeats&&e.type!=WaveEventType.Soldier)throw new InvalidOperationException("到达拍超出防守段："+e.tag);
             foreach(int lane in e.lanes)if(lane<1||lane>3)throw new InvalidOperationException("多轨配置越界："+e.tag);
         }

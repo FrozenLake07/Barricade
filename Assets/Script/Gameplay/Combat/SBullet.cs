@@ -30,7 +30,9 @@ public class SBullet : MonoBehaviour
     public float ReloadFlashUntil {get;private set;}
     public float EffectiveReloadTime=>reloadTime*RunState.ReloadMultiplier;
     public int CampaignCapacity=>3+RunState.AmmoBonus;
-    bool Unlimited=>StoryDirector.Active&&RunState.Chapter==9;
+    bool Unlimited=>CampaignDebug.Infinite(StoryDirector.Active&&RunState.Chapter==9);
+    public bool DebugUnlimited=>Unlimited;
+    public void DebugAmmo(int value){magazine.SetAmmo(value,CampaignCapacity);}
     double BeatPosition=>StoryDirector.Active?WaveTiming.Position(StoryDirector.Current.Clock.Completed,StoryDirector.Current.Clock.Elapsed,StoryDirector.Current.Clock.Wait,StoryDirector.Current.Clock.Window):0;
     bool Finale=>WaveDirector.Current!=null&&WaveDirector.Current.FinaleStarted;
     void RefreshCampaignReload(){if(StoryDirector.Active)magazine.Tick(BeatPosition,Time.timeSinceLevelLoad,CampaignCapacity);}
@@ -39,16 +41,25 @@ public class SBullet : MonoBehaviour
     {
         if(!StoryDirector.CombatRunning||Unlimited||Finale)return;
         RefreshCampaignReload();bool perfect=StoryDirector.Current.Clock.IsPerfect;
-        if(!magazine.Reload(perfect,false,CampaignCapacity,BeatPosition,Time.timeSinceLevelLoad,RunState.Chapter==4?EffectiveReloadTime:-1))return;
+        if(!magazine.Reload(perfect,false,CampaignCapacity,BeatPosition,Time.timeSinceLevelLoad,RunState.Chapter==4?reloadTime:-1,RunState.ReloadMultiplier))return;
+        CampaignTelemetry.Current?.Record(perfect?"perfect_reload":"reload");
         if(perfect)
         {
             ReloadFlashUntil=Time.unscaledTime+.2f;SfxPlayer.Play("SFX-PLY-04",.4f,1.12f);
-            if(!perfectReloadHint){perfectReloadHint=true;StoryDirector.Current.ShowCaption("完美换弹");}
+            if(!perfectReloadHint){perfectReloadHint=true;StoryDirector.Current.ShowGameplayHint("完美换弹");}
         }
         else SfxPlayer.Play("SFX-PLY-03",.5f);
     }
     public bool IsReloading{get{if(StoryDirector.Active){RefreshCampaignReload();return magazine.IsReloading;}return Time.timeSinceLevelLoad<reloadReadyTime;}}
     public float ReloadRemaining=>StoryDirector.Active?(float)magazine.Remaining(BeatPosition,Time.timeSinceLevelLoad,StoryDirector.Current.Clock.Period):Mathf.Max(0,reloadReadyTime-Time.timeSinceLevelLoad);
+    public float CampaignReloadProgress
+    {
+        get
+        {
+            if(!StoryDirector.Active)return 1f;
+            RefreshCampaignReload();return (float)magazine.Progress(BeatPosition,Time.timeSinceLevelLoad);
+        }
+    }
     public bool CanFire
     {
         get
@@ -63,6 +74,7 @@ public class SBullet : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         bulletPrefab = Resources.Load<GameObject>("arrow/Bullet");
         reloadReadyTime = 0f;
+        if(StoryDirector.Active)magazine.Finish(CampaignCapacity);
         latestShotId = 0;
         if (bulletPrefab == null)
             Debug.LogWarning("[SBullet] 缺少 arrow/Bullet 预制体，无法开枪。");
@@ -239,6 +251,7 @@ public class SBullet : MonoBehaviour
     // 这里再压一档节拍作为额外惩罚
     void Penalty()
     {
+        CampaignTelemetry.Current?.Record("empty_shot");
         if (!RhythmManager.IsFollowingMusic)
             TapSec.Setbeattime = Mathf.Max(0.5f, TapSec.Setbeattime - 0.05f);
         SfxPlayer.Play("SFX-PLY-02", 0.4f);
@@ -278,6 +291,7 @@ public class SBullet : MonoBehaviour
         }
         SfxPlayer.PlayVariants("SFX-PLY-01", 3, 0.5f, 0.03f);
         SfxPlayer.Play("SFX-PLY-03", 0.25f);
+        CampaignTelemetry.Current?.Record("shot",perf?"perfect":"ordinary");
         ShotFired?.Invoke(kind == ArrowDefinition.TargetKind.Bomb, perf, latestShotId);
     }
 

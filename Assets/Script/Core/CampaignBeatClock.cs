@@ -26,5 +26,12 @@ public sealed class CampaignBeatClock
         if(!opened && Elapsed>=Wait){opened=true;Opened++;WindowOpened?.Invoke(Opened);}
         if(Elapsed>=Wait+Window){CycleCompleted?.Invoke(Completed+1);Completed++;Elapsed=0;Wait=Math.Max(.05f,NextWait);opened=claimed=false;}
     }
+    public void DebugTiming(float wait,float window)
+    {
+        float oldWait=Wait;Window=Math.Max(.01f,window);Wait=Math.Max(.05f,wait);
+        // Preserve whether this cycle has already opened its window.
+        Elapsed=opened?Wait+Math.Min(Math.Max(0,Elapsed-oldWait),Window-.0001f):Math.Min(Elapsed,Wait-.0001f);
+    }
+    public void DebugComplete(int beats){Completed=Opened=Math.Max(Completed,beats);}
     public bool ClaimPerfect(){if(!IsPerfect||claimed)return false;claimed=true;return true;}
 }

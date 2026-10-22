@@ -24,6 +24,7 @@ public class HeartFill : MonoBehaviour
 
     void Start()
     {
+        ParisSceneUI.Heart(this);
         // 分母取"进场时的血量"——场景 1 攒到多少，场景 2 就以它为满格。
         // 所以攒到 300 进来，血条就是 100% 起步，后面挨打再往下掉。
         if (StoryDirector.Active) maxWallHP = GameManager.WallMaxHP;
@@ -44,11 +45,12 @@ public class HeartFill : MonoBehaviour
     // 剩余比例：1 = 满血，0 = 空血
     float Ratio()
     {
-        return Mathf.Clamp01((float)GameManager.WallHP / maxHP);
+        return CampaignHudPresentation.HealthRatio(GameManager.WallHP,maxHP);
     }
 
     void Apply()
     {
         if (fill != null) fill.fillAmount = shown;
     }
+    public void RefreshNow(){shown=Ratio();Apply();}
 }

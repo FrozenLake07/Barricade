@@ -73,11 +73,13 @@ public sealed class CampaignUI
             view.prompt.text="按下任意按键开始游戏";
             view.subtitle=Label("Subtitle",page.transform,font,27,new Vector2(.1f,.12f),new Vector2(.9f,.38f));
         }
+        AmmoHudView.Attach(instance.transform);
         Main=view.main;Detail=view.detail;Hud=view.hud;Caption=view.caption;
         Black=view.black;Night=view.night;
         var silver=GameFont.Silver;
         foreach(var text in instance.GetComponentsInChildren<UnityEngine.UI.Text>(true))
             text.font=silver!=null?silver:font;
+        ParisUITheme.Apply(view);
         view.Capture();
     }
     public void ShowTitle(){view.ShowTitle();}

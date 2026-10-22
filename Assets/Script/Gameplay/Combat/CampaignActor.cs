@@ -18,7 +18,7 @@ public sealed class CampaignActor : MonoBehaviour
     void Start(){startX=transform.position.x;if(escort)ActiveEscort=this;}
     void Update()
     {
-        if(resolved||!StoryDirector.CombatRunning)return;
+        if(resolved||!StoryDirector.CombatRunning||DebugConsole.SimulationPaused)return;
         if(wave!=null)
         {
             if(wave.Frozen)return;
@@ -42,23 +42,28 @@ public sealed class CampaignActor : MonoBehaviour
     void ResolveEscort(bool survived)
     {
         if(resolved)return;resolved=true;
-        RunState.RegisterEscortResult(survived);
+        bool capacityAwarded=RunState.RegisterEscortResult(survived);
         if(survived)
         {
-            StoryDirector.Current?.ShowCaption(RunState.EscortSuccesses==3&&RunState.EscortFailures==0?"他三次都回来了。本章换弹时间 ×0.8":"他回来了。");
+            if(capacityAwarded)
+            {
+                CampaignTelemetry.Current?.Record("ammo_capacity_reward","complete_child_rescue;capacity="+(3+RunState.AmmoBonus));
+                StoryDirector.Current?.ShowGameplayHint("完整护送成功 · 携弹上限 +1（现为 "+(3+RunState.AmmoBonus)+" 发）");
+            }
+            else StoryDirector.Current?.ShowGameplayHint("孩子本次已安全返回。");
             Destroy(gameObject);
         }
         else
         {
             GetComponent<SpriteRenderer>().color=Color.white;SfxPlayer.Play("SFX-ENM-02",.45f);
-            StoryDirector.Current?.ShowCaption($"他受伤了。本章换弹时间 ×{RunState.ReloadMultiplier:F1}");
+            StoryDirector.Current?.ShowGameplayHint("本次护送未完成，完整救援未达成。");
             Destroy(gameObject,.15f);
         }
     }
     public void HitByPlayer()
     {
         if(escort||resolved)return;
-        resolved=true;var hp=GetComponent<EnemyHP>();if(hp!=null)hp.HP=0;RunState.SpySpared=false;RunState.Score+=500;StoryDirector.Current?.ShowCaption("+500");Destroy(gameObject,.1f);
+        resolved=true;var hp=GetComponent<EnemyHP>();if(hp!=null)hp.HP=0;RunState.SpySpared=false;RunState.Score+=500;StoryDirector.Current?.ShowGameplayHint("+500");Destroy(gameObject,.1f);
     }
     void OnTriggerEnter2D(Collider2D other)
     {

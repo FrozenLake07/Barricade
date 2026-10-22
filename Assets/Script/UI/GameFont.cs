@@ -1,6 +1,6 @@
 using UnityEngine;
 
-// 通过资源配置引用原始 Silver.ttf，不复制字体，也不退回系统字体。
+// 通过资源配置引用项目像素字体；当前UI派生版只补齐“垒”，原始Silver保留。
 [CreateAssetMenu(menuName="Barricade/UI/Game Font")]
 public sealed class GameFont : ScriptableObject
 {

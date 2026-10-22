@@ -31,17 +31,17 @@ public sealed class ConstructionJudgement
         return (firstSeen&&firstPerfect)||(secondSeen&&secondPerfect)?ConstructionResult.Wrong:ConstructionResult.Miss;
     }
     public static bool IsChord(int chapter,int beat)
-        =>chapter==1?beat>=49&&(beat-49)%12==0:beat%8==0;
+        =>chapter==2?beat>=49&&(beat-49)%12==0:beat%8==0;
     public static void Prompt(int chapter,int beat,out int first,out int second)
     {
         first=(beat*7+chapter)%4;second=-1;
         if(!IsChord(chapter,beat))return;
-        int index=(chapter+(chapter==1?(beat-49)/12:beat/8))%4;
+        int index=(chapter+(chapter==2?(beat-49)/12:beat/8))%4;
         first=index/2;second=2+index%2;
     }
     public static double RewardScale(int chapter,int beats,int limit,int chordPerfect)
     {
-        int total=0;for(int beat=1;beat<=beats;beat++)total+=IsChord(chapter,beat)?chordPerfect:10;
-        return total>0?Math.Max(1,(double)limit/total):1;
+        // Construction and repair always use the same per-input reward.
+        return 1;
     }
 }

@@ -66,11 +66,12 @@ public class CapsuleTrack : MonoBehaviour
 
     void Update()
     {
-        if (StoryDirector.Active && !StoryDirector.CombatRunning) return;
+        if (DebugConsole.CapturingInput || (StoryDirector.Active && !StoryDirector.CombatRunning)) return;
         if (Input.GetKeyDown(KeyCode.A)) { Debug.Log("[CapsuleTrack] 收到 A"); TrySwitch(-1); }       // A：降一条
         else if (Input.GetKeyDown(KeyCode.D)) { Debug.Log("[CapsuleTrack] 收到 D"); TrySwitch(+1); }  // D：升一条
     }
 
+    public void DebugLane(int lane){if(tracks==null)throw new System.InvalidOperationException("轨道尚未初始化。");TrySwitch(lane-1-track);}
     void TrySwitch(int dir)
     {
         int next = track + dir;

@@ -67,14 +67,15 @@ public class Tap : MonoBehaviour
 
     void Start()
     {
+        ParisSceneUI.Construction(this);
         charge = GetComponent<WallCharge>();
         Key = Randoml();
         ShowCount();
     }
 
     // 只把游戏操作键作为QTE尝试，点击Game窗口或其他非操作键不触发休息。
-    static bool HasQteInput() => Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D)
-        || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.Space);
+    static bool HasQteInput() => !DebugConsole.CapturingInput && (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D)
+        || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.Space));
 
     public void NotifyCampaignInput(bool perfect,float pitch=1f)
     {
@@ -233,6 +234,6 @@ public class Tap : MonoBehaviour
 
     void ShowCount()
     {
-        if (cntui != null) cntui.text = cnt.ToString();
+        if (cntui != null) cntui.text = "合拍 "+cnt;
     }
 }

@@ -115,14 +115,23 @@ public class Spawn : MonoBehaviour
         get {var source=Resources.Load<GameObject>("enemy/Soldier");var move=source!=null?source.GetComponent<EnemyMove>():null;return move!=null?move.speed:.5f;}
     }
     // 调度与节流由WaveDirector负责；此入口只执行一个原子批次。
-    public GameObject[] SpawnAt(WaveEventType type,float advance,int count=1)
+    public float WaveEntryX(bool allowOnscreenOpening,float advance=0)
+    {
+        float x=transform.position.x;
+        if(allowOnscreenOpening)return x+Mathf.Clamp(advance,0,10);
+        var camera=Camera.main;
+        if(camera!=null&&camera.orthographic)
+            x=Mathf.Min(x,camera.transform.position.x-camera.orthographicSize*camera.aspect-1.5f);
+        return x;
+    }
+    public GameObject[] SpawnAt(WaveEventType type,float advance,int count=1,bool allowOnscreenOpening=false)
     {
         var source=Resources.Load<GameObject>(type==WaveEventType.Squad?"enemy/Leader":"enemy/Soldier");
         if(source==null)return new GameObject[0];
         int id=NewGroupId();var result=new GameObject[Mathf.Max(1,count)];
         for(int i=0;i<result.Length;i++)
         {
-            Vector3 position=transform.position+Vector3.right*Mathf.Clamp(advance,0,10)-Vector3.right*(i*.9f);
+            Vector3 position=new Vector3(WaveEntryX(allowOnscreenOpening,advance)-i*.9f,transform.position.y,transform.position.z);
             result[i]=Instantiate(source,position,Quaternion.identity);
             var move=result[i].GetComponent<EnemyMove>();
             move.waveControlled=true;move.ConfigureSpawn(id,target);

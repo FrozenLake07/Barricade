@@ -92,7 +92,7 @@ public class EnemyMove : MonoBehaviour
 
     void Update()
     {
-        if (CampaignSession.Suspended) return;
+        if (CampaignSession.Suspended || DebugConsole.SimulationPaused) return;
         if (StoryDirector.Active && StoryDirector.Current.EnemiesFrozen)
         { if (rb != null) rb.velocity = Vector2.zero; return; }
         if (!Alive) { pendingFire = false; return; }

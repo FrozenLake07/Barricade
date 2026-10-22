@@ -33,13 +33,18 @@ public class GameManager : MonoBehaviour
 
     public static void DamageWallAmount(int amount, bool explosion = false)
     {
-        if (StoryDirector.Active && !StoryDirector.CombatRunning) return;
+        if (CampaignDebug.Value.god || (StoryDirector.Active && !StoryDirector.CombatRunning)) return;
+        if(StoryDirector.Active)amount=CampaignRevisionRules.ScaleCombatDamage(amount,StoryDirector.Current.Chapter.combatDamageMultiplier);
+        int before=WallHP;
         WallHP = Mathf.Max(0, WallHP - Mathf.Max(0, amount));
+        CampaignTelemetry.Current?.HealthChanged(before,WallHP,0);
     }
 
     /// 给街垒回血（上限为 WallMaxHP）。场景 1 每次完美按键就调它
     public static void AddWallHP(int amount)
     {
+        int before=WallHP;
         WallHP = Mathf.Min(WallMaxHP, WallHP + amount);
+        CampaignTelemetry.Current?.HealthChanged(before,WallHP,Mathf.Max(0,amount));
     }
 }

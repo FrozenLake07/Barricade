@@ -13,18 +13,18 @@ MonoBehaviour:
   m_Name: Chapter03_A
   m_EditorClassIdentifier: 
   chapter: 3
-  variant: "A"
+  variant: A
   relativeToDefense: 1
-  defenseBeats: 163
-  maxOnScreen: 8
-  maxEventsPerBeat: 2
-  laneCooldown: 2
-  requiredShellInterceptions: 0
+  defenseBeats: 171
+  maxOnScreen: 12
+  maxEventsPerBeat: 3
+  laneCooldown: 1
   shellTravelBeats: 3
   auditDistance: 14.88
   auditSoldierSpeed: 0.5
   auditSquadSeconds: 14.3
   auditShellSeconds: 1.5
+  requiredShellInterceptions: 0
   squadImpactOffsets: 0a0000000f00000014000000
   events:
   - beat: 0
@@ -35,105 +35,375 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: "opening"
+    tag: opening
     lanes: 
   - beat: 8
     alignTo: -1
     type: 0
     lane: 3
-    advance: 7
+    advance: 0
     count: 1
     spacing: 4
     duration: 0
-    tag: "Soldier-8"
+    tag: Soldier-8
     lanes: 
   - beat: 20
     alignTo: -1
     type: 1
     lane: 2
-    advance: 3
+    advance: 0
     count: 1
     spacing: 4
     duration: 0
-    tag: "first-bomb"
+    tag: first-bomb
     lanes: 
   - beat: 34
     alignTo: -1
     type: 0
     lane: 1
-    advance: 6
+    advance: 0
     count: 1
     spacing: 4
     duration: 0
-    tag: "Soldier-34"
+    tag: Soldier-34
     lanes: 
   - beat: 46
     alignTo: 80
     type: 0
     lane: 3
-    advance: 4
+    advance: 0
     count: 1
     spacing: 4
     duration: 0
-    tag: "dilemma-A"
+    tag: dilemma-A
     lanes: 0300000001000000
   - beat: 58
     alignTo: 80
     type: 0
     lane: 2
-    advance: 8
+    advance: 0
     count: 1
     spacing: 4
     duration: 0
-    tag: "dilemma-A"
+    tag: dilemma-A
     lanes: 
   - beat: 76
     alignTo: -1
     type: 0
     lane: 2
-    advance: 6
+    advance: 0
     count: 1
     spacing: 4
     duration: 0
-    tag: "Soldier-76"
+    tag: Soldier-76
     lanes: 0200000003000000
   - beat: 92
     alignTo: -1
     type: 0
     lane: 1
-    advance: 5
+    advance: 0
     count: 1
     spacing: 4
     duration: 0
-    tag: "Soldier-92"
+    tag: Soldier-92
     lanes: 
   - beat: 104
     alignTo: -1
     type: 0
     lane: 1
-    advance: 3
+    advance: 0
     count: 1
     spacing: 4
     duration: 0
-    tag: "Soldier-104"
+    tag: Soldier-104
     lanes: 0100000003000000
   - beat: 128
     alignTo: -1
     type: 0
     lane: 3
-    advance: 8
+    advance: 0
     count: 1
     spacing: 4
     duration: 0
-    tag: "Soldier-128"
+    tag: Soldier-128
     lanes: 
   - beat: 126
     alignTo: -1
     type: 0
     lane: 2
-    advance: 6
+    advance: 0
     count: 1
     spacing: 4
     duration: 0
-    tag: "Soldier-126"
+    tag: Soldier-126
+    lanes: 
+  - beat: 147
+    alignTo: 161
+    type: 0
+    lane: 1
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: choice-time-redistributed
+    lanes: 
+  - beat: 8
+    alignTo: -1
+    type: 0
+    lane: 1
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v3-0
+    lanes: 
+  - beat: 13
+    alignTo: -1
+    type: 0
+    lane: 2
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v3-1
+    lanes: 
+  - beat: 18
+    alignTo: -1
+    type: 0
+    lane: 3
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v3-2
+    lanes: 0300000001000000
+  - beat: 23
+    alignTo: -1
+    type: 0
+    lane: 1
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v3-3
+    lanes: 
+  - beat: 28
+    alignTo: -1
+    type: 0
+    lane: 2
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v3-4
+    lanes: 
+  - beat: 33
+    alignTo: -1
+    type: 0
+    lane: 3
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v3-5
+    lanes: 0300000001000000
+  - beat: 38
+    alignTo: -1
+    type: 0
+    lane: 1
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v3-6
+    lanes: 
+  - beat: 43
+    alignTo: -1
+    type: 0
+    lane: 2
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v3-7
+    lanes: 
+  - beat: 48
+    alignTo: -1
+    type: 0
+    lane: 3
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v3-8
+    lanes: 0300000001000000
+  - beat: 53
+    alignTo: -1
+    type: 0
+    lane: 1
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v3-9
+    lanes: 
+  - beat: 58
+    alignTo: -1
+    type: 0
+    lane: 2
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v3-10
+    lanes: 
+  - beat: 63
+    alignTo: -1
+    type: 0
+    lane: 3
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v3-11
+    lanes: 0300000001000000
+  - beat: 68
+    alignTo: -1
+    type: 0
+    lane: 1
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v3-12
+    lanes: 
+  - beat: 73
+    alignTo: -1
+    type: 0
+    lane: 2
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v3-13
+    lanes: 
+  - beat: 78
+    alignTo: -1
+    type: 0
+    lane: 3
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v3-14
+    lanes: 0300000001000000
+  - beat: 83
+    alignTo: -1
+    type: 0
+    lane: 1
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v3-15
+    lanes: 
+  - beat: 88
+    alignTo: -1
+    type: 0
+    lane: 2
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v3-16
+    lanes: 
+  - beat: 93
+    alignTo: -1
+    type: 0
+    lane: 3
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v3-17
+    lanes: 0300000001000000
+  - beat: 98
+    alignTo: -1
+    type: 0
+    lane: 1
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v3-18
+    lanes: 
+  - beat: 103
+    alignTo: -1
+    type: 0
+    lane: 2
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v3-19
+    lanes: 
+  - beat: 108
+    alignTo: -1
+    type: 0
+    lane: 3
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v3-20
+    lanes: 0300000001000000
+  - beat: 113
+    alignTo: -1
+    type: 0
+    lane: 1
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v3-21
+    lanes: 
+  - beat: 118
+    alignTo: -1
+    type: 0
+    lane: 2
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v3-22
+    lanes: 
+  - beat: 123
+    alignTo: -1
+    type: 0
+    lane: 3
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v3-23
+    lanes: 0300000001000000
+  - beat: 128
+    alignTo: -1
+    type: 0
+    lane: 1
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v3-24
+    lanes: 
+  - beat: 133
+    alignTo: -1
+    type: 0
+    lane: 2
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v3-25
     lanes: 

@@ -124,7 +124,7 @@ public sealed class Cannon : MonoBehaviour
 
     void LateUpdate()
     {
-        if (CampaignSession.Suspended) return;
+        if (CampaignSession.Suspended || DebugConsole.SimulationPaused) return;
         if (duplicate) return;
         // Animator完成采样后按实际状态校正，避免Fire和Idle切换时大小错一帧。
         bool fire = visualAnimator != null && visualAnimator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.Fire");

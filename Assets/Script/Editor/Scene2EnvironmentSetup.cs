@@ -45,7 +45,12 @@ public static class Scene2EnvironmentSetup
             var positions = tracks.Select(t => t.position).ToArray();
             report.pixelsPerUnit = 941f / (camera.orthographicSize * 2f);
             var names = new[] { "Cobblestone", "Buildings", "Barricade" };
-            var sprites = names.Select(n => Import(Folder + "/" + n + ".png", report.pixelsPerUnit)).ToArray();
+            var sprites = names.Select(n => {
+                // Replacement art keeps the established building height and pavement baseline.
+                float ppu = n == "Buildings" ? 123.603300330033f : n == "Cobblestone" ? 76.8f : report.pixelsPerUnit;
+                Vector2? pivot = n == "Buildings" ? (Vector2?)new Vector2(.5f, 0.182179936744f) : null;
+                return Import(Folder + "/" + n + ".png", ppu, pivot);
+            }).ToArray();
             var root = scene.GetRootGameObjects().FirstOrDefault(g => g.name == "Act2Environment");
             if (root == null) root = new GameObject("Act2Environment");
             root.transform.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
@@ -152,7 +157,7 @@ public static class Scene2EnvironmentSetup
         importer.mipmapEnabled = false;
         importer.filterMode = FilterMode.Point;
         importer.textureCompression = TextureImporterCompression.Uncompressed;
-        importer.maxTextureSize = 2048;
+        importer.maxTextureSize = path.EndsWith("/Buildings.png", StringComparison.Ordinal) ? 4096 : 2048;
         importer.wrapMode = TextureWrapMode.Clamp;
         var settings = new TextureImporterSettings();
         importer.ReadTextureSettings(settings);

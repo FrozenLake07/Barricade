@@ -14,21 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chapters:
   - number: 1
-    title: "葬礼"
-    introduction: "六月五日。拉马克将军的灵车经过这里。"
-    preparationBeats: 183
+    preparationBeats: 0
     defenseBeats: 0
     choiceBeats: 0
     epilogueBeats: 0
+    cinematicBeats: 32
+    title: "\u846C\u793C"
+    introduction: "\u516D\u6708\u4E94\u65E5\u3002\u62C9\u9A6C\u514B\u5C06\u519B\u7684\u7075\u8F66\u7ECF\u8FC7\u8FD9\u91CC\u3002"
     startingWait: 0.85
     accelerate: 0
-    lines:
-    - beat: 1
-      text: "六月五日。拉马克将军的灵车经过这里。"
-    - beat: 61
-      text: "有人爬上了马车。有人开始唱歌。"
-    - beat: 121
-      text: "到今晚为止，这条街不归国王管。"
+    combatDamageMultiplier: 1
+    lines: []
     waves: []
     waveA: {fileID: 0}
     waveB: {fileID: 0}
@@ -39,6 +35,8 @@ MonoBehaviour:
       placeholderSeconds: 10
       allowSkip: 1
       waitForSignal: 0
+      signalTimeoutSeconds: 60
+      caption: 
     prepareToDefense:
       cinematicPrefab: {fileID: 0}
       timeline: {fileID: 0}
@@ -46,6 +44,8 @@ MonoBehaviour:
       placeholderSeconds: 4
       allowSkip: 1
       waitForSignal: 0
+      signalTimeoutSeconds: 60
+      caption: 
     exit:
       cinematicPrefab: {fileID: 0}
       timeline: {fileID: 0}
@@ -53,33 +53,23 @@ MonoBehaviour:
       placeholderSeconds: 2
       allowSkip: 1
       waitForSignal: 0
+      signalTimeoutSeconds: 60
+      caption: 
   - number: 2
-    title: "筑垒"
-    introduction: "把马车翻过来。把桶搬上来。"
-    preparationBeats: 120
-    defenseBeats: 63
+    preparationBeats: 127
+    defenseBeats: 0
     choiceBeats: 0
     epilogueBeats: 0
+    cinematicBeats: 0
+    title: "\u7B51\u5792"
+    introduction: "\u628A\u9A6C\u8F66\u7FFB\u8FC7\u6765\u3002\u628A\u6876\u642C\u4E0A\u6765\u3002"
     startingWait: 0.85
     accelerate: 1
-    lines:
-    - beat: 1
-      text: "把马车翻过来。把桶搬上来。"
-    waves:
-    - beat: 0
-      kind: 0
-      lane: 1
-      count: 1
-    - beat: 20
-      kind: 0
-      lane: 1
-      count: 1
-    - beat: 38
-      kind: 0
-      lane: 2
-      count: 1
-    waveA: {fileID: 11400000, guid: 9ae91893e26d471dba4e2cc726c960b0, type: 2}
-    waveB: {fileID: 11400000, guid: 374b6b772329428588ea9517223e3e55, type: 2}
+    combatDamageMultiplier: 1
+    lines: []
+    waves: []
+    waveA: {fileID: 0}
+    waveB: {fileID: 0}
     entry:
       cinematicPrefab: {fileID: 0}
       timeline: {fileID: 0}
@@ -87,6 +77,8 @@ MonoBehaviour:
       placeholderSeconds: 10
       allowSkip: 1
       waitForSignal: 0
+      signalTimeoutSeconds: 60
+      caption: 
     prepareToDefense:
       cinematicPrefab: {fileID: 0}
       timeline: {fileID: 0}
@@ -94,6 +86,8 @@ MonoBehaviour:
       placeholderSeconds: 4
       allowSkip: 1
       waitForSignal: 0
+      signalTimeoutSeconds: 60
+      caption: 
     exit:
       cinematicPrefab: {fileID: 0}
       timeline: {fileID: 0}
@@ -101,75 +95,81 @@ MonoBehaviour:
       placeholderSeconds: 2
       allowSkip: 1
       waitForSignal: 0
+      signalTimeoutSeconds: 60
+      caption: 
   - number: 3
-    title: "第一次进攻"
-    introduction: "第一排枪之后，街垒还在。"
-    preparationBeats: 20
-    defenseBeats: 163
+    preparationBeats: 52
+    defenseBeats: 171
     choiceBeats: 0
     epilogueBeats: 0
+    cinematicBeats: 0
+    title: "\u7B2C\u4E00\u6B21\u8FDB\u653B"
+    introduction: "\u7B2C\u4E00\u6392\u67AA\u4E4B\u540E\uFF0C\u8857\u5792\u8FD8\u5728\u3002"
     startingWait: 0.85
     accelerate: 1
-    lines:
-    - beat: 1
-      text: "第一排枪之后，街垒还在。"
+    combatDamageMultiplier: 2.5
+    lines: []
     waves:
     - beat: 0
-      kind: 0
       lane: 0
       count: 1
-    - beat: 8
       kind: 0
+    - beat: 8
       lane: 2
       count: 1
+      kind: 0
     - beat: 20
-      kind: 1
       lane: 1
       count: 3
+      kind: 1
     - beat: 34
-      kind: 0
       lane: 0
       count: 1
-    - beat: 46
       kind: 0
+    - beat: 46
       lane: 2
       count: 1
-    - beat: 46
       kind: 0
+    - beat: 46
       lane: 0
       count: 1
+      kind: 0
     - beat: 58
-      kind: 0
       lane: 1
       count: 1
-    - beat: 76
       kind: 0
+    - beat: 76
       lane: 1
       count: 1
-    - beat: 76
       kind: 0
+    - beat: 76
       lane: 2
       count: 1
+      kind: 0
     - beat: 92
-      kind: 0
       lane: 0
       count: 1
-    - beat: 104
       kind: 0
+    - beat: 104
       lane: 0
       count: 1
-    - beat: 104
       kind: 0
+    - beat: 104
       lane: 2
       count: 1
+      kind: 0
     - beat: 128
-      kind: 0
       lane: 2
       count: 1
-    - beat: 126
       kind: 0
+    - beat: 126
       lane: 1
       count: 1
+      kind: 0
+    - beat: 147
+      lane: 0
+      count: 1
+      kind: 0
     waveA: {fileID: 11400000, guid: 8c87ffd0c4d54cdbb1e6e5ac5cdc92be, type: 2}
     waveB: {fileID: 11400000, guid: 427bcad97dae4e46be401f97885d8d01, type: 2}
     entry:
@@ -179,6 +179,8 @@ MonoBehaviour:
       placeholderSeconds: 10
       allowSkip: 1
       waitForSignal: 0
+      signalTimeoutSeconds: 60
+      caption: 
     prepareToDefense:
       cinematicPrefab: {fileID: 0}
       timeline: {fileID: 0}
@@ -186,6 +188,8 @@ MonoBehaviour:
       placeholderSeconds: 4
       allowSkip: 1
       waitForSignal: 0
+      signalTimeoutSeconds: 60
+      caption: 
     exit:
       cinematicPrefab: {fileID: 0}
       timeline: {fileID: 0}
@@ -193,63 +197,69 @@ MonoBehaviour:
       placeholderSeconds: 2
       allowSkip: 1
       waitForSignal: 0
+      signalTimeoutSeconds: 60
+      caption: 
   - number: 4
-    title: "加弗罗什"
-    introduction: "他跑出去了。没有人命令他。"
-    preparationBeats: 20
-    defenseBeats: 163
+    preparationBeats: 52
+    defenseBeats: 171
     choiceBeats: 0
     epilogueBeats: 0
+    cinematicBeats: 0
+    title: "\u52A0\u5F17\u7F57\u4EC0"
+    introduction: "\u4ED6\u8DD1\u51FA\u53BB\u4E86\u3002\u6CA1\u6709\u4EBA\u547D\u4EE4\u4ED6\u3002"
     startingWait: 0.85
     accelerate: 1
-    lines:
-    - beat: 1
-      text: "他跑出去了。没有人命令他。"
+    combatDamageMultiplier: 3
+    lines: []
     waves:
     - beat: 0
-      kind: 0
       lane: 0
       count: 1
-    - beat: 0
       kind: 0
+    - beat: 0
       lane: 2
       count: 1
+      kind: 0
     - beat: 12
-      kind: 0
       lane: 1
       count: 1
+      kind: 0
     - beat: 30
-      kind: 3
       lane: 1
       count: 1
+      kind: 3
     - beat: 49
-      kind: 0
       lane: 0
       count: 1
+      kind: 0
     - beat: 70
-      kind: 3
       lane: 0
       count: 1
+      kind: 3
     - beat: 94
-      kind: 0
       lane: 1
       count: 1
+      kind: 0
     - beat: 104
-      kind: 1
       lane: 2
       count: 3
+      kind: 1
     - beat: 110
-      kind: 3
       lane: 1
       count: 1
+      kind: 3
     - beat: 118
-      kind: 0
       lane: 2
       count: 1
-    - beat: 130
       kind: 0
+    - beat: 130
       lane: 1
       count: 1
+      kind: 0
+    - beat: 147
+      lane: 1
+      count: 1
+      kind: 0
     waveA: {fileID: 11400000, guid: 4cbb1df7e4c34add86796c21dbde3f59, type: 2}
     waveB: {fileID: 11400000, guid: d01ccf54849e4f88b6cebb5cd1cb82b9, type: 2}
     entry:
@@ -259,6 +269,8 @@ MonoBehaviour:
       placeholderSeconds: 10
       allowSkip: 1
       waitForSignal: 0
+      signalTimeoutSeconds: 60
+      caption: 
     prepareToDefense:
       cinematicPrefab: {fileID: 0}
       timeline: {fileID: 0}
@@ -266,6 +278,8 @@ MonoBehaviour:
       placeholderSeconds: 4
       allowSkip: 1
       waitForSignal: 0
+      signalTimeoutSeconds: 60
+      caption: 
     exit:
       cinematicPrefab: {fileID: 0}
       timeline: {fileID: 0}
@@ -273,75 +287,81 @@ MonoBehaviour:
       placeholderSeconds: 2
       allowSkip: 1
       waitForSignal: 0
+      signalTimeoutSeconds: 60
+      caption: 
   - number: 5
-    title: "沙威"
-    introduction: "一个穿制服的人被认了出来。"
-    preparationBeats: 20
-    defenseBeats: 163
+    preparationBeats: 48
+    defenseBeats: 171
     choiceBeats: 0
     epilogueBeats: 0
+    cinematicBeats: 0
+    title: "\u6C99\u5A01"
+    introduction: "\u4E00\u4E2A\u7A7F\u5236\u670D\u7684\u4EBA\u88AB\u8BA4\u4E86\u51FA\u6765\u3002"
     startingWait: 0.85
     accelerate: 1
-    lines:
-    - beat: 1
-      text: "一个穿制服的人被认了出来。"
+    combatDamageMultiplier: 2
+    lines: []
     waves:
     - beat: 0
-      kind: 0
       lane: 1
       count: 1
+      kind: 0
     - beat: 14
-      kind: 0
       lane: 0
       count: 1
+      kind: 0
     - beat: 28
-      kind: 0
       lane: 2
       count: 1
+      kind: 0
     - beat: 40
-      kind: 4
       lane: 1
       count: 1
+      kind: 4
     - beat: 52
-      kind: 0
       lane: 0
       count: 1
+      kind: 0
     - beat: 66
-      kind: 1
       lane: 2
       count: 3
+      kind: 1
     - beat: 70
-      kind: 0
       lane: 1
       count: 1
+      kind: 0
     - beat: 92
-      kind: 0
       lane: 0
       count: 1
+      kind: 0
     - beat: 100
-      kind: 4
       lane: 0
       count: 1
+      kind: 4
     - beat: 104
-      kind: 0
       lane: 1
       count: 1
-    - beat: 118
       kind: 0
+    - beat: 118
       lane: 2
       count: 1
+      kind: 0
     - beat: 130
-      kind: 1
       lane: 1
       count: 3
+      kind: 1
     - beat: 126
-      kind: 0
       lane: 0
       count: 1
-    - beat: 134
       kind: 0
+    - beat: 134
       lane: 1
       count: 1
+      kind: 0
+    - beat: 147
+      lane: 2
+      count: 1
+      kind: 0
     waveA: {fileID: 11400000, guid: 9802b1b769a94fdd847ab77ac0ec89d1, type: 2}
     waveB: {fileID: 11400000, guid: 48f859635b434a3bbbb4f8a411ec4ea6, type: 2}
     entry:
@@ -351,6 +371,8 @@ MonoBehaviour:
       placeholderSeconds: 10
       allowSkip: 1
       waitForSignal: 0
+      signalTimeoutSeconds: 60
+      caption: 
     prepareToDefense:
       cinematicPrefab: {fileID: 0}
       timeline: {fileID: 0}
@@ -358,6 +380,8 @@ MonoBehaviour:
       placeholderSeconds: 4
       allowSkip: 1
       waitForSignal: 0
+      signalTimeoutSeconds: 60
+      caption: 
     exit:
       cinematicPrefab: {fileID: 0}
       timeline: {fileID: 0}
@@ -365,67 +389,73 @@ MonoBehaviour:
       placeholderSeconds: 2
       allowSkip: 1
       waitForSignal: 0
+      signalTimeoutSeconds: 60
+      caption: 
   - number: 6
-    title: "夜袭"
-    introduction: "有人把火把扔了过来。"
-    preparationBeats: 20
-    defenseBeats: 163
+    preparationBeats: 54
+    defenseBeats: 171
     choiceBeats: 0
     epilogueBeats: 0
+    cinematicBeats: 0
+    title: "\u591C\u88AD"
+    introduction: "\u6709\u4EBA\u628A\u706B\u628A\u6254\u4E86\u8FC7\u6765\u3002"
     startingWait: 0.85
     accelerate: 1
-    lines:
-    - beat: 1
-      text: "有人把火把扔了过来。"
+    combatDamageMultiplier: 2.2
+    lines: []
     waves:
     - beat: 0
-      kind: 0
       lane: 0
       count: 1
+      kind: 0
     - beat: 0
-      kind: 0
       lane: 2
       count: 1
+      kind: 0
     - beat: 20
-      kind: 0
       lane: 1
       count: 1
+      kind: 0
     - beat: 40
-      kind: 1
       lane: 0
       count: 3
+      kind: 1
     - beat: 48
-      kind: 0
       lane: 1
       count: 1
-    - beat: 48
       kind: 0
+    - beat: 48
       lane: 2
       count: 1
+      kind: 0
     - beat: 70
-      kind: 0
       lane: 0
       count: 1
+      kind: 0
     - beat: 88
-      kind: 1
       lane: 2
       count: 3
+      kind: 1
     - beat: 96
-      kind: 0
       lane: 0
       count: 1
-    - beat: 96
       kind: 0
+    - beat: 96
       lane: 1
       count: 1
-    - beat: 120
       kind: 0
+    - beat: 120
       lane: 2
       count: 1
-    - beat: 130
       kind: 0
+    - beat: 130
       lane: 1
       count: 1
+      kind: 0
+    - beat: 147
+      lane: 0
+      count: 1
+      kind: 0
     waveA: {fileID: 11400000, guid: d85d3246841849ac8f262dfead396987, type: 2}
     waveB: {fileID: 11400000, guid: 67592a3bbeaa4d1388e85503e1019b83, type: 2}
     entry:
@@ -435,6 +465,8 @@ MonoBehaviour:
       placeholderSeconds: 10
       allowSkip: 1
       waitForSignal: 0
+      signalTimeoutSeconds: 60
+      caption: 
     prepareToDefense:
       cinematicPrefab: {fileID: 0}
       timeline: {fileID: 0}
@@ -442,6 +474,8 @@ MonoBehaviour:
       placeholderSeconds: 4
       allowSkip: 1
       waitForSignal: 0
+      signalTimeoutSeconds: 60
+      caption: 
     exit:
       cinematicPrefab: {fileID: 0}
       timeline: {fileID: 0}
@@ -449,55 +483,61 @@ MonoBehaviour:
       placeholderSeconds: 2
       allowSkip: 1
       waitForSignal: 0
+      signalTimeoutSeconds: 60
+      caption: 
   - number: 7
-    title: "瓦让"
-    introduction: "处决间谍的枪，递到了他手里。"
-    preparationBeats: 0
-    defenseBeats: 120
-    choiceBeats: 63
+    preparationBeats: 8
+    defenseBeats: 128
+    choiceBeats: 7
     epilogueBeats: 0
+    cinematicBeats: 0
+    title: "\u74E6\u8BA9"
+    introduction: "\u5904\u51B3\u95F4\u8C0D\u7684\u67AA\uFF0C\u9012\u5230\u4E86\u4ED6\u624B\u91CC\u3002"
     startingWait: 0.85
     accelerate: 1
-    lines:
-    - beat: 1
-      text: "处决间谍的枪，递到了他手里。"
+    combatDamageMultiplier: 3
+    lines: []
     waves:
     - beat: 0
-      kind: 0
       lane: 0
       count: 1
-    - beat: 0
       kind: 0
+    - beat: 0
       lane: 1
       count: 1
-    - beat: 18
       kind: 0
+    - beat: 18
       lane: 2
       count: 1
+      kind: 0
     - beat: 34
-      kind: 1
       lane: 1
       count: 3
+      kind: 1
     - beat: 46
-      kind: 0
       lane: 0
       count: 1
-    - beat: 62
       kind: 0
+    - beat: 62
       lane: 1
       count: 1
-    - beat: 62
       kind: 0
+    - beat: 62
       lane: 2
       count: 1
-    - beat: 80
       kind: 0
+    - beat: 80
       lane: 0
       count: 1
-    - beat: 74
       kind: 0
+    - beat: 74
       lane: 1
       count: 1
+      kind: 0
+    - beat: 104
+      lane: 1
+      count: 1
+      kind: 0
     waveA: {fileID: 11400000, guid: 47cbbc9debb54c13996f9e013cd44a65, type: 2}
     waveB: {fileID: 11400000, guid: f02ace83b073442d8e0e7bbe2ef34830, type: 2}
     entry:
@@ -507,6 +547,8 @@ MonoBehaviour:
       placeholderSeconds: 10
       allowSkip: 1
       waitForSignal: 0
+      signalTimeoutSeconds: 60
+      caption: 
     prepareToDefense:
       cinematicPrefab: {fileID: 0}
       timeline: {fileID: 0}
@@ -514,6 +556,8 @@ MonoBehaviour:
       placeholderSeconds: 4
       allowSkip: 1
       waitForSignal: 0
+      signalTimeoutSeconds: 60
+      caption: 
     exit:
       cinematicPrefab: {fileID: 0}
       timeline: {fileID: 0}
@@ -521,71 +565,77 @@ MonoBehaviour:
       placeholderSeconds: 2
       allowSkip: 1
       waitForSignal: 0
+      signalTimeoutSeconds: 60
+      caption: 
   - number: 8
-    title: "火炮"
-    introduction: "他们把炮推上来了。"
-    preparationBeats: 20
-    defenseBeats: 163
+    preparationBeats: 58
+    defenseBeats: 171
     choiceBeats: 0
     epilogueBeats: 0
+    cinematicBeats: 0
+    title: "\u706B\u70AE"
+    introduction: "\u4ED6\u4EEC\u628A\u70AE\u63A8\u4E0A\u6765\u4E86\u3002"
     startingWait: 0.85
     accelerate: 1
-    lines:
-    - beat: 1
-      text: "他们把炮推上来了。"
+    combatDamageMultiplier: 1
+    lines: []
     waves:
     - beat: 0
-      kind: 0
       lane: 0
       count: 1
+      kind: 0
     - beat: 0
-      kind: 0
       lane: 2
       count: 1
+      kind: 0
     - beat: 20
-      kind: 0
       lane: 1
       count: 1
+      kind: 0
     - beat: 40
+      lane: 1
+      count: 1
       kind: 5
-      lane: 1
-      count: 1
     - beat: 70
-      kind: 6
       lane: 1
       count: 1
+      kind: 6
     - beat: 76
-      kind: 0
       lane: 0
       count: 1
-    - beat: 76
       kind: 0
+    - beat: 76
       lane: 2
       count: 1
+      kind: 0
     - beat: 100
-      kind: 6
       lane: 1
       count: 1
+      kind: 6
     - beat: 104
-      kind: 1
       lane: 2
       count: 3
+      kind: 1
     - beat: 130
-      kind: 6
       lane: 1
       count: 1
+      kind: 6
     - beat: 126
-      kind: 0
       lane: 0
       count: 1
-    - beat: 126
       kind: 0
+    - beat: 126
       lane: 1
       count: 1
+      kind: 0
     - beat: 152
-      kind: 6
       lane: 1
       count: 1
+      kind: 6
+    - beat: 147
+      lane: 2
+      count: 1
+      kind: 0
     waveA: {fileID: 11400000, guid: 3e8385041e1244519b790af6c080586e, type: 2}
     waveB: {fileID: 11400000, guid: b81a10f63df9476ca962e6439ec1ae34, type: 2}
     entry:
@@ -595,6 +645,8 @@ MonoBehaviour:
       placeholderSeconds: 10
       allowSkip: 1
       waitForSignal: 0
+      signalTimeoutSeconds: 60
+      caption: 
     prepareToDefense:
       cinematicPrefab: {fileID: 0}
       timeline: {fileID: 0}
@@ -602,6 +654,8 @@ MonoBehaviour:
       placeholderSeconds: 4
       allowSkip: 1
       waitForSignal: 0
+      signalTimeoutSeconds: 60
+      caption: 
     exit:
       cinematicPrefab: {fileID: 0}
       timeline: {fileID: 0}
@@ -609,179 +663,185 @@ MonoBehaviour:
       placeholderSeconds: 2
       allowSkip: 1
       waitForSignal: 0
+      signalTimeoutSeconds: 60
+      caption: 
   - number: 9
-    title: "最后总攻"
-    introduction: "这是最后的斗争。"
-    preparationBeats: 20
-    defenseBeats: 163
+    preparationBeats: 55
+    defenseBeats: 171
     choiceBeats: 0
     epilogueBeats: 0
+    cinematicBeats: 0
+    title: "\u6700\u540E\u603B\u653B"
+    introduction: "\u8FD9\u662F\u6700\u540E\u7684\u6597\u4E89\u3002"
     startingWait: 0.5
     accelerate: 0
-    lines:
-    - beat: 1
-      text: "这是最后的斗争。"
+    combatDamageMultiplier: 1
+    lines: []
     waves:
     - beat: 0
+      lane: 1
+      count: 1
       kind: 5
-      lane: 1
-      count: 1
     - beat: 0
-      kind: 0
       lane: 0
       count: 1
+      kind: 0
     - beat: 8
-      kind: 0
       lane: 1
       count: 1
+      kind: 0
     - beat: 16
-      kind: 0
       lane: 2
       count: 1
+      kind: 0
     - beat: 24
-      kind: 0
       lane: 0
       count: 1
+      kind: 0
     - beat: 32
-      kind: 0
       lane: 1
       count: 1
+      kind: 0
     - beat: 40
-      kind: 1
       lane: 0
       count: 3
-    - beat: 40
       kind: 1
+    - beat: 40
       lane: 2
       count: 3
-    - beat: 41
       kind: 1
+    - beat: 41
       lane: 0
       count: 3
-    - beat: 41
       kind: 1
+    - beat: 41
       lane: 2
       count: 3
+      kind: 1
     - beat: 42
-      kind: 6
       lane: 0
       count: 1
+      kind: 6
     - beat: 43
-      kind: 6
       lane: 2
       count: 1
+      kind: 6
     - beat: 48
-      kind: 0
       lane: 0
       count: 1
+      kind: 0
     - beat: 56
-      kind: 0
       lane: 1
       count: 1
+      kind: 0
     - beat: 64
-      kind: 0
       lane: 2
       count: 1
+      kind: 0
     - beat: 72
-      kind: 0
       lane: 0
       count: 1
+      kind: 0
     - beat: 80
-      kind: 0
       lane: 1
       count: 1
+      kind: 0
     - beat: 88
-      kind: 0
       lane: 2
       count: 1
+      kind: 0
     - beat: 90
-      kind: 1
       lane: 0
       count: 3
-    - beat: 90
       kind: 1
+    - beat: 90
       lane: 2
       count: 3
-    - beat: 91
       kind: 1
+    - beat: 91
       lane: 0
       count: 3
-    - beat: 91
       kind: 1
+    - beat: 91
       lane: 2
       count: 3
+      kind: 1
     - beat: 92
-      kind: 6
       lane: 0
       count: 1
-    - beat: 93
       kind: 6
+    - beat: 93
       lane: 2
       count: 1
+      kind: 6
     - beat: 98
-      kind: 0
       lane: 0
       count: 1
-    - beat: 106
       kind: 0
+    - beat: 106
       lane: 1
       count: 1
+      kind: 0
     - beat: 114
-      kind: 0
       lane: 2
       count: 1
+      kind: 0
     - beat: 122
-      kind: 0
       lane: 0
       count: 1
+      kind: 0
     - beat: 130
-      kind: 1
       lane: 0
       count: 3
-    - beat: 130
       kind: 1
+    - beat: 130
       lane: 2
       count: 3
-    - beat: 131
       kind: 1
+    - beat: 131
       lane: 0
       count: 3
-    - beat: 131
       kind: 1
+    - beat: 131
       lane: 2
       count: 3
+      kind: 1
     - beat: 133
-      kind: 6
       lane: 0
       count: 1
+      kind: 6
     - beat: 134
+      lane: 2
+      count: 1
       kind: 6
-      lane: 2
-      count: 1
     - beat: 138
-      kind: 0
       lane: 0
       count: 1
+      kind: 0
     - beat: 138
-      kind: 0
       lane: 2
       count: 1
-    - beat: 146
       kind: 0
+    - beat: 146
       lane: 0
       count: 1
-    - beat: 146
       kind: 0
+    - beat: 146
       lane: 2
       count: 1
-    - beat: 154
       kind: 0
+    - beat: 154
       lane: 0
       count: 1
-    - beat: 154
       kind: 0
+    - beat: 154
       lane: 2
       count: 1
+      kind: 0
+    - beat: 147
+      lane: 0
+      count: 1
+      kind: 0
     waveA: {fileID: 11400000, guid: 2548f9aa3abe405cbb1eb08018ce437b, type: 2}
     waveB: {fileID: 11400000, guid: cbaf4415434549e989b60f9333ead6e6, type: 2}
     entry:
@@ -791,6 +851,8 @@ MonoBehaviour:
       placeholderSeconds: 10
       allowSkip: 1
       waitForSignal: 0
+      signalTimeoutSeconds: 60
+      caption: 
     prepareToDefense:
       cinematicPrefab: {fileID: 0}
       timeline: {fileID: 0}
@@ -798,6 +860,8 @@ MonoBehaviour:
       placeholderSeconds: 4
       allowSkip: 1
       waitForSignal: 0
+      signalTimeoutSeconds: 60
+      caption: 
     exit:
       cinematicPrefab: {fileID: 0}
       timeline: {fileID: 0}
@@ -805,18 +869,20 @@ MonoBehaviour:
       placeholderSeconds: 2
       allowSkip: 1
       waitForSignal: 0
+      signalTimeoutSeconds: 60
+      caption: 
   - number: 10
-    title: "街垒之后"
-    introduction: "街垒陷落。马里乌斯活了下来。"
     preparationBeats: 0
     defenseBeats: 0
     choiceBeats: 0
     epilogueBeats: 183
+    cinematicBeats: 0
+    title: "\u7EC8\u7AE0"
+    introduction: "\u8857\u5792\u9677\u843D\u3002\u9A6C\u91CC\u4E4C\u65AF\u6D3B\u4E86\u4E0B\u6765\u3002"
     startingWait: 0.5
     accelerate: 0
-    lines:
-    - beat: 1
-      text: "街垒陷落。马里乌斯活了下来。"
+    combatDamageMultiplier: 1
+    lines: []
     waves: []
     waveA: {fileID: 0}
     waveB: {fileID: 0}
@@ -827,6 +893,8 @@ MonoBehaviour:
       placeholderSeconds: 10
       allowSkip: 1
       waitForSignal: 0
+      signalTimeoutSeconds: 60
+      caption: 
     prepareToDefense:
       cinematicPrefab: {fileID: 0}
       timeline: {fileID: 0}
@@ -834,6 +902,8 @@ MonoBehaviour:
       placeholderSeconds: 4
       allowSkip: 1
       waitForSignal: 0
+      signalTimeoutSeconds: 60
+      caption: 
     exit:
       cinematicPrefab: {fileID: 0}
       timeline: {fileID: 0}
@@ -841,6 +911,35 @@ MonoBehaviour:
       placeholderSeconds: 2
       allowSkip: 1
       waitForSignal: 0
+      signalTimeoutSeconds: 60
+      caption: 
+  playtestLabel: combat-v3-offscreen-volley-20261022
+  recordPlaytests: 1
+  calibrateEveryNewGame: 1
+  targetBeatBudget: 1830
+  enforceBeatBudget: 0
+  firstChapterFrames:
+  - image: {fileID: 21300000, guid: 16ba0bbbef3644adbab2a8707d7e49cd, type: 3}
+    beats: 8
+    subtitle: 
+    voiceOver: {fileID: 0}
+    voiceDelaySeconds: 0
+  - image: {fileID: 21300000, guid: e8c3e6cd9cf648ed828ce0b715331932, type: 3}
+    beats: 6
+    subtitle: 
+    voiceOver: {fileID: 0}
+    voiceDelaySeconds: 0
+  - image: {fileID: 21300000, guid: 44483333dce441159dcb4cda4e732310, type: 3}
+    beats: 10
+    subtitle: 
+    voiceOver: {fileID: 0}
+    voiceDelaySeconds: 0
+  - image: {fileID: 21300000, guid: bf43b5dbab9c4228a6474501757cd6d2, type: 3}
+    beats: 8
+    subtitle: 
+    voiceOver: {fileID: 0}
+    voiceDelaySeconds: 0
+  firstChapterCrossfadeSeconds: 0.6
   constructionLimit: 600
   lastChancesPerChapter: 2
   chordMaxGap: 0.12
@@ -854,6 +953,8 @@ MonoBehaviour:
     placeholderSeconds: 0.85
     allowSkip: 1
     waitForSignal: 0
+    signalTimeoutSeconds: 60
+    caption: 
   ending:
     cinematicPrefab: {fileID: 0}
     timeline: {fileID: 0}
@@ -861,3 +962,5 @@ MonoBehaviour:
     placeholderSeconds: 4
     allowSkip: 1
     waitForSignal: 0
+    signalTimeoutSeconds: 60
+    caption: 

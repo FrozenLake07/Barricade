@@ -1,6 +1,6 @@
 using UnityEngine;
 
-// 三人同帧入场，每人一次投弹，总计三枚，命中拍为+10/+15/+20。
+// Three volleys: every living grenadier throws together. Health and projectiles belong to individuals.
 public sealed class WaveSquad : MonoBehaviour
 {
     WaveDirector director;
@@ -16,7 +16,7 @@ public sealed class WaveSquad : MonoBehaviour
     }
     void Update()
     {
-        if (CampaignSession.Suspended) return;
+        if (CampaignSession.Suspended || DebugConsole.SimulationPaused) return;
         if(director==null){Destroy(gameObject);return;}
         if(!StoryDirector.CombatRunning||director.Frozen)return;
         bool any=false;
@@ -24,23 +24,25 @@ public sealed class WaveSquad : MonoBehaviour
         {
             var go=members[i];if(go==null||go.GetComponent<EnemyHP>().HP<=0)continue;
             any=true;var move=go.GetComponent<EnemyMove>();
-            go.GetComponent<Rigidbody2D>().velocity=go.transform.position.x-start[i]<move.leaderAdvanceDistance?Vector2.right*move.speed:Vector2.zero;
+            float stop=director.SquadThrowX(lane)-i*.9f;
+            go.GetComponent<Rigidbody2D>().velocity=round>=director.Script.squadImpactOffsets.Length||go.transform.position.x<stop?Vector2.right*move.speed:Vector2.zero;
         }
         if(!any){Destroy(gameObject);return;}
         var offsets=director.Script.squadImpactOffsets;
-        if(round>=Mathf.Min(3,offsets.Length))
-        {
-            foreach(var go in members)if(go!=null)Destroy(go);
-            Destroy(gameObject);return;
-        }
+        if(round>=Mathf.Min(3,offsets.Length))return; // Survivors march onward; completing a volley never kills them.
         int impact=director.ImpactBeat(beat+offsets[round]);
-        double launch=impact-2;
-        var shooter=round<members.Length?members[round]:null;
+        double launch=impact-3; // Three reaction beats for three independent grenades.
         if(!animationStarted&&director.Position>=launch-EnemyVisualAnimation.ThrowReleaseDelay/director.Period)
-        {animationStarted=true;if(shooter!=null)shooter.GetComponent<EnemyMove>().BeginWaveThrow();}
+        {
+            animationStarted=true;
+            foreach(var shooter in members)if(shooter!=null&&shooter.GetComponent<EnemyHP>().HP>0)shooter.GetComponent<EnemyMove>().BeginWaveThrow();
+        }
         if(director.Position<launch)return;
-        if(shooter!=null&&shooter.GetComponent<EnemyHP>().HP>0)shooter.GetComponent<EnemyMove>().ThrowWaveBomb(director,lane,impact,tagName+"-"+(round+1));
+        int throwing=0;
+        for(int i=0;i<members.Length;i++)
+            if(members[i]!=null&&members[i].GetComponent<EnemyHP>().HP>0)
+            {members[i].GetComponent<EnemyMove>().ThrowWaveBomb(director,lane,impact,tagName+"-volley"+(round+1)+"-member"+(i+1));throwing++;}
+        CampaignTelemetry.Current?.Record("grenadier_volley",$"round={round+1};alive={throwing};impact={impact}");
         round++;animationStarted=false;
     }
-    void OnDestroy(){if(members!=null)foreach(var go in members)if(go!=null)Destroy(go);}
 }

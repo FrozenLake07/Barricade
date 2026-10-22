@@ -78,7 +78,8 @@ public class TargetMarker : MonoBehaviour
             sprite = reloadingSprite;
             if (reloadFrames != null && reloadFrames.Length > 0)
             {
-                float progress = 1f - shooter.ReloadRemaining / Mathf.Max(0.001f, shooter.reloadTime);
+                float progress = StoryDirector.Active ? shooter.CampaignReloadProgress
+                    : 1f - shooter.ReloadRemaining / Mathf.Max(0.001f, shooter.reloadTime);
                 int index = Mathf.Clamp(Mathf.FloorToInt(Mathf.Clamp01(progress) * (reloadFrames.Length - 1)),
                                         0, reloadFrames.Length - 1);
                 if (reloadFrames[index] != null) sprite = reloadFrames[index];

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2ce3cc5c62a410f802e7a5b9eeaacdc, type: 3}
   m_Name: GameFont
   m_EditorClassIdentifier: 
-  font: {fileID: 12800000, guid: 51c23b6f818b61945827c3da5a60510d, type: 3}
+  font: {fileID: 12800000, guid: c3faae3aec6b4e68aa27f7a648097b06, type: 3}

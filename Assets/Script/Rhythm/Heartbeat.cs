@@ -1,6 +1,6 @@
 using UnityEngine;
 
-/// 心跳效果。挂到想搏动的物体上，直接读节拍脚本的静态计时器，不需要拖引用。
+/// 战役直接读取CampaignBeatClock；单独运行场景时读取Tap/TapSec静态计时器。
 ///   beattime 递减期间 —— 越接近归零，跳得越重、越快
 ///   perfecttime 窗口内 —— 缩到 restScale 并完全静止
 ///
@@ -59,9 +59,7 @@ public class Heartbeat : MonoBehaviour
 
     Vector3 baseScale;
     float phase;           // 0~1 的心跳相位
-    float prevBeat = -1f;
-    bool beatMoved;        // 见过 beattime 变化（用来判断来源选对没有）
-    bool warned;
+    readonly HeartbeatClockWatch clockWatch=new HeartbeatClockWatch();
     bool wasMusic;
     float blendRemaining;
     Vector3 lastMusicScale;
@@ -86,9 +84,12 @@ public class Heartbeat : MonoBehaviour
     }
 
     // 统一的读数入口 —— 两个来源的字段名是一样的
-    float BeatTime    => source == BeatSource.TapSec ? TapSec.beattime    : Tap.beattime;
-    float SetBeatTime => source == BeatSource.TapSec ? TapSec.Setbeattime : Tap.Setbeattime;
-    float PerfectTime => source == BeatSource.TapSec ? TapSec.perfecttime : Tap.perfecttime;
+    float BeatTime    => StoryDirector.Active?StoryDirector.Current.Clock.BeatRemaining:source == BeatSource.TapSec ? TapSec.beattime : Tap.beattime;
+    float SetBeatTime => StoryDirector.Active?StoryDirector.Current.Clock.Wait:source == BeatSource.TapSec ? TapSec.Setbeattime : Tap.Setbeattime;
+    float PerfectTime => StoryDirector.Active?StoryDirector.Current.Clock.PerfectRemaining:source == BeatSource.TapSec ? TapSec.perfecttime : Tap.perfecttime;
+    float NextBeatTime => StoryDirector.Active?StoryDirector.Current.Clock.NextWait:source==BeatSource.TapSec?TapSec.oribeattime:Tap.oribeattime;
+    float PerfectWindow => StoryDirector.Active?StoryDirector.Current.Clock.Window:source==BeatSource.TapSec?TapSec.Setperfecttime:Tap.Setperfecttime;
+    bool FreeRest => !StoryDirector.Active&&source==BeatSource.Tap&&Tap.IsResting;
 
     void Awake()
     {
@@ -103,6 +104,7 @@ public class Heartbeat : MonoBehaviour
 #endif
         timingTap = FindFirstObjectByType<Tap>();
         timingTapSec = FindFirstObjectByType<TapSec>();
+        if(StoryDirector.Active)return; // CampaignBeatClock is authoritative, even while scene scripts are absent.
         if (source != BeatSource.Auto) return;
 
         // 哪个节拍脚本在这个场景里存在，就用哪个
@@ -114,14 +116,15 @@ public class Heartbeat : MonoBehaviour
 
     void LateUpdate()
     {
-        if (CampaignSession.Suspended)
+        if (CampaignSession.Suspended || DebugConsole.SimulationPaused)
         {
+            clockWatch.Reset();
             audioOutput?.Stop();
             transform.localScale=CampaignSession.Counting?baseScale*(1f+maxAmplitude*Pulse(CampaignSession.CountPhase)):baseScale*restScale;
             return;
         }
         if (StoryDirector.Active && !StoryDirector.HeartbeatRunning)
-        { audioOutput?.Stop(); transform.localScale = baseScale * restScale; return; }
+        { clockWatch.Reset();audioOutput?.Stop(); transform.localScale = baseScale * restScale; return; }
         UpdateHeartbeat();
         UpdateAudioPlan();
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
@@ -131,7 +134,7 @@ public class Heartbeat : MonoBehaviour
 
     void UpdateHeartbeat()
     {
-        sampledMusicMode = RhythmManager.TryGetMusicFrame(out sampledMusic);
+        sampledMusicMode = !StoryDirector.Active&&RhythmManager.TryGetMusicFrame(out sampledMusic);
         if (sampledMusicMode)
         {
             MusicBeatFrame music = sampledMusic;
@@ -148,7 +151,7 @@ public class Heartbeat : MonoBehaviour
             wasMusic = true;
             lastMusicScale = transform.localScale;
             phase = 0f;
-            beatMoved = true;
+            clockWatch.Reset();
             return;
         }
         if (wasMusic)
@@ -160,28 +163,23 @@ public class Heartbeat : MonoBehaviour
         }
         // 休息只限制建造输入。自主模式用稳定的基础节拍继续搏动，
         // 不把冻结的beattime误当作不断逼近Perfect的高速脉冲；音乐模式仍优先跟DSP。
-        if (source == BeatSource.Tap && Tap.IsResting)
+        if (FreeRest)
         {
             float restPeriod = BlendFreePeriod(Mathf.Max(0.5f, SetBeatTime));
             visualPeriodForDebug = restPeriod;
             AdvancePulsePhase(restPeriod);
-            beatMoved = true;
-            prevBeat = BeatTime;
+            clockWatch.Reset();
             SetFreeScale(baseScale * (1f + maxAmplitude * Pulse(phase)));
             return;
         }
         float beat = BeatTime;
         float setBeat = SetBeatTime;
 
-        // 来源自检：5 秒内 beattime 一次都没变过，说明这个来源没在跑
-        if (prevBeat >= 0f && beat != prevBeat) beatMoved = true;
-        prevBeat = beat;
-
-        if (!warned && !beatMoved && Time.time > 5f)
+        if (clockWatch.Observe(beat,Time.deltaTime,Time.timeScale>0))
         {
-            warned = true;
-            Debug.LogWarning($"[Heartbeat] 节拍来源是 {source}，但它的 beattime 在 5 秒内一次都没变。" +
-                             $"检查一下场景里到底挂的是 Tap 还是 TapSec。");
+            Debug.LogWarning(StoryDirector.Active?
+                "[Heartbeat] CampaignBeatClock 在实际运行的5秒内未推进，请检查战役阶段和时钟。":
+                $"[Heartbeat] 节拍来源 {source} 在实际运行的5秒内未变化，请检查该场景计时组件是否启用。");
         }
 
         // 完美窗口（beattime 已归零、perfecttime 还没超时）：完全静止
@@ -210,10 +208,10 @@ public class Heartbeat : MonoBehaviour
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
     void UpdatePerfectDebug()
     {
-        if (Input.GetKeyDown(KeyCode.F3)) showPerfectTimer = !showPerfectTimer;
+        if (!DebugConsole.CapturingInput && Input.GetKeyDown(KeyCode.F3)) showPerfectTimer = !showPerfectTimer;
         if (!showPerfectTimer) return;
-        if (Input.GetKeyDown(KeyCode.F6)) RhythmManager.AdjustOutputDelay(-10f);
-        if (Input.GetKeyDown(KeyCode.F7)) RhythmManager.AdjustOutputDelay(10f);
+        if (!DebugConsole.CapturingInput && Input.GetKeyDown(KeyCode.F6)) RhythmManager.AdjustOutputDelay(-10f);
+        if (!DebugConsole.CapturingInput && Input.GetKeyDown(KeyCode.F7)) RhythmManager.AdjustOutputDelay(10f);
 
         // 每帧在玩家逻辑之后读取一次；OnGUI只绘制快照，不推进或重置计时。
         // 和本帧声音、缩放共用一次采样，避免DSP跨窗口后面板显示下一状态。
@@ -221,7 +219,7 @@ public class Heartbeat : MonoBehaviour
         MusicBeatFrame music = sampledMusic;
         float beat = musicMode ? music.BeatTime : BeatTime;
         float perfect = musicMode ? music.PerfectTime : PerfectTime;
-        bool resting = source == BeatSource.Tap && Tap.IsResting;
+        bool resting = FreeRest;
         debugPerfectActive = musicMode ? music.Started && music.IsPerfect
             : !resting && beat <= 0f && perfect > 0f;
         bool hasNext = !musicMode || music.HasNextPerfect;
@@ -237,7 +235,7 @@ public class Heartbeat : MonoBehaviour
             + "F6: -10ms    F7: +10ms (sound late: F7)\n"
             + "Scheduled: " + (audioOutput != null ? audioOutput.ScheduledCount : 0)
             + "    late skipped: " + (audioOutput != null ? audioOutput.LateSkipped : 0) + "\n"
-            + "Mode: " + (musicMode ? (music.UsesDynamicBpm ? "DYNAMIC BPM" : "MUSIC ACCENTS") : "FREE") + "    Source: " + source + "\n"
+            + "Mode: " + (musicMode ? (music.UsesDynamicBpm ? "DYNAMIC BPM" : "MUSIC ACCENTS") : "FREE") + "    Source: " + (StoryDirector.Active?"CampaignBeatClock":source.ToString()) + "\n"
             + "Tempo: " + (musicMode ? music.CurrentBpm.ToString("F1") + " BPM"
                 : visualPeriodForDebug > 0f ? (60f / visualPeriodForDebug).ToString("F1") + " visual BPM" : "--")
                 + (musicMode ? "   +/- " + music.WindowHalfWidth.ToString("F3") + " s" : "") + "\n"
@@ -287,7 +285,7 @@ public class Heartbeat : MonoBehaviour
 
     void UpdateAudioPlan()
     {
-        bool clockRunning = sampledMusicMode || (source == BeatSource.Tap
+        bool clockRunning = StoryDirector.Active?StoryDirector.HeartbeatRunning:sampledMusicMode || (source == BeatSource.Tap
             ? timingTap != null && timingTap.isActiveAndEnabled && ConstructionStageFlow.CanAcceptInput(timingTap)
             : timingTapSec != null && timingTapSec.isActiveAndEnabled);
         if (!enableHeartbeatSound || Time.timeScale <= 0f || AudioListener.pause || !clockRunning)
@@ -299,7 +297,7 @@ public class Heartbeat : MonoBehaviour
         if (audioOutput == null) audioOutput = new HeartbeatAudioOutput(gameObject);
         double now = AudioSettings.dspTime, delay = RhythmManager.OutputDelaySeconds;
         audioOutput.BeginFrame(now, delay, heartbeatVolume * SfxPlayer.MasterVolume);
-        bool rest = !sampledMusicMode && source == BeatSource.Tap && Tap.IsResting;
+        bool rest = !sampledMusicMode && FreeRest;
         bool gap = !sampledMusicMode && HeartbeatPulseTiming.IsPerfectGap(BeatTime, PerfectTime);
         int mode = sampledMusicMode ? 1 : rest ? 2 : gap ? 3 : BeatTime > 0f ? 4 : 5;
         if (lastOutputDelay >= 0d && System.Math.Abs(lastOutputDelay - delay) > .0005d)
@@ -341,7 +339,7 @@ public class Heartbeat : MonoBehaviour
             // Perfect期间允许提前提交“下一段beattime”的声音，届时才会到耳朵。
             // 此时不能对声源粗暴Stop，否则蓝牙永远来不及追上画面。
             double nextStart = now + PerfectTime / scale;
-            float nextBeat = Mathf.Max(.5f, source == BeatSource.TapSec ? TapSec.oribeattime : Tap.oribeattime);
+            float nextBeat = Mathf.Max(.05f,NextBeatTime);
             SubmitFreeSpan(FreeSpan(nextStart, nextStart + nextBeat / scale, 0d, nextBeat, nextBeat, false),
                 audioGeneration + 1L, horizon);
             return;
@@ -350,8 +348,8 @@ public class Heartbeat : MonoBehaviour
         double endNow = now + BeatTime / scale;
         SubmitFreeSpan(FreeSpan(now, endNow, freePulseCycle + phase, BeatTime, SetBeatTime, false),
             audioGeneration, horizon);
-        double followingStart = endNow + (source == BeatSource.TapSec ? TapSec.Setperfecttime : Tap.Setperfecttime) / scale;
-        float followingBeat = Mathf.Max(.5f, source == BeatSource.TapSec ? TapSec.oribeattime : Tap.oribeattime);
+        double followingStart = endNow + PerfectWindow / scale;
+        float followingBeat = Mathf.Max(.05f,NextBeatTime);
         SubmitFreeSpan(FreeSpan(followingStart, followingStart + followingBeat / scale,
             0d, followingBeat, followingBeat, false), audioGeneration + 1L, horizon);
     }
@@ -383,6 +381,7 @@ public class Heartbeat : MonoBehaviour
 
     void OnDisable()
     {
+        clockWatch.Reset();
         if (audioOutput != null) audioOutput.Stop();
         previousAudioMode = -1;
     }

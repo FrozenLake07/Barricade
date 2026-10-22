@@ -1,22 +1,23 @@
 # Script目录使用说明
 
-按功能整理，共47个脚本：39个运行时脚本、8个编辑器脚本。
+按功能整理，共123个脚本：100个运行时脚本、23个编辑器脚本。
 
 | 文件夹 | 放什么 | 脚本数 |
 | --- | --- | --- |
-| `Core/` | 全局数值、阶段流程、场景音乐衔接和通用跟随 | 4 |
-| `Rhythm/` | 玩家节奏、心脏动画、Perfect和音乐计时 | 3 |
-| `Audio/` | 全局音效、心跳音频排程与延迟计算 | 3 |
+| `Debug/` | 调试控制台、命令解析与运行时覆盖 | 4 |
+| `Core/` | 全局数值、阶段流程、场景音乐衔接和通用跟随 | 16 |
+| `Rhythm/` | 玩家节奏、心脏动画、Perfect和音乐计时 | 4 |
+| `Audio/` | 全局音效、心跳音频排程与延迟计算 | 5 |
 | `Gameplay/Construction/` | 场景1的QTE与街垒建造 | 2 |
-| `Gameplay/Combat/` | 场景2的操作、开枪、弹道、伤害与手榴弹 | 7 |
-| `Enemies/` | 刷敌、敌人行为、血量与敌人组节奏 | 4 |
+| `Gameplay/Combat/` | 场景2的操作、开枪、弹道、伤害与手榴弹 | 11 |
+| `Enemies/` | 刷敌、敌人行为、血量与敌人组节奏 | 16 |
 | `Animation/Hero/` | 主角状态机、Animator驱动、建造/战斗动作与剧情播放 | 7 |
 | `Animation/Enemies/` | 敌人动画库、Animator驱动与掷弹兵原图骨架 | 3 |
-| `UI/` | 心脏血条、按键反馈和准星 | 3 |
-| `Legacy/` | 旧实现及占位脚本；目前未找到场景/预制体/资产引用，保留供回查 | 3 |
+| `UI/` | 心脏血条、按键反馈和准星 | 28 |
+| `Legacy/` | 旧实现及占位脚本；目前未找到场景/预制体/资产引用，保留供回查 | 4 |
 | `Editor/Animation/` | 主角与敌人动画资产生成和绑定工具 | 2 |
 | `Editor/Audio/` | 心跳音频配置核验与实际排程记录 | 2 |
-| `Editor/Diagnostics/` | 动画导入、播放及场景2显示诊断 | 4 |
+| `Editor/Diagnostics/` | 动画导入、播放及场景2显示诊断 | 14 |
 
 ## 常用修改位置
 
@@ -36,4 +37,6 @@
 Legacy只表示历史实现/占位，不代表可以直接删除；删除前仍应确认未来用途和引用。
 Assets/Test1.cs在本次Script目录整理范围之外，保持原位置。
 
-项目待办：游戏开头的调音／声音延迟校准界面尚未实现，见工程根目录HANDOVER.md。
+开头调音／声音延迟校准已恢复；当前状态以工程根目录 HANDOVER.md 的最新交接为准。
+
+控制台帮助：工程根目录 DEBUG_CONSOLE.md；源码 Debug/、Core/StoryDirector.Debug.cs、Enemies/WaveDirector.Debug.cs。原生检查位于 Editor/Diagnostics/DebugConsoleVerification.cs。

@@ -17,6 +17,7 @@ public sealed class CampaignSession : MonoBehaviour
     public static bool Counting=>Current!=null&&Current.mode==Mode.CountIn;
     public static float CountPhase=>Counting?Current.count.Phase:0f;
     public static string SavePath=>Path.Combine(Application.persistentDataPath,"barricade-slot.sav");
+    public static void BlockCurrentInput(){if(Current!=null)Current.blockedThroughFrame=Time.frameCount+1;}
     StoryDirector owner;
     StartScreenView screen;
     CampaignMenuView menu;
@@ -71,8 +72,9 @@ public sealed class CampaignSession : MonoBehaviour
     }
     void Update()
     {
-        if(owner==null||menu==null)return;
-        if(mode==Mode.Live&&Input.GetKeyDown(KeyCode.Escape)&&owner.CanPause)Pause();
+        if(owner==null||menu==null||DebugConsole.CapturingInput)return;
+        if(mode==Mode.Live&&Input.GetKeyDown(KeyCode.Escape)&&owner.CanPause)
+        {var film=owner.GetComponent<CampaignCinematicView>();if(film==null||!film.IsNaming||!film.Composing)Pause();}
         else if((mode==Mode.Paused||mode==Mode.CountIn)&&Input.GetKeyDown(KeyCode.Escape))
         {
             if(mode==Mode.CountIn){if(counting!=null)StopCoroutine(counting);pulse.Stop();mode=Mode.Paused;menu.countInPage.SetActive(false);menu.pausePage.SetActive(true);Select(menu.resume);}
@@ -96,19 +98,29 @@ public sealed class CampaignSession : MonoBehaviour
         mode=Mode.Paused;Freeze();menu.pausePage.SetActive(true);RefreshSlot();Select(menu.resume);
     }
     public void Resume()
-    {if(mode==Mode.Paused)counting=StartCoroutine(CountAndResume());}
+    {
+        if(mode!=Mode.Paused)return;
+        if(owner.Phase==CampaignPhase.Transition)
+        {
+            menu.pausePage.SetActive(false);menu.countInPage.SetActive(false);events.SetSelectedGameObject(null);
+            blockedThroughFrame=Time.frameCount;mode=Mode.Live;Thaw();return;
+        }
+        counting=StartCoroutine(CountAndResume());
+    }
     IEnumerator CountAndResume()
     {
         mode=Mode.CountIn;menu.pausePage.SetActive(false);menu.countInPage.SetActive(true);events.SetSelectedGameObject(null);
-        count.Reset(owner.Clock.Period>.1f?owner.Clock.Period:1.35f);int hit=0;menu.countInText.text="3";
+        count.Reset(owner.Clock.Period>.1f?owner.Clock.Period:1.35f);int hit=0;bool consoleHeldPulse=false;menu.countInText.text="3";
         while(!count.Finished)
         {
+            if(DebugConsole.SimulationPaused){if(!consoleHeldPulse){pulse.Pause();consoleHeldPulse=true;}yield return null;continue;}
+            if(consoleHeldPulse){pulse.UnPause();consoleHeldPulse=false;}
             menu.countInText.text=count.Remaining.ToString();
             // Each heartbeat has two audible pulses, matching the project's heart visual.
             double at=(hit/2+(hit%2==0?.12:.30))*count.Period;
             if(hit<ResumeCountIn.Beats*2&&count.Elapsed>=at){if(pulseClip!=null)pulse.PlayOneShot(pulseClip);hit++;}
             yield return null;
-            count.Advance(Math.Min(.1f,Time.unscaledDeltaTime));
+            if(!DebugConsole.SimulationPaused)count.Advance(Math.Min(.1f,Time.unscaledDeltaTime));
         }
         menu.countInPage.SetActive(false);pulse.Stop();blockedThroughFrame=Time.frameCount;
         mode=Mode.Live;Thaw();counting=null;
@@ -117,7 +129,7 @@ public sealed class CampaignSession : MonoBehaviour
     {
         bool exists=CampaignSaveData.TryRead(SavePath,out var saved,out string error);
         menu.continueGame.interactable=menu.load.interactable=exists;menu.save.interactable=owner.CanSave;
-        string description=exists?$"唯一存档：第{saved.chapter}章  {ReadOpened(saved)}拍\n{DateTime.Parse(saved.utc).ToLocalTime():yyyy-MM-dd HH:mm:ss}":error;
+        string description=exists?$"存档：{CampaignHudPresentation.Heading(saved.chapter,owner.table.chapters[saved.chapter-1].title)}\n{DateTime.Parse(saved.utc).ToLocalTime():yyyy-MM-dd HH:mm:ss}":error;
         menu.titleStatus.text=description;
         menu.pauseStatus.text=(owner.CanSave?"Esc：继续   存档将覆盖唯一存档位":"过场播放中，结束后可存档")+"\n"+description;
     }

@@ -28,6 +28,7 @@ public class TapSec : MonoBehaviour
     void Update()
     {
         if (StoryDirector.Active) { StoryDirector.Current.CombatInput(this); return; }
+        if(DebugConsole.CapturingInput)return;
         // 选目标与换轨都是准备动作，不推进节拍；同帧切换后按 Space 也会禁射。
         if (Input.GetKeyDown(KeyCode.W)) SetAimMode("Up");
         else if (Input.GetKeyDown(KeyCode.S)) SetAimMode("Down");
