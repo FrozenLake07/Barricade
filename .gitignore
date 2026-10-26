@@ -46,5 +46,5 @@ desktop.ini
 *.log
 *.log.*
 
-# 本地音频素材（体积大、受版权保护，不入库）
-/Assets/Audio/
+# 本地原始音频备份（不入库）
+/_LocalAudio/

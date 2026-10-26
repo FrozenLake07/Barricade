@@ -50,7 +50,7 @@ MonoBehaviour:
   titleMusic: {fileID: 0}
   chapterMusic: {fileID: 8300000, guid: bbbb2fc3fdc6d8e4ca257e9d4412725d, type: 3}
   mourningMusic: {fileID: 8300000, guid: df34bae7571796c4a8b779a640fda94e, type: 3}
-  finaleMusic: {fileID: 8300000, guid: 5571424cb430feb4895e0e44f8d6f804, type: 3}
+  finaleMusic: {fileID: 0}
   hopeFinaleCueSeconds: 64.9
   cinematicMusicVolume: 0.65
   gameplayMusicVolume: 0.16
