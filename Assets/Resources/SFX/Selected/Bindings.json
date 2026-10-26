@@ -1,0 +1,286 @@
+{
+  "version": 1,
+  "policy": "one_fixed_clip_per_event",
+  "bindings": [
+    {
+      "id": "action_build_normal",
+      "path": "Selected/action_build_normal_01"
+    },
+    {
+      "id": "action_build_wrong",
+      "path": "Selected/action_build_wrong_01"
+    },
+    {
+      "id": "action_build_perfect",
+      "path": "Selected/action_build_perfect_01"
+    },
+    {
+      "id": "action_rest_breath",
+      "path": "Selected/action_rest_breath_01"
+    },
+    {
+      "id": "action_aim_adjust",
+      "path": "Selected/action_aim_adjust_01"
+    },
+    {
+      "id": "weapon_blocked",
+      "path": "Selected/weapon_blocked_01"
+    },
+    {
+      "id": "weapon_reload_paper",
+      "path": "Selected/weapon_reload_paper_01"
+    },
+    {
+      "id": "weapon_reload_mechanism",
+      "path": "Selected/weapon_reload_mechanism_01"
+    },
+    {
+      "id": "weapon_no_target",
+      "path": "Selected/weapon_no_target_02"
+    },
+    {
+      "id": "weapon_reload_ready",
+      "path": "Selected/weapon_reload_ready_02"
+    },
+    {
+      "id": "weapon_enemy_musket_fire",
+      "path": "Selected/weapon_enemy_musket_fire_01"
+    },
+    {
+      "id": "weapon_player_musket_fire",
+      "path": "Selected/weapon_player_musket_fire_03"
+    },
+    {
+      "id": "combat_body_fall",
+      "path": "Selected/combat_body_fall_03"
+    },
+    {
+      "id": "threat_grenade_prepare",
+      "path": "Selected/threat_grenade_prepare_01"
+    },
+    {
+      "id": "threat_grenade_throw",
+      "path": "Selected/threat_grenade_throw_01"
+    },
+    {
+      "id": "threat_grenade_fuse_loop",
+      "path": "Selected/threat_grenade_fuse_loop_01"
+    },
+    {
+      "id": "threat_grenade_explode",
+      "path": "Selected/threat_grenade_explode_02"
+    },
+    {
+      "id": "threat_chain_debris",
+      "path": "Selected/threat_chain_debris_01"
+    },
+    {
+      "id": "build_pickup",
+      "path": "Selected/build_pickup_01"
+    },
+    {
+      "id": "build_putdown",
+      "path": "Selected/build_putdown_03"
+    },
+    {
+      "id": "build_drop",
+      "path": "Selected/build_drop_01"
+    },
+    {
+      "id": "footstep_cobblestone",
+      "path": "Selected/footstep_cobblestone_01"
+    },
+    {
+      "id": "character_pickup_ammunition",
+      "path": "Selected/character_pickup_ammunition_02"
+    },
+    {
+      "id": "structure_bullet_hit_wood",
+      "path": "Selected/structure_bullet_hit_wood_01"
+    },
+    {
+      "id": "structure_bullet_hit_stone",
+      "path": "Selected/structure_bullet_hit_stone_01"
+    },
+    {
+      "id": "structure_body_collision",
+      "path": "Selected/structure_body_collision_01"
+    },
+    {
+      "id": "structure_crack_light",
+      "path": "Selected/structure_crack_light_01"
+    },
+    {
+      "id": "structure_collapse",
+      "path": "Selected/structure_collapse_01"
+    },
+    {
+      "id": "structure_crack_heavy",
+      "path": "Selected/structure_crack_heavy_02"
+    },
+    {
+      "id": "artillery_fire",
+      "path": "Selected/artillery_fire_01"
+    },
+    {
+      "id": "artillery_wall_impact",
+      "path": "Selected/artillery_wall_impact_01"
+    },
+    {
+      "id": "artillery_chain_detail",
+      "path": "Selected/artillery_chain_detail_01"
+    },
+    {
+      "id": "artillery_flyby",
+      "path": "Selected/artillery_flyby_02"
+    },
+    {
+      "id": "ambience_wind_loop",
+      "path": "Selected/ambience_wind_loop_01"
+    },
+    {
+      "id": "ambience_fire_detail_loop",
+      "path": "Selected/ambience_fire_detail_loop_01"
+    },
+    {
+      "id": "ambience_carriage_pass_candidate",
+      "path": "Selected/ambience_carriage_pass_candidate_01"
+    },
+    {
+      "id": "ambience_bell_distant_candidate",
+      "path": "Selected/ambience_bell_distant_candidate_01"
+    },
+    {
+      "id": "ui_confirm",
+      "path": "Selected/ui_confirm_02"
+    },
+    {
+      "id": "ui_cancel",
+      "path": "Selected/ui_cancel_02"
+    },
+    {
+      "id": "ui_unavailable",
+      "path": "Selected/ui_unavailable_02"
+    },
+    {
+      "id": "SFX-QTE-01",
+      "path": "Selected/action_build_perfect_01"
+    },
+    {
+      "id": "SFX-QTE-02",
+      "path": "Selected/action_build_normal_01"
+    },
+    {
+      "id": "SFX-QTE-03",
+      "path": "Selected/action_build_wrong_01"
+    },
+    {
+      "id": "SFX-QTE-04",
+      "path": "Selected/action_rest_breath_01"
+    },
+    {
+      "id": "SFX-BLD-01",
+      "path": "Selected/build_pickup_01"
+    },
+    {
+      "id": "SFX-BLD-02",
+      "path": "Selected/build_putdown_03"
+    },
+    {
+      "id": "SFX-BLD-06",
+      "path": "Selected/footstep_cobblestone_01"
+    },
+    {
+      "id": "SFX-BLD-07",
+      "path": "Selected/build_drop_01"
+    },
+    {
+      "id": "SFX-PLY-01",
+      "path": "Selected/weapon_player_musket_fire_03"
+    },
+    {
+      "id": "SFX-PLY-02",
+      "path": "Selected/weapon_no_target_02"
+    },
+    {
+      "id": "SFX-PLY-03",
+      "path": "Selected/weapon_reload_paper_01"
+    },
+    {
+      "id": "SFX-PLY-04",
+      "path": "Selected/weapon_reload_ready_02"
+    },
+    {
+      "id": "SFX-PLY-05",
+      "path": "Selected/action_aim_adjust_01"
+    },
+    {
+      "id": "SFX-PLY-06",
+      "path": "Selected/weapon_blocked_01"
+    },
+    {
+      "id": "SFX-ENM-01",
+      "path": "Selected/weapon_enemy_musket_fire_01"
+    },
+    {
+      "id": "SFX-ENM-02",
+      "path": ""
+    },
+    {
+      "id": "SFX-ENM-07",
+      "path": ""
+    },
+    {
+      "id": "SFX-BMB-01",
+      "path": "Selected/threat_grenade_throw_01"
+    },
+    {
+      "id": "SFX-BMB-02",
+      "path": "Selected/threat_grenade_fuse_loop_01"
+    },
+    {
+      "id": "SFX-BMB-03",
+      "path": "Selected/threat_grenade_hit_unexploded_01"
+    },
+    {
+      "id": "SFX-BMB-04",
+      "path": "Selected/threat_grenade_explode_02"
+    },
+    {
+      "id": "SFX-BMB-05",
+      "path": "Selected/threat_chain_debris_01"
+    },
+    {
+      "id": "SFX-WAL-01",
+      "path": "Selected/structure_bullet_hit_wood_01"
+    },
+    {
+      "id": "SFX-WAL-02",
+      "path": "Selected/structure_body_collision_01"
+    },
+    {
+      "id": "SFX-ART-01",
+      "path": "Selected/artillery_chain_detail_01"
+    },
+    {
+      "id": "SFX-ART-02",
+      "path": "Selected/artillery_fire_01"
+    },
+    {
+      "id": "SFX-ART-03",
+      "path": "Selected/artillery_flyby_02"
+    },
+    {
+      "id": "SFX-ART-04",
+      "path": "Selected/artillery_wall_impact_01"
+    },
+    {
+      "id": "SFX-SYS-03",
+      "path": ""
+    },
+    {
+      "id": "threat_grenade_hit_unexploded",
+      "path": "Selected/threat_grenade_hit_unexploded_01"
+    }
+  ]
+}

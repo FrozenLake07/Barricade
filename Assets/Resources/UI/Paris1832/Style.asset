@@ -11,20 +11,27 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 881d21e0cdda413494ba297ab29125e4, type: 3}
   m_Name: Paris1832Style
-  m_EditorClassIdentifier:
+  m_EditorClassIdentifier: 
   frame: {fileID: 21300000, guid: ec2e452b1bd049ad840ce913c3ed10ee, type: 3}
   paper: {fileID: 21300000, guid: a7c7a136eb62494487218c454c0d5628, type: 3}
   leather: {fileID: 21300000, guid: c986176764654bef83034c678c40c61f, type: 3}
   leadBall: {fileID: 21300000, guid: 8322ab0702d74dac98ecb87f3e86c5f4, type: 3}
-  titleBackground: {fileID: 21300000, guid: bf43b5dbab9c4228a6474501757cd6d2, type: 3}
+  titleBackground: {fileID: 21300000, guid: e40d28b458c8c304cb646dee68c7b3b1, type: 3}
   titleMark: {fileID: 21300000, guid: f1a57e3e7cbe4b02b5c84dd08a7927bb, type: 3}
-  heartEmpty: {fileID: 21300000, guid: b3e4ea89068e4816a311e0c5bd98c1ea, type: 3}
   heart: {fileID: 21300000, guid: d8ecc69acfa24e32a8bf77b1bca607ff, type: 3}
-  surface: {r: .025, g: .03, b: .035, a: .90}
+  heartEmpty: {fileID: 21300000, guid: b3e4ea89068e4816a311e0c5bd98c1ea, type: 3}
+  titleCovers:
+  - {fileID: 21300000, guid: e40d28b458c8c304cb646dee68c7b3b1, type: 3}
+  - {fileID: 21300000, guid: 8a2e2d516e68b6741a9954a1e06de9e3, type: 3}
+  - {fileID: 21300000, guid: c388d965e11684241bfddc8b078b4978, type: 3}
+  firstLaunchCover: {fileID: 21300000, guid: 027b9b993b8a4aa4cbcb25497cb5e9c6, type: 3}
+  titleFont: {fileID: 12800000, guid: 45ad6b50ac3baea409fae1924c429423, type: 3}
+  titleArtwork: {fileID: 21300000, guid: ca007cb949d99804bbd2f495a149f2fd, type: 3}
   ink: {r: 0.18, g: 0.16, b: 0.14, a: 1}
-  cream: {r: .88, g: .85, b: .77, a: 1}
-  red: {r: .50, g: .16, b: .14, a: 1}
-  muted: {r: .66, g: .64, b: .58, a: 1}
-  borderDensity: 1
+  cream: {r: 0.88, g: 0.85, b: 0.77, a: 1}
+  red: {r: 0.5, g: 0.16, b: 0.14, a: 1}
+  muted: {r: 0.66, g: 0.64, b: 0.58, a: 1}
   heartTint: {r: 1, g: 1, b: 1, a: 1}
   heartEmptyTint: {r: 1, g: 1, b: 1, a: 1}
+  surface: {r: 0.025, g: 0.03, b: 0.035, a: 0.9}
+  borderDensity: 1

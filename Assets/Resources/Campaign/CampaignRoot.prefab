@@ -50,10 +50,11 @@ MonoBehaviour:
   titleMusic: {fileID: 0}
   chapterMusic: {fileID: 8300000, guid: bbbb2fc3fdc6d8e4ca257e9d4412725d, type: 3}
   mourningMusic: {fileID: 8300000, guid: df34bae7571796c4a8b779a640fda94e, type: 3}
-  finaleMusic: {fileID: 8300000, guid: 0f5aeed3deecb4a45b35308435edf931, type: 3}
+  finaleMusic: {fileID: 8300000, guid: 5571424cb430feb4895e0e44f8d6f804, type: 3}
+  hopeFinaleCueSeconds: 64.9
   cinematicMusicVolume: 0.65
   gameplayMusicVolume: 0.16
-  gameplayMusicFadeSeconds: 0.45
+  gameplayMusicFadeSeconds: 2
   musicRecoveryFadeSeconds: 0.6
   endingPrefab: {fileID: 5941867462262186932, guid: 067bc018cc2842e45aa1eab36d34aed8, type: 3}
   screenPrefab: {fileID: 100000, guid: 98acc94e9d8d481185b87992b2ef8a69, type: 3}

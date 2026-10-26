@@ -1,0 +1,936 @@
+{
+  "version": 1,
+  "note": "Times follow AudioSource.time, in seconds. English speaker names only. Gavroche is labeled only in chapter 4. Chinese translations are adapted for the game; local ASR timings have not been manually listened through.",
+  "tracks": [
+    {
+      "id": "chapters-1-2",
+      "clip": "Do You Hear The People Sing",
+      "cues": [
+        {
+          "start": 15.76,
+          "end": 18.96,
+          "en": "Do you hear the people sing?",
+          "zh": "你可听见人民的歌声？",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 18.96,
+          "end": 22.26,
+          "en": "Singing the song of angry men?",
+          "zh": "他们唱着愤怒者的歌。",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 22.26,
+          "end": 25.38,
+          "en": "It is the music of a people",
+          "zh": "这是人民的歌声，",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 25.38,
+          "end": 28.76,
+          "en": "Who will not be slaves again!",
+          "zh": "他们不愿再做奴隶！",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 28.76,
+          "end": 31.98,
+          "en": "When the beating of your heart",
+          "zh": "当你的心跳，",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 31.98,
+          "end": 35.24,
+          "en": "Echoes the beating of the drums",
+          "zh": "与战鼓一同回响，",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 35.24,
+          "end": 37.92,
+          "en": "There is a life about to start",
+          "zh": "崭新的生活即将开始，",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 37.92,
+          "end": 41.76,
+          "en": "When tomorrow comes!",
+          "zh": "当明天到来！",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 41.76,
+          "end": 44.66,
+          "en": "Will you join in our crusade?",
+          "zh": "你愿加入我们的抗争吗？",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 44.66,
+          "end": 48.62,
+          "en": "Who will be strong and stand with me?",
+          "zh": "谁愿坚定地与我并肩？",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 48.62,
+          "end": 50.96,
+          "en": "Beyond the barricade",
+          "zh": "在街垒的另一边，",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 50.96,
+          "end": 54.78,
+          "en": "Is there a world you long to see?",
+          "zh": "可有你向往的世界？",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 54.78,
+          "end": 56.28,
+          "en": "Then join in the fight",
+          "zh": "那就加入这场战斗，",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 56.28,
+          "end": 60.72,
+          "en": "That will give you the right to be free!",
+          "zh": "为自己争得自由的权利！",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 60.72,
+          "end": 63.68,
+          "en": "Do you hear the people sing?",
+          "zh": "你可听见人民的歌声？",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 63.68,
+          "end": 66.76,
+          "en": "Singing the song of angry men?",
+          "zh": "他们唱着愤怒者的歌。",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 66.76,
+          "end": 69.88,
+          "en": "It is the music of a people",
+          "zh": "这是人民的歌声，",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 69.88,
+          "end": 72.84,
+          "en": "Who will not be slaves again!",
+          "zh": "他们不愿再做奴隶！",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 72.84,
+          "end": 75.96,
+          "en": "When the beating of your heart",
+          "zh": "当你的心跳，",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 75.96,
+          "end": 79,
+          "en": "Echoes the beating of the drums",
+          "zh": "与战鼓一同回响，",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 79,
+          "end": 81.76,
+          "en": "There is a life about to start",
+          "zh": "崭新的生活即将开始，",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 81.76,
+          "end": 85.4,
+          "en": "When tomorrow comes!",
+          "zh": "当明天到来！",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 85.4,
+          "end": 88.18,
+          "en": "Will you give all you can give",
+          "zh": "你愿献出自己的一切，",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 88.18,
+          "end": 91.72,
+          "en": "So that our banner may advance?",
+          "zh": "让我们的旗帜继续向前吗？",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 91.72,
+          "end": 94.2,
+          "en": "Some will fall and some will live",
+          "zh": "有人倒下，也有人活下来，",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 94.2,
+          "end": 98.04,
+          "en": "Will you stand up and take your chance?",
+          "zh": "你愿挺身而出，抓住这次机会吗？",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 98.04,
+          "end": 99.54,
+          "en": "The blood of the martyrs",
+          "zh": "牺牲者的鲜血，",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 99.54,
+          "end": 103.58,
+          "en": "Will water the meadows of France!",
+          "zh": "将浇灌法兰西的土地！",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 103.58,
+          "end": 106.54,
+          "en": "Do you hear the people sing?",
+          "zh": "你可听见人民的歌声？",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 106.54,
+          "end": 109.56,
+          "en": "Singing the song of angry men?",
+          "zh": "他们唱着愤怒者的歌。",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 109.56,
+          "end": 112.48,
+          "en": "It is the music of a people",
+          "zh": "这是人民的歌声，",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 112.48,
+          "end": 115.64,
+          "en": "Who will not be slaves again!",
+          "zh": "他们不愿再做奴隶！",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 115.64,
+          "end": 118.62,
+          "en": "When the beating of your heart",
+          "zh": "当你的心跳，",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 118.62,
+          "end": 121.64,
+          "en": "Echoes the beating of the drums",
+          "zh": "与战鼓一同回响，",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 121.64,
+          "end": 124.24,
+          "en": "There is a life about to start",
+          "zh": "崭新的生活即将开始，",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 124.24,
+          "end": 127.74,
+          "en": "When tomorrow comes!",
+          "zh": "当明天到来！",
+          "speaker": "Ensemble"
+        }
+      ]
+    },
+    {
+      "id": "chapter-3",
+      "clip": "CH03_OneDayMore_Javert",
+      "cues": [
+        {
+          "start": 0,
+          "end": 2.72,
+          "en": "One more day to revolution",
+          "zh": "再过一天，革命便将来临。",
+          "speaker": "Javert"
+        },
+        {
+          "start": 2.72,
+          "end": 5.42,
+          "en": "We will nip it in the bud",
+          "zh": "我们会把它扼杀在萌芽之中。",
+          "speaker": "Javert"
+        },
+        {
+          "start": 5.42,
+          "end": 8.21,
+          "en": "We'll be ready for these schoolboys",
+          "zh": "我们早已准备好对付这些学生。",
+          "speaker": "Javert"
+        }
+      ]
+    },
+    {
+      "id": "chapter-4",
+      "clip": "CH04_ParisLookDown_Gavroche",
+      "cues": [
+        {
+          "start": 0,
+          "end": 2.6,
+          "en": "How do you do? My name's Gavroche.",
+          "zh": "你们好！我叫 Gavroche。",
+          "speaker": "Gavroche"
+        },
+        {
+          "start": 2.6,
+          "end": 5.5,
+          "en": "These are my people. Here's my patch.",
+          "zh": "这些是我的街坊，这里是我的地盘。",
+          "speaker": "Gavroche"
+        },
+        {
+          "start": 5.5,
+          "end": 8.2,
+          "en": "Not much to look at, nothing posh",
+          "zh": "这里不起眼，也谈不上体面，",
+          "speaker": "Gavroche"
+        },
+        {
+          "start": 8.2,
+          "end": 11,
+          "en": "Nothing that you'd call up to scratch.",
+          "zh": "没什么能让你看得上眼。",
+          "speaker": "Gavroche"
+        },
+        {
+          "start": 11,
+          "end": 14,
+          "en": "This is my school, my high society",
+          "zh": "这里是我的学校，也是我的上流社会，",
+          "speaker": "Gavroche"
+        },
+        {
+          "start": 14,
+          "end": 16.7,
+          "en": "Here in the slums of Saint-Michel.",
+          "zh": "就在 Saint-Michel 的贫民街。",
+          "speaker": "Gavroche"
+        },
+        {
+          "start": 16.7,
+          "end": 19.5,
+          "en": "We live on crumbs of humble piety",
+          "zh": "我们靠人们施舍的一点面包屑过活，",
+          "speaker": "Gavroche"
+        },
+        {
+          "start": 19.5,
+          "end": 22.3,
+          "en": "Tough on the teeth, but what the hell!",
+          "zh": "硌牙又怎样，管它呢！",
+          "speaker": "Gavroche"
+        },
+        {
+          "start": 22.3,
+          "end": 25,
+          "en": "Think you're poor? Think you're free?",
+          "zh": "觉得自己穷？觉得自己自由？",
+          "speaker": "Gavroche"
+        },
+        {
+          "start": 25,
+          "end": 27.96,
+          "en": "Follow me! Follow me!",
+          "zh": "跟我来！跟我来！",
+          "speaker": "Gavroche"
+        }
+      ]
+    },
+    {
+      "id": "chapter-5",
+      "clip": "CH05_Javert_OpeningReport",
+      "cues": [
+        {
+          "start": 1.86,
+          "end": 4.14,
+          "en": "Listen, my friends, I have done as I said.",
+          "zh": "听着，朋友们，我已照说好的去做。",
+          "speaker": "Javert"
+        },
+        {
+          "start": 4.14,
+          "end": 7.02,
+          "en": "I have been to their lines, I have counted each man.",
+          "zh": "我去过他们的阵地，清点了每一个人。",
+          "speaker": "Javert"
+        },
+        {
+          "start": 7.02,
+          "end": 10.4,
+          "en": "I will tell what I can.",
+          "zh": "我会把知道的都告诉你们。",
+          "speaker": "Javert"
+        },
+        {
+          "start": 10.4,
+          "end": 12.84,
+          "en": "Better beware, they have armies to spare.",
+          "zh": "务必小心，他们的兵力绰绰有余。",
+          "speaker": "Javert"
+        },
+        {
+          "start": 12.84,
+          "end": 15.9,
+          "en": "And our danger is real; we will need all our cunning",
+          "zh": "危险就在眼前，我们必须用尽计谋，",
+          "speaker": "Javert"
+        },
+        {
+          "start": 15.9,
+          "end": 17.68,
+          "en": "To bring them to heel.",
+          "zh": "才能让他们屈服。",
+          "speaker": "Javert"
+        }
+      ]
+    },
+    {
+      "id": "chapter-6",
+      "clip": "CH06_DrinkWithMe_BeforeMarius",
+      "cues": [
+        {
+          "start": 0,
+          "end": 3.68,
+          "en": "Drink with me",
+          "zh": "与我共饮，",
+          "speaker": "Enjolras"
+        },
+        {
+          "start": 3.68,
+          "end": 7.88,
+          "en": "To days gone by.",
+          "zh": "敬那些逝去的日子。",
+          "speaker": "Enjolras"
+        },
+        {
+          "start": 7.88,
+          "end": 10.6,
+          "en": "To the life",
+          "zh": "敬那生活，",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 10.6,
+          "end": 15.28,
+          "en": "That used to be.",
+          "zh": "敬我们曾经拥有的生活。",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 15.28,
+          "end": 18.4,
+          "en": "At the shrine of friendship",
+          "zh": "在友谊的圣坛前，",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 18.4,
+          "end": 20.38,
+          "en": "Never say die.",
+          "zh": "永远不要轻言放弃。",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 20.38,
+          "end": 23.7,
+          "en": "Let the wine of friendship",
+          "zh": "让友谊的美酒，",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 23.7,
+          "end": 26.02,
+          "en": "Never run dry.",
+          "zh": "永远不会干涸。",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 26.02,
+          "end": 28.88,
+          "en": "Here's to you,",
+          "zh": "这一杯，敬你，",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 28.88,
+          "end": 35.02,
+          "en": "And here's to me.",
+          "zh": "也敬我自己。",
+          "speaker": "Ensemble"
+        }
+      ]
+    },
+    {
+      "id": "chapter-7",
+      "clip": "CH07_Javert_QuestionAndReply",
+      "cues": [
+        {
+          "start": 0,
+          "end": 3.06,
+          "en": "So what are we going to do with this snake in the grass?",
+          "zh": "我们该如何处置这个暗藏的叛徒？",
+          "speaker": "Enjolras"
+        },
+        {
+          "start": 3.06,
+          "end": 5.88,
+          "en": "Take this man and throw him in the tavern in there.",
+          "zh": "把这个人押进那边的酒馆。",
+          "speaker": "Enjolras"
+        },
+        {
+          "start": 5.88,
+          "end": 7.4,
+          "en": "The people will decide your fate,",
+          "zh": "人民将决定你的命运，",
+          "speaker": "Enjolras"
+        },
+        {
+          "start": 7.4,
+          "end": 8.96,
+          "en": "Inspector Javert.",
+          "zh": "Javert 警督。",
+          "speaker": "Enjolras"
+        },
+        {
+          "start": 8.96,
+          "end": 12.36,
+          "en": "Shoot me now or shoot me later.",
+          "zh": "现在开枪也好，以后开枪也罢。",
+          "speaker": "Javert"
+        },
+        {
+          "start": 12.36,
+          "end": 14.64,
+          "en": "Every schoolboy to his sport.",
+          "zh": "学生们各有各的消遣。",
+          "speaker": "Javert"
+        },
+        {
+          "start": 14.64,
+          "end": 17.6,
+          "en": "Death to each and every traitor!",
+          "zh": "所有叛徒，都该处死！",
+          "speaker": "Javert"
+        },
+        {
+          "start": 17.6,
+          "end": 20.06,
+          "en": "I renounce your people's court.",
+          "zh": "我不承认你们的人民法庭。",
+          "speaker": "Javert"
+        }
+      ]
+    },
+    {
+      "id": "mourning-ending",
+      "clip": "Empty Chairs At Empty Tables",
+      "cues": [
+        {
+          "start": 9,
+          "end": 16,
+          "en": "There's a grief that can't be spoken.",
+          "zh": "有一种悲伤，无法言说。",
+          "speaker": "Marius"
+        },
+        {
+          "start": 16,
+          "end": 22,
+          "en": "There's a pain goes on and on.",
+          "zh": "有一种痛，永无止息。",
+          "speaker": "Marius"
+        },
+        {
+          "start": 22,
+          "end": 27,
+          "en": "Empty chairs at empty tables,",
+          "zh": "空空的椅子，空空的桌子，",
+          "speaker": "Marius"
+        },
+        {
+          "start": 27,
+          "end": 36,
+          "en": "Now my friends are dead and gone.",
+          "zh": "如今我的朋友们都已离去。",
+          "speaker": "Marius"
+        },
+        {
+          "start": 36,
+          "end": 42,
+          "en": "Here they talked of revolution.",
+          "zh": "他们曾在这里谈论革命。",
+          "speaker": "Marius"
+        },
+        {
+          "start": 42,
+          "end": 48,
+          "en": "Here it was they lit the flame.",
+          "zh": "他们曾在这里点燃火焰。",
+          "speaker": "Marius"
+        },
+        {
+          "start": 48,
+          "end": 53,
+          "en": "Here they sang about tomorrow,",
+          "zh": "他们曾在这里歌唱明天，",
+          "speaker": "Marius"
+        },
+        {
+          "start": 53,
+          "end": 62,
+          "en": "And tomorrow never came.",
+          "zh": "可那个明天，再也没有到来。",
+          "speaker": "Marius"
+        },
+        {
+          "start": 62,
+          "end": 67,
+          "en": "From the table in the corner",
+          "zh": "从角落里的那张桌旁，",
+          "speaker": "Marius"
+        },
+        {
+          "start": 67,
+          "end": 72,
+          "en": "They could see a world reborn,",
+          "zh": "他们看见了重生的世界。",
+          "speaker": "Marius"
+        },
+        {
+          "start": 72,
+          "end": 77,
+          "en": "And they rose with voices ringing.",
+          "zh": "他们起身，歌声响亮。",
+          "speaker": "Marius"
+        },
+        {
+          "start": 77,
+          "end": 83,
+          "en": "I can hear them now!",
+          "zh": "如今我仍听得见！",
+          "speaker": "Marius"
+        },
+        {
+          "start": 83,
+          "end": 88,
+          "en": "The very words that they had sung",
+          "zh": "他们当年唱出的那些话，",
+          "speaker": "Marius"
+        },
+        {
+          "start": 88,
+          "end": 97,
+          "en": "Became their last communion,",
+          "zh": "成了他们最后的圣餐，",
+          "speaker": "Marius"
+        },
+        {
+          "start": 97,
+          "end": 102,
+          "en": "On the lonely barricade",
+          "zh": "就在那孤独的街垒上，",
+          "speaker": "Marius"
+        },
+        {
+          "start": 102,
+          "end": 107,
+          "en": "At dawn.",
+          "zh": "就在黎明时分。",
+          "speaker": "Marius"
+        },
+        {
+          "start": 107,
+          "end": 113,
+          "en": "Oh, my friends, my friends, forgive me,",
+          "zh": "啊，朋友们，请原谅我，",
+          "speaker": "Marius"
+        },
+        {
+          "start": 113,
+          "end": 118,
+          "en": "That I live and you are gone.",
+          "zh": "我还活着，你们却已离去。",
+          "speaker": "Marius"
+        },
+        {
+          "start": 118,
+          "end": 122,
+          "en": "There's a grief that can't be spoken.",
+          "zh": "有一种悲伤，无法言说。",
+          "speaker": "Marius"
+        },
+        {
+          "start": 122,
+          "end": 128,
+          "en": "There's a pain goes on and on.",
+          "zh": "有一种痛，永无止息。",
+          "speaker": "Marius"
+        },
+        {
+          "start": 128,
+          "end": 133,
+          "en": "Phantom faces at the window,",
+          "zh": "窗边浮现着熟悉的面容，",
+          "speaker": "Marius"
+        },
+        {
+          "start": 133,
+          "end": 137,
+          "en": "Phantom shadows on the floor,",
+          "zh": "地板上仿佛还有你们的身影。",
+          "speaker": "Marius"
+        },
+        {
+          "start": 137,
+          "end": 141,
+          "en": "Empty chairs at empty tables,",
+          "zh": "空空的椅子，空空的桌子，",
+          "speaker": "Marius"
+        },
+        {
+          "start": 141,
+          "end": 147,
+          "en": "Where my friends will meet no more.",
+          "zh": "朋友们再也不会在这里相聚。",
+          "speaker": "Marius"
+        },
+        {
+          "start": 147,
+          "end": 155,
+          "en": "Oh, my friends, my friends, don't ask me",
+          "zh": "啊，朋友们，不要问我，",
+          "speaker": "Marius"
+        },
+        {
+          "start": 155,
+          "end": 161,
+          "en": "What your sacrifice was for.",
+          "zh": "你们的牺牲究竟是为了什么。",
+          "speaker": "Marius"
+        },
+        {
+          "start": 161,
+          "end": 168,
+          "en": "Empty chairs at empty tables,",
+          "zh": "空空的椅子，空空的桌子，",
+          "speaker": "Marius"
+        },
+        {
+          "start": 168,
+          "end": 179,
+          "en": "Where my friends will sing no more.",
+          "zh": "朋友们再也不会在这里歌唱。",
+          "speaker": "Marius"
+        }
+      ]
+    },
+    {
+      "id": "hope-ending",
+      "clip": "Hope_MourningAndHope",
+      "cues": [
+        {
+          "start": 11,
+          "end": 18,
+          "en": "There's a grief that can't be spoken.",
+          "zh": "有一种悲伤，无法言说。",
+          "speaker": "Marius"
+        },
+        {
+          "start": 18,
+          "end": 24,
+          "en": "There's a pain goes on and on.",
+          "zh": "有一种痛，永无止息。",
+          "speaker": "Marius"
+        },
+        {
+          "start": 24,
+          "end": 29,
+          "en": "Empty chairs at empty tables,",
+          "zh": "空空的椅子，空空的桌子，",
+          "speaker": "Marius"
+        },
+        {
+          "start": 29,
+          "end": 38,
+          "en": "Now my friends are dead and gone.",
+          "zh": "如今我的朋友们都已离去。",
+          "speaker": "Marius"
+        },
+        {
+          "start": 38,
+          "end": 44,
+          "en": "Here they talked of revolution.",
+          "zh": "他们曾在这里谈论革命。",
+          "speaker": "Marius"
+        },
+        {
+          "start": 44,
+          "end": 50,
+          "en": "Here it was they lit the flame.",
+          "zh": "他们曾在这里点燃火焰。",
+          "speaker": "Marius"
+        },
+        {
+          "start": 50,
+          "end": 55,
+          "en": "Here they sang about tomorrow,",
+          "zh": "他们曾在这里歌唱明天，",
+          "speaker": "Marius"
+        },
+        {
+          "start": 55,
+          "end": 62,
+          "en": "And tomorrow never came.",
+          "zh": "可那个明天，再也没有到来。",
+          "speaker": "Marius"
+        },
+        {
+          "start": 64.9,
+          "end": 67.92,
+          "en": "Do you hear the people sing?",
+          "zh": "你可听见人民的歌声？",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 67.92,
+          "end": 71.08,
+          "en": "Lost in the valley of the night,",
+          "zh": "即使迷失在黑夜的深谷，",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 71.08,
+          "end": 74.88,
+          "en": "It is the music of a people",
+          "zh": "这是人民的歌声，",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 74.88,
+          "end": 77.38,
+          "en": "Who are climbing to the light.",
+          "zh": "他们正走向光明。",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 77.38,
+          "end": 80.58,
+          "en": "For the wretched of the earth",
+          "zh": "对世上受苦的人们而言，",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 80.58,
+          "end": 83.68,
+          "en": "There is a flame that never dies.",
+          "zh": "有一束火焰，永不熄灭。",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 83.68,
+          "end": 87.52,
+          "en": "Even the darkest night will end,",
+          "zh": "即使最黑暗的长夜也会结束，",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 87.52,
+          "end": 88.9,
+          "en": "And the sun will rise!",
+          "zh": "太阳终将升起！",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 89.6,
+          "end": 92.52,
+          "en": "Will you join in our crusade?",
+          "zh": "你愿加入我们的抗争吗？",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 92.52,
+          "end": 95.44,
+          "en": "Who will be strong and stand with me?",
+          "zh": "谁愿坚定地与我并肩？",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 95.44,
+          "end": 98.44,
+          "en": "Somewhere beyond the barricade",
+          "zh": "在街垒的另一边，",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 98.44,
+          "end": 101.44,
+          "en": "Is there a world you long to see?",
+          "zh": "可有你向往的世界？",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 101.44,
+          "end": 104.44,
+          "en": "Do you hear the people sing?",
+          "zh": "你可听见人民的歌声？",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 104.44,
+          "end": 107.24,
+          "en": "Say, do you hear the distant drums?",
+          "zh": "你可听见远方的鼓声？",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 107.24,
+          "end": 110.44,
+          "en": "It is the future that they bring,",
+          "zh": "那是他们带来的未来，",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 110.44,
+          "end": 113.44,
+          "en": "When tomorrow comes!",
+          "zh": "当明天到来！",
+          "speaker": "Ensemble"
+        },
+        {
+          "start": 113.44,
+          "end": 130.04,
+          "en": "Tomorrow comes!",
+          "zh": "明天终将到来！",
+          "speaker": "Ensemble"
+        }
+      ]
+    }
+  ]
+}

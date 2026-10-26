@@ -1,30 +1,16 @@
-# 街垒 / Barricade
+﻿# 第1832次心跳
 
-心跳驱动的2D节奏防守游戏，十章讲述街垒的一夜。Unity **2022.3.62f3c1**。
+以巴黎街垒为背景的 2D 节奏防守游戏。Unity **2022.3.62f3c1**。
 
-## 运行
+打开 `Assets/Scenes/Title.unity` 后进入 Play。编辑器菜单 **街垒 → 工程导航** 可直接打开主菜单、建造、防守和酒馆场景，或定位章节、配乐字幕、字体和对白配置。
 
-打开 `Assets/Scenes/Title.unity` 后Play。首次任意键开始，后续显示开始/继续/退出菜单；F2重新校准音量和声音延迟。标题无音乐，进入战役后直接播放完整《Do You Hear The People Sing》。
+- [工程地图与常用修改位置](Documentation/README.md)
+- [运行架构与模块职责](Documentation/ARCHITECTURE.md)
+- [章节、音乐、UI和素材编辑](Documentation/Guides/Editing.md)
+- [酒馆 Timeline 与对白](Documentation/Guides/Timeline.md)
+- [验证与维护](Documentation/Guides/Verification.md)
+- [接手说明](HANDOVER.md)
 
-第一章为32拍四图连续演出，结束后自动进入第二章。第二章正式建造；后续建造段为修补。街垒生命跨章保留，重试回到本章开始时的生命，上限600。建造/修补统一单键Perfect+10、双键Perfect+15/普通+5，无短章倍率。
+运行时脚本位于 `Assets/Script/Runtime`，编辑器工具位于 `Assets/Script/Editor`。素材按 Art、Audio、UI、Cinematics 分类；Resources 保留原加载路径。
 
-建造A/D/W/S；双键间隔≤120ms。防守A/D换轨、W空中/S地面、空格射击、R换弹；Esc暂停、单存档、读档，继续前三拍倒计时。第7章Q放走/E处决；第9章无限弹、每拍一枪。玩法中不显示叙事字幕，保留必要操作提示。
-
-## 配置
-
-`Resources/Campaign/ChapterTable.asset` 管理章节拍数及过场。第一章 `First Chapter Frames` 配置4张图、8/6/10/8拍，以及默认空白的字幕/配音接口。十章合计1830拍，章节时长不再相等；防守波次仍由16份A/B资产管理。
-
-存档格式版本2。旧版本1存档仍保留，但因章节和血量机制变更不能加载。
-
-## 最新验证（2026-10-21）
-
-74份运行时、16份编辑器源码独立编译通过；10455项逻辑回归通过。原生Unity启动退出140063，尚未完成新版原生导入和实际画面/声音试玩。Unity恢复后运行“街垒 / 战役 / 检查四图第一章与跨章生命”，再从Title实测。
-
-最新实施说明、修改前快照与验证记录位于：
-`C:/Users/ASUS/Documents/Codex/2026-10-20/new-chat/outputs/第一章与战役调整`。
-
-HANDOVER末尾为当前规则，覆盖历史每章183拍、进章重置生命与短章收益放大等旧说明。
-
-## 素材与许可
-
-代码未附开源许可。心跳素材来自Freesound #332821（CC0）。已有《悲惨世界》相关录音的版权属于原权利人；第一章图片由用户提供。
+先前的阶段报告已收进 [Documentation/History](Documentation/History)，用于回查历史；当前行为以现有配置和上面的指南为准。

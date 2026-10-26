@@ -21,8 +21,10 @@ MonoBehaviour:
     cinematicBeats: 32
     title: "\u846C\u793C"
     introduction: "\u516D\u6708\u4E94\u65E5\u3002\u62C9\u9A6C\u514B\u5C06\u519B\u7684\u7075\u8F66\u7ECF\u8FC7\u8FD9\u91CC\u3002"
+    ammoEnabled: 0
     startingWait: 0.85
     accelerate: 0
+    openingMusic: {fileID: 8300000, guid: bbbb2fc3fdc6d8e4ca257e9d4412725d, type: 3}
     combatDamageMultiplier: 1
     lines: []
     waves: []
@@ -51,6 +53,15 @@ MonoBehaviour:
       timeline: {fileID: 0}
       audio: {fileID: 0}
       placeholderSeconds: 2
+      allowSkip: 1
+      waitForSignal: 0
+      signalTimeoutSeconds: 60
+      caption: 
+    openingSequence:
+      cinematicPrefab: {fileID: 0}
+      timeline: {fileID: 0}
+      audio: {fileID: 0}
+      placeholderSeconds: 0
       allowSkip: 1
       waitForSignal: 0
       signalTimeoutSeconds: 60
@@ -63,8 +74,10 @@ MonoBehaviour:
     cinematicBeats: 0
     title: "\u7B51\u5792"
     introduction: "\u628A\u9A6C\u8F66\u7FFB\u8FC7\u6765\u3002\u628A\u6876\u642C\u4E0A\u6765\u3002"
+    ammoEnabled: 0
     startingWait: 0.85
     accelerate: 1
+    openingMusic: {fileID: 8300000, guid: bbbb2fc3fdc6d8e4ca257e9d4412725d, type: 3}
     combatDamageMultiplier: 1
     lines: []
     waves: []
@@ -97,17 +110,28 @@ MonoBehaviour:
       waitForSignal: 0
       signalTimeoutSeconds: 60
       caption: 
+    openingSequence:
+      cinematicPrefab: {fileID: 7269782022344248005, guid: 6b7dd537dd46a37419e81626dceb09b7, type: 3}
+      timeline: {fileID: 0}
+      audio: {fileID: 0}
+      placeholderSeconds: 0
+      allowSkip: 0
+      waitForSignal: 0
+      signalTimeoutSeconds: 60
+      caption: 
   - number: 3
-    preparationBeats: 52
+    preparationBeats: 48
     defenseBeats: 171
     choiceBeats: 0
     epilogueBeats: 0
     cinematicBeats: 0
     title: "\u7B2C\u4E00\u6B21\u8FDB\u653B"
     introduction: "\u7B2C\u4E00\u6392\u67AA\u4E4B\u540E\uFF0C\u8857\u5792\u8FD8\u5728\u3002"
+    ammoEnabled: 0
     startingWait: 0.85
     accelerate: 1
-    combatDamageMultiplier: 2.5
+    openingMusic: {fileID: 8300000, guid: 8af3c627171023040b33cd9f7f2f3834, type: 3}
+    combatDamageMultiplier: 1
     lines: []
     waves:
     - beat: 0
@@ -170,6 +194,294 @@ MonoBehaviour:
       lane: 0
       count: 1
       kind: 0
+    - beat: 3
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 6
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 9
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 9
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 12
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 15
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 18
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 18
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 21
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 24
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 27
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 27
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 30
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 33
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 36
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 36
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 39
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 42
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 45
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 45
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 48
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 51
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 54
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 54
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 57
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 60
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 63
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 63
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 66
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 69
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 72
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 72
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 75
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 78
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 81
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 81
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 84
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 87
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 90
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 90
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 93
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 96
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 99
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 99
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 102
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 105
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 108
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 108
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 111
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 114
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 117
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 117
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 120
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 123
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 126
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 126
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 129
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 132
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 135
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 135
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 138
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 141
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 144
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 144
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 147
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 150
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 153
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 153
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 156
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 159
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 162
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 162
+      lane: 0
+      count: 1
+      kind: 0
     waveA: {fileID: 11400000, guid: 8c87ffd0c4d54cdbb1e6e5ac5cdc92be, type: 2}
     waveB: {fileID: 11400000, guid: 427bcad97dae4e46be401f97885d8d01, type: 2}
     entry:
@@ -199,17 +511,28 @@ MonoBehaviour:
       waitForSignal: 0
       signalTimeoutSeconds: 60
       caption: 
+    openingSequence:
+      cinematicPrefab: {fileID: 0}
+      timeline: {fileID: 0}
+      audio: {fileID: 0}
+      placeholderSeconds: 0
+      allowSkip: 1
+      waitForSignal: 0
+      signalTimeoutSeconds: 60
+      caption: 
   - number: 4
-    preparationBeats: 52
+    preparationBeats: 48
     defenseBeats: 171
     choiceBeats: 0
     epilogueBeats: 0
     cinematicBeats: 0
     title: "\u52A0\u5F17\u7F57\u4EC0"
     introduction: "\u4ED6\u8DD1\u51FA\u53BB\u4E86\u3002\u6CA1\u6709\u4EBA\u547D\u4EE4\u4ED6\u3002"
+    ammoEnabled: 0
     startingWait: 0.85
     accelerate: 1
-    combatDamageMultiplier: 3
+    openingMusic: {fileID: 8300000, guid: 318f39988e95d7e42bbde37f0c5e1e18, type: 3}
+    combatDamageMultiplier: 1
     lines: []
     waves:
     - beat: 0
@@ -260,6 +583,366 @@ MonoBehaviour:
       lane: 1
       count: 1
       kind: 0
+    - beat: 3
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 6
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 6
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 9
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 9
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 12
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 15
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 15
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 18
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 18
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 21
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 24
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 24
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 27
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 27
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 30
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 33
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 33
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 36
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 36
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 39
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 42
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 42
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 45
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 45
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 48
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 51
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 51
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 54
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 54
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 57
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 60
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 60
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 63
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 63
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 66
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 69
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 69
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 72
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 72
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 75
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 78
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 78
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 81
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 81
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 84
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 87
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 87
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 90
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 90
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 93
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 96
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 96
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 99
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 99
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 102
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 105
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 105
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 108
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 108
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 111
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 114
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 114
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 117
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 117
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 120
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 123
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 123
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 126
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 126
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 129
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 132
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 132
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 135
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 135
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 138
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 141
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 141
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 144
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 144
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 147
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 150
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 150
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 153
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 153
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 156
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 159
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 159
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 162
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 162
+      lane: 1
+      count: 1
+      kind: 0
     waveA: {fileID: 11400000, guid: 4cbb1df7e4c34add86796c21dbde3f59, type: 2}
     waveB: {fileID: 11400000, guid: d01ccf54849e4f88b6cebb5cd1cb82b9, type: 2}
     entry:
@@ -289,6 +972,15 @@ MonoBehaviour:
       waitForSignal: 0
       signalTimeoutSeconds: 60
       caption: 
+    openingSequence:
+      cinematicPrefab: {fileID: 0}
+      timeline: {fileID: 0}
+      audio: {fileID: 0}
+      placeholderSeconds: 0
+      allowSkip: 1
+      waitForSignal: 0
+      signalTimeoutSeconds: 60
+      caption: 
   - number: 5
     preparationBeats: 48
     defenseBeats: 171
@@ -297,9 +989,11 @@ MonoBehaviour:
     cinematicBeats: 0
     title: "\u6C99\u5A01"
     introduction: "\u4E00\u4E2A\u7A7F\u5236\u670D\u7684\u4EBA\u88AB\u8BA4\u4E86\u51FA\u6765\u3002"
+    ammoEnabled: 1
     startingWait: 0.85
     accelerate: 1
-    combatDamageMultiplier: 2
+    openingMusic: {fileID: 8300000, guid: 11e82dcc6b6ab9441a8160c5e03dc1df, type: 3}
+    combatDamageMultiplier: 1
     lines: []
     waves:
     - beat: 0
@@ -314,10 +1008,6 @@ MonoBehaviour:
       lane: 2
       count: 1
       kind: 0
-    - beat: 40
-      lane: 1
-      count: 1
-      kind: 4
     - beat: 52
       lane: 0
       count: 1
@@ -334,10 +1024,6 @@ MonoBehaviour:
       lane: 0
       count: 1
       kind: 0
-    - beat: 100
-      lane: 0
-      count: 1
-      kind: 4
     - beat: 104
       lane: 1
       count: 1
@@ -359,6 +1045,366 @@ MonoBehaviour:
       count: 1
       kind: 0
     - beat: 147
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 3
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 6
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 6
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 9
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 9
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 12
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 15
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 15
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 18
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 18
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 21
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 24
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 24
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 27
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 27
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 30
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 33
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 33
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 36
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 36
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 39
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 42
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 42
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 45
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 45
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 48
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 51
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 51
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 54
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 54
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 57
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 60
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 60
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 63
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 63
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 66
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 69
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 69
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 72
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 72
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 75
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 78
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 78
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 81
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 81
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 84
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 87
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 87
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 90
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 90
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 93
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 96
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 96
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 99
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 99
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 102
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 105
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 105
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 108
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 108
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 111
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 114
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 114
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 117
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 117
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 120
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 123
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 123
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 126
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 126
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 129
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 132
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 132
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 135
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 135
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 138
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 141
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 141
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 144
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 144
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 147
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 150
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 150
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 153
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 153
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 156
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 159
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 159
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 162
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 162
       lane: 2
       count: 1
       kind: 0
@@ -391,17 +1437,28 @@ MonoBehaviour:
       waitForSignal: 0
       signalTimeoutSeconds: 60
       caption: 
+    openingSequence:
+      cinematicPrefab: {fileID: 0}
+      timeline: {fileID: 0}
+      audio: {fileID: 0}
+      placeholderSeconds: 0
+      allowSkip: 1
+      waitForSignal: 0
+      signalTimeoutSeconds: 60
+      caption: 
   - number: 6
-    preparationBeats: 54
+    preparationBeats: 48
     defenseBeats: 171
     choiceBeats: 0
     epilogueBeats: 0
     cinematicBeats: 0
     title: "\u591C\u88AD"
     introduction: "\u6709\u4EBA\u628A\u706B\u628A\u6254\u4E86\u8FC7\u6765\u3002"
+    ammoEnabled: 1
     startingWait: 0.85
     accelerate: 1
-    combatDamageMultiplier: 2.2
+    openingMusic: {fileID: 8300000, guid: 4effb4c758789324b9ddeb60470ffeaa, type: 3}
+    combatDamageMultiplier: 1
     lines: []
     waves:
     - beat: 0
@@ -456,6 +1513,366 @@ MonoBehaviour:
       lane: 0
       count: 1
       kind: 0
+    - beat: 3
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 6
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 6
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 9
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 9
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 12
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 15
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 15
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 18
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 18
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 21
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 24
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 24
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 27
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 27
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 30
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 33
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 33
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 36
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 36
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 39
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 42
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 42
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 45
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 45
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 48
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 51
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 51
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 54
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 54
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 57
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 60
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 60
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 63
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 63
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 66
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 69
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 69
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 72
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 72
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 75
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 78
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 78
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 81
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 81
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 84
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 87
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 87
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 90
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 90
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 93
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 96
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 96
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 99
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 99
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 102
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 105
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 105
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 108
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 108
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 111
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 114
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 114
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 117
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 117
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 120
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 123
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 123
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 126
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 126
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 129
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 132
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 132
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 135
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 135
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 138
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 141
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 141
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 144
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 144
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 147
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 150
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 150
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 153
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 153
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 156
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 159
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 159
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 162
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 162
+      lane: 0
+      count: 1
+      kind: 0
     waveA: {fileID: 11400000, guid: d85d3246841849ac8f262dfead396987, type: 2}
     waveB: {fileID: 11400000, guid: 67592a3bbeaa4d1388e85503e1019b83, type: 2}
     entry:
@@ -485,17 +1902,28 @@ MonoBehaviour:
       waitForSignal: 0
       signalTimeoutSeconds: 60
       caption: 
+    openingSequence:
+      cinematicPrefab: {fileID: 0}
+      timeline: {fileID: 0}
+      audio: {fileID: 0}
+      placeholderSeconds: 0
+      allowSkip: 1
+      waitForSignal: 0
+      signalTimeoutSeconds: 60
+      caption: 
   - number: 7
-    preparationBeats: 8
-    defenseBeats: 128
-    choiceBeats: 7
+    preparationBeats: 41
+    defenseBeats: 135
+    choiceBeats: 0
     epilogueBeats: 0
     cinematicBeats: 0
-    title: "\u74E6\u8BA9"
+    title: "\u5189\xB7\u963F\u8BA9"
     introduction: "\u5904\u51B3\u95F4\u8C0D\u7684\u67AA\uFF0C\u9012\u5230\u4E86\u4ED6\u624B\u91CC\u3002"
+    ammoEnabled: 1
     startingWait: 0.85
     accelerate: 1
-    combatDamageMultiplier: 3
+    openingMusic: {fileID: 8300000, guid: 1804cc21576207a4d8ee83b5ac7183e6, type: 3}
+    combatDamageMultiplier: 1
     lines: []
     waves:
     - beat: 0
@@ -534,8 +1962,384 @@ MonoBehaviour:
       lane: 1
       count: 1
       kind: 0
-    - beat: 104
+    - beat: 111
       lane: 1
+      count: 1
+      kind: 0
+    - beat: 3
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 5
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 5
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 7
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 9
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 9
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 11
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 13
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 13
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 15
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 17
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 17
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 19
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 21
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 21
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 23
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 25
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 25
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 27
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 29
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 29
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 31
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 33
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 33
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 35
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 37
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 37
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 39
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 41
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 41
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 43
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 45
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 45
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 47
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 49
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 49
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 51
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 53
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 53
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 55
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 57
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 57
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 59
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 61
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 61
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 63
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 65
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 65
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 67
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 69
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 69
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 71
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 73
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 73
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 75
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 77
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 77
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 79
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 81
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 81
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 83
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 85
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 85
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 87
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 89
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 89
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 91
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 93
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 93
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 95
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 97
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 97
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 99
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 101
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 101
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 103
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 105
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 105
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 107
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 109
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 109
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 111
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 113
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 113
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 115
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 117
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 117
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 119
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 121
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 121
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 123
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 125
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 125
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 127
+      lane: 0
       count: 1
       kind: 0
     waveA: {fileID: 11400000, guid: 47cbbc9debb54c13996f9e013cd44a65, type: 2}
@@ -567,16 +2371,27 @@ MonoBehaviour:
       waitForSignal: 0
       signalTimeoutSeconds: 60
       caption: 
+    openingSequence:
+      cinematicPrefab: {fileID: 0}
+      timeline: {fileID: 0}
+      audio: {fileID: 0}
+      placeholderSeconds: 0
+      allowSkip: 1
+      waitForSignal: 0
+      signalTimeoutSeconds: 60
+      caption: 
   - number: 8
-    preparationBeats: 58
+    preparationBeats: 48
     defenseBeats: 171
     choiceBeats: 0
     epilogueBeats: 0
     cinematicBeats: 0
     title: "\u706B\u70AE"
     introduction: "\u4ED6\u4EEC\u628A\u70AE\u63A8\u4E0A\u6765\u4E86\u3002"
+    ammoEnabled: 1
     startingWait: 0.85
     accelerate: 1
+    openingMusic: {fileID: 8300000, guid: 0a5fd11296f51f84f8588d1c048af97c, type: 3}
     combatDamageMultiplier: 1
     lines: []
     waves:
@@ -616,10 +2431,6 @@ MonoBehaviour:
       lane: 2
       count: 3
       kind: 1
-    - beat: 130
-      lane: 1
-      count: 1
-      kind: 6
     - beat: 126
       lane: 0
       count: 1
@@ -628,12 +2439,492 @@ MonoBehaviour:
       lane: 1
       count: 1
       kind: 0
-    - beat: 152
-      lane: 1
-      count: 1
-      kind: 6
     - beat: 147
       lane: 2
+      count: 1
+      kind: 0
+    - beat: 3
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 5
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 5
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 7
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 9
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 9
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 11
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 13
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 13
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 15
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 17
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 17
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 19
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 21
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 21
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 23
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 25
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 25
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 27
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 29
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 29
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 31
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 33
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 33
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 35
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 37
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 37
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 39
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 41
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 41
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 43
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 45
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 45
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 47
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 49
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 49
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 51
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 53
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 53
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 55
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 57
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 57
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 59
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 61
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 61
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 63
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 65
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 65
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 67
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 69
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 69
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 71
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 73
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 73
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 75
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 77
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 77
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 79
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 81
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 81
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 83
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 85
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 85
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 87
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 89
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 89
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 91
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 93
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 93
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 95
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 97
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 97
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 99
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 101
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 101
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 103
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 105
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 105
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 107
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 109
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 109
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 111
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 113
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 113
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 115
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 117
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 117
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 119
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 121
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 121
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 123
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 125
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 125
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 127
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 129
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 129
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 131
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 133
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 133
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 135
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 137
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 137
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 139
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 141
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 141
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 143
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 145
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 145
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 147
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 149
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 149
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 151
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 153
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 153
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 155
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 157
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 157
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 159
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 161
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 161
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 163
+      lane: 1
       count: 1
       kind: 0
     waveA: {fileID: 11400000, guid: 3e8385041e1244519b790af6c080586e, type: 2}
@@ -665,16 +2956,27 @@ MonoBehaviour:
       waitForSignal: 0
       signalTimeoutSeconds: 60
       caption: 
+    openingSequence:
+      cinematicPrefab: {fileID: 0}
+      timeline: {fileID: 0}
+      audio: {fileID: 0}
+      placeholderSeconds: 0
+      allowSkip: 1
+      waitForSignal: 0
+      signalTimeoutSeconds: 60
+      caption: 
   - number: 9
-    preparationBeats: 55
+    preparationBeats: 48
     defenseBeats: 171
     choiceBeats: 0
     epilogueBeats: 0
     cinematicBeats: 0
-    title: "\u6700\u540E\u603B\u653B"
-    introduction: "\u8FD9\u662F\u6700\u540E\u7684\u6597\u4E89\u3002"
+    title: "\u8FD9\u662F\u6700\u540E\u7684\u6597\u4E89"
+    introduction: 
+    ammoEnabled: 1
     startingWait: 0.5
     accelerate: 0
+    openingMusic: {fileID: 0}
     combatDamageMultiplier: 1
     lines: []
     waves:
@@ -842,6 +3144,490 @@ MonoBehaviour:
       lane: 0
       count: 1
       kind: 0
+    - beat: 3
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 5
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 5
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 7
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 9
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 9
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 11
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 13
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 13
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 15
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 17
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 17
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 19
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 21
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 21
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 23
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 25
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 25
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 27
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 29
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 29
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 31
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 33
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 33
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 35
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 37
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 37
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 39
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 41
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 41
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 43
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 45
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 45
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 47
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 49
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 49
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 51
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 53
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 53
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 55
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 57
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 57
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 59
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 61
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 61
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 63
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 65
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 65
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 67
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 69
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 69
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 71
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 73
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 73
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 75
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 77
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 77
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 79
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 81
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 81
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 83
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 85
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 85
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 87
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 89
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 89
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 91
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 93
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 93
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 95
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 97
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 97
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 99
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 101
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 101
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 103
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 105
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 105
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 107
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 109
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 109
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 111
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 113
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 113
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 115
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 117
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 117
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 119
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 121
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 121
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 123
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 125
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 125
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 127
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 129
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 129
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 131
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 133
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 133
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 135
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 137
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 137
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 139
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 141
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 141
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 143
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 145
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 145
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 147
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 149
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 149
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 151
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 153
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 153
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 155
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 157
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 157
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 159
+      lane: 0
+      count: 1
+      kind: 0
+    - beat: 161
+      lane: 1
+      count: 1
+      kind: 0
+    - beat: 161
+      lane: 2
+      count: 1
+      kind: 0
+    - beat: 163
+      lane: 2
+      count: 1
+      kind: 0
     waveA: {fileID: 11400000, guid: 2548f9aa3abe405cbb1eb08018ce437b, type: 2}
     waveB: {fileID: 11400000, guid: cbaf4415434549e989b60f9333ead6e6, type: 2}
     entry:
@@ -871,6 +3657,15 @@ MonoBehaviour:
       waitForSignal: 0
       signalTimeoutSeconds: 60
       caption: 
+    openingSequence:
+      cinematicPrefab: {fileID: 0}
+      timeline: {fileID: 0}
+      audio: {fileID: 0}
+      placeholderSeconds: 0
+      allowSkip: 1
+      waitForSignal: 0
+      signalTimeoutSeconds: 60
+      caption: 
   - number: 10
     preparationBeats: 0
     defenseBeats: 0
@@ -878,9 +3673,11 @@ MonoBehaviour:
     epilogueBeats: 183
     cinematicBeats: 0
     title: "\u7EC8\u7AE0"
-    introduction: "\u8857\u5792\u9677\u843D\u3002\u9A6C\u91CC\u4E4C\u65AF\u6D3B\u4E86\u4E0B\u6765\u3002"
+    introduction: 
+    ammoEnabled: 1
     startingWait: 0.5
     accelerate: 0
+    openingMusic: {fileID: 0}
     combatDamageMultiplier: 1
     lines: []
     waves: []
@@ -913,10 +3710,19 @@ MonoBehaviour:
       waitForSignal: 0
       signalTimeoutSeconds: 60
       caption: 
-  playtestLabel: combat-v3-offscreen-volley-20261022
+    openingSequence:
+      cinematicPrefab: {fileID: 0}
+      timeline: {fileID: 0}
+      audio: {fileID: 0}
+      placeholderSeconds: 0
+      allowSkip: 1
+      waitForSignal: 0
+      signalTimeoutSeconds: 60
+      caption: 
+  playtestLabel: combat-v4-density-fire-20261023
   recordPlaytests: 1
   calibrateEveryNewGame: 1
-  targetBeatBudget: 1830
+  targetBeatBudget: 1832
   enforceBeatBudget: 0
   firstChapterFrames:
   - image: {fileID: 21300000, guid: 16ba0bbbef3644adbab2a8707d7e49cd, type: 3}
@@ -942,7 +3748,7 @@ MonoBehaviour:
   firstChapterCrossfadeSeconds: 0.6
   constructionLimit: 600
   lastChancesPerChapter: 2
-  chordMaxGap: 0.12
+  chordMaxGap: 0.14
   chordPerfectHP: 15
   chordOrdinaryHP: 5
   perfectWindow: 0.5

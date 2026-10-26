@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 502989373532359191}
   - component: {fileID: 8493044094091215752}
   - component: {fileID: 6636141492713137351}
+  - component: {fileID: 8322042906577732126}
   m_Layer: 0
   m_Name: Soldier
   m_TagString: Untagged
@@ -244,5 +245,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 095a153781a04c8bba70c4b1154ee3f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8322042906577732126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4168247892135096614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcb952810facffb489c68277044c4cee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

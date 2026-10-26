@@ -25,6 +25,7 @@ MonoBehaviour:
   auditSquadSeconds: 14.3
   auditShellSeconds: 1.5
   requiredShellInterceptions: 0
+  cannonRetreatBeat: -1
   squadImpactOffsets: 0a0000000f00000014000000
   events:
   - beat: 0
@@ -407,7 +408,7 @@ MonoBehaviour:
     duration: 0
     tag: choice-time-redistributed
     lanes: 
-  - beat: 8
+  - beat: 3
     alignTo: -1
     type: 0
     lane: 1
@@ -415,8 +416,38 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: pressure-v3-0
+    tag: pressure-v4-0
     lanes: 
+  - beat: 5
+    alignTo: -1
+    type: 0
+    lane: 2
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v4-1
+    lanes: 0200000003000000
+  - beat: 7
+    alignTo: -1
+    type: 0
+    lane: 3
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v4-2
+    lanes: 
+  - beat: 9
+    alignTo: -1
+    type: 0
+    lane: 1
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v4-3
+    lanes: 0100000002000000
   - beat: 11
     alignTo: -1
     type: 0
@@ -425,9 +456,9 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: pressure-v3-1
-    lanes: 0200000003000000
-  - beat: 14
+    tag: pressure-v4-4
+    lanes: 
+  - beat: 13
     alignTo: -1
     type: 0
     lane: 3
@@ -435,9 +466,9 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: pressure-v3-2
-    lanes: 
-  - beat: 17
+    tag: pressure-v4-5
+    lanes: 0300000001000000
+  - beat: 15
     alignTo: -1
     type: 0
     lane: 1
@@ -445,9 +476,9 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: pressure-v3-3
-    lanes: 0100000002000000
-  - beat: 20
+    tag: pressure-v4-6
+    lanes: 
+  - beat: 17
     alignTo: -1
     type: 0
     lane: 2
@@ -455,9 +486,9 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: pressure-v3-4
-    lanes: 
-  - beat: 23
+    tag: pressure-v4-7
+    lanes: 0200000003000000
+  - beat: 19
     alignTo: -1
     type: 0
     lane: 3
@@ -465,9 +496,9 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: pressure-v3-5
-    lanes: 0300000001000000
-  - beat: 26
+    tag: pressure-v4-8
+    lanes: 
+  - beat: 21
     alignTo: -1
     type: 0
     lane: 1
@@ -475,7 +506,37 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: pressure-v3-6
+    tag: pressure-v4-9
+    lanes: 0100000002000000
+  - beat: 23
+    alignTo: -1
+    type: 0
+    lane: 2
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v4-10
+    lanes: 
+  - beat: 25
+    alignTo: -1
+    type: 0
+    lane: 3
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v4-11
+    lanes: 0300000001000000
+  - beat: 27
+    alignTo: -1
+    type: 0
+    lane: 1
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v4-12
     lanes: 
   - beat: 29
     alignTo: -1
@@ -485,9 +546,9 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: pressure-v3-7
+    tag: pressure-v4-13
     lanes: 0200000003000000
-  - beat: 32
+  - beat: 31
     alignTo: -1
     type: 0
     lane: 3
@@ -495,9 +556,9 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: pressure-v3-8
+    tag: pressure-v4-14
     lanes: 
-  - beat: 35
+  - beat: 33
     alignTo: -1
     type: 0
     lane: 1
@@ -505,9 +566,9 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: pressure-v3-9
+    tag: pressure-v4-15
     lanes: 0100000002000000
-  - beat: 38
+  - beat: 35
     alignTo: -1
     type: 0
     lane: 2
@@ -515,9 +576,9 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: pressure-v3-10
+    tag: pressure-v4-16
     lanes: 
-  - beat: 41
+  - beat: 37
     alignTo: -1
     type: 0
     lane: 3
@@ -525,9 +586,9 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: pressure-v3-11
+    tag: pressure-v4-17
     lanes: 0300000001000000
-  - beat: 44
+  - beat: 39
     alignTo: -1
     type: 0
     lane: 1
@@ -535,8 +596,38 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: pressure-v3-12
+    tag: pressure-v4-18
     lanes: 
+  - beat: 41
+    alignTo: -1
+    type: 0
+    lane: 2
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v4-19
+    lanes: 0200000003000000
+  - beat: 43
+    alignTo: -1
+    type: 0
+    lane: 3
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v4-20
+    lanes: 
+  - beat: 45
+    alignTo: -1
+    type: 0
+    lane: 1
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v4-21
+    lanes: 0100000002000000
   - beat: 47
     alignTo: -1
     type: 0
@@ -545,9 +636,9 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: pressure-v3-13
-    lanes: 0200000003000000
-  - beat: 50
+    tag: pressure-v4-22
+    lanes: 
+  - beat: 49
     alignTo: -1
     type: 0
     lane: 3
@@ -555,9 +646,9 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: pressure-v3-14
-    lanes: 
-  - beat: 53
+    tag: pressure-v4-23
+    lanes: 0300000001000000
+  - beat: 51
     alignTo: -1
     type: 0
     lane: 1
@@ -565,9 +656,9 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: pressure-v3-15
-    lanes: 0100000002000000
-  - beat: 56
+    tag: pressure-v4-24
+    lanes: 
+  - beat: 53
     alignTo: -1
     type: 0
     lane: 2
@@ -575,9 +666,9 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: pressure-v3-16
-    lanes: 
-  - beat: 59
+    tag: pressure-v4-25
+    lanes: 0200000003000000
+  - beat: 55
     alignTo: -1
     type: 0
     lane: 3
@@ -585,9 +676,9 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: pressure-v3-17
-    lanes: 0300000001000000
-  - beat: 62
+    tag: pressure-v4-26
+    lanes: 
+  - beat: 57
     alignTo: -1
     type: 0
     lane: 1
@@ -595,7 +686,37 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: pressure-v3-18
+    tag: pressure-v4-27
+    lanes: 0100000002000000
+  - beat: 59
+    alignTo: -1
+    type: 0
+    lane: 2
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v4-28
+    lanes: 
+  - beat: 61
+    alignTo: -1
+    type: 0
+    lane: 3
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v4-29
+    lanes: 0300000001000000
+  - beat: 63
+    alignTo: -1
+    type: 0
+    lane: 1
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v4-30
     lanes: 
   - beat: 65
     alignTo: -1
@@ -605,9 +726,9 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: pressure-v3-19
+    tag: pressure-v4-31
     lanes: 0200000003000000
-  - beat: 68
+  - beat: 67
     alignTo: -1
     type: 0
     lane: 3
@@ -615,9 +736,9 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: pressure-v3-20
+    tag: pressure-v4-32
     lanes: 
-  - beat: 71
+  - beat: 69
     alignTo: -1
     type: 0
     lane: 1
@@ -625,9 +746,9 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: pressure-v3-21
+    tag: pressure-v4-33
     lanes: 0100000002000000
-  - beat: 74
+  - beat: 71
     alignTo: -1
     type: 0
     lane: 2
@@ -635,9 +756,9 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: pressure-v3-22
+    tag: pressure-v4-34
     lanes: 
-  - beat: 77
+  - beat: 73
     alignTo: -1
     type: 0
     lane: 3
@@ -645,9 +766,9 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: pressure-v3-23
+    tag: pressure-v4-35
     lanes: 0300000001000000
-  - beat: 80
+  - beat: 75
     alignTo: -1
     type: 0
     lane: 1
@@ -655,8 +776,38 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: pressure-v3-24
+    tag: pressure-v4-36
     lanes: 
+  - beat: 77
+    alignTo: -1
+    type: 0
+    lane: 2
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v4-37
+    lanes: 0200000003000000
+  - beat: 79
+    alignTo: -1
+    type: 0
+    lane: 3
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v4-38
+    lanes: 
+  - beat: 81
+    alignTo: -1
+    type: 0
+    lane: 1
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v4-39
+    lanes: 0100000002000000
   - beat: 83
     alignTo: -1
     type: 0
@@ -665,9 +816,9 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: pressure-v3-25
-    lanes: 0200000003000000
-  - beat: 86
+    tag: pressure-v4-40
+    lanes: 
+  - beat: 85
     alignTo: -1
     type: 0
     lane: 3
@@ -675,9 +826,9 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: pressure-v3-26
-    lanes: 
-  - beat: 89
+    tag: pressure-v4-41
+    lanes: 0300000001000000
+  - beat: 87
     alignTo: -1
     type: 0
     lane: 1
@@ -685,9 +836,9 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: pressure-v3-27
-    lanes: 0100000002000000
-  - beat: 92
+    tag: pressure-v4-42
+    lanes: 
+  - beat: 89
     alignTo: -1
     type: 0
     lane: 2
@@ -695,9 +846,9 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: pressure-v3-28
-    lanes: 
-  - beat: 95
+    tag: pressure-v4-43
+    lanes: 0200000003000000
+  - beat: 91
     alignTo: -1
     type: 0
     lane: 3
@@ -705,9 +856,9 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: pressure-v3-29
-    lanes: 0300000001000000
-  - beat: 98
+    tag: pressure-v4-44
+    lanes: 
+  - beat: 93
     alignTo: -1
     type: 0
     lane: 1
@@ -715,7 +866,37 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: pressure-v3-30
+    tag: pressure-v4-45
+    lanes: 0100000002000000
+  - beat: 95
+    alignTo: -1
+    type: 0
+    lane: 2
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v4-46
+    lanes: 
+  - beat: 97
+    alignTo: -1
+    type: 0
+    lane: 3
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v4-47
+    lanes: 0300000001000000
+  - beat: 99
+    alignTo: -1
+    type: 0
+    lane: 1
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v4-48
     lanes: 
   - beat: 101
     alignTo: -1
@@ -725,9 +906,9 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: pressure-v3-31
+    tag: pressure-v4-49
     lanes: 0200000003000000
-  - beat: 104
+  - beat: 103
     alignTo: -1
     type: 0
     lane: 3
@@ -735,9 +916,9 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: pressure-v3-32
+    tag: pressure-v4-50
     lanes: 
-  - beat: 107
+  - beat: 105
     alignTo: -1
     type: 0
     lane: 1
@@ -745,9 +926,9 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: pressure-v3-33
+    tag: pressure-v4-51
     lanes: 0100000002000000
-  - beat: 110
+  - beat: 107
     alignTo: -1
     type: 0
     lane: 2
@@ -755,9 +936,9 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: pressure-v3-34
+    tag: pressure-v4-52
     lanes: 
-  - beat: 113
+  - beat: 109
     alignTo: -1
     type: 0
     lane: 3
@@ -765,9 +946,9 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: pressure-v3-35
+    tag: pressure-v4-53
     lanes: 0300000001000000
-  - beat: 116
+  - beat: 111
     alignTo: -1
     type: 0
     lane: 1
@@ -775,8 +956,38 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: pressure-v3-36
+    tag: pressure-v4-54
     lanes: 
+  - beat: 113
+    alignTo: -1
+    type: 0
+    lane: 2
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v4-55
+    lanes: 0200000003000000
+  - beat: 115
+    alignTo: -1
+    type: 0
+    lane: 3
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v4-56
+    lanes: 
+  - beat: 117
+    alignTo: -1
+    type: 0
+    lane: 1
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v4-57
+    lanes: 0100000002000000
   - beat: 119
     alignTo: -1
     type: 0
@@ -785,9 +996,9 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: pressure-v3-37
-    lanes: 0200000003000000
-  - beat: 122
+    tag: pressure-v4-58
+    lanes: 
+  - beat: 121
     alignTo: -1
     type: 0
     lane: 3
@@ -795,9 +1006,9 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: pressure-v3-38
-    lanes: 
-  - beat: 125
+    tag: pressure-v4-59
+    lanes: 0300000001000000
+  - beat: 123
     alignTo: -1
     type: 0
     lane: 1
@@ -805,9 +1016,9 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: pressure-v3-39
-    lanes: 0100000002000000
-  - beat: 128
+    tag: pressure-v4-60
+    lanes: 
+  - beat: 125
     alignTo: -1
     type: 0
     lane: 2
@@ -815,9 +1026,9 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: pressure-v3-40
-    lanes: 
-  - beat: 131
+    tag: pressure-v4-61
+    lanes: 0200000003000000
+  - beat: 127
     alignTo: -1
     type: 0
     lane: 3
@@ -825,9 +1036,9 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: pressure-v3-41
-    lanes: 0300000001000000
-  - beat: 134
+    tag: pressure-v4-62
+    lanes: 
+  - beat: 129
     alignTo: -1
     type: 0
     lane: 1
@@ -835,5 +1046,175 @@ MonoBehaviour:
     count: 1
     spacing: 4
     duration: 0
-    tag: pressure-v3-42
+    tag: pressure-v4-63
+    lanes: 0100000002000000
+  - beat: 131
+    alignTo: -1
+    type: 0
+    lane: 2
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v4-64
+    lanes: 
+  - beat: 133
+    alignTo: -1
+    type: 0
+    lane: 3
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v4-65
+    lanes: 0300000001000000
+  - beat: 135
+    alignTo: -1
+    type: 0
+    lane: 1
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v4-66
+    lanes: 
+  - beat: 137
+    alignTo: -1
+    type: 0
+    lane: 2
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v4-67
+    lanes: 0200000003000000
+  - beat: 139
+    alignTo: -1
+    type: 0
+    lane: 3
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v4-68
+    lanes: 
+  - beat: 141
+    alignTo: -1
+    type: 0
+    lane: 1
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v4-69
+    lanes: 0100000002000000
+  - beat: 143
+    alignTo: -1
+    type: 0
+    lane: 2
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v4-70
+    lanes: 
+  - beat: 145
+    alignTo: -1
+    type: 0
+    lane: 3
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v4-71
+    lanes: 0300000001000000
+  - beat: 147
+    alignTo: -1
+    type: 0
+    lane: 1
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v4-72
+    lanes: 
+  - beat: 149
+    alignTo: -1
+    type: 0
+    lane: 2
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v4-73
+    lanes: 0200000003000000
+  - beat: 151
+    alignTo: -1
+    type: 0
+    lane: 3
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v4-74
+    lanes: 
+  - beat: 153
+    alignTo: -1
+    type: 0
+    lane: 1
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v4-75
+    lanes: 0100000002000000
+  - beat: 155
+    alignTo: -1
+    type: 0
+    lane: 2
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v4-76
+    lanes: 
+  - beat: 157
+    alignTo: -1
+    type: 0
+    lane: 3
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v4-77
+    lanes: 0300000001000000
+  - beat: 159
+    alignTo: -1
+    type: 0
+    lane: 1
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v4-78
+    lanes: 
+  - beat: 161
+    alignTo: -1
+    type: 0
+    lane: 2
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v4-79
+    lanes: 0200000003000000
+  - beat: 163
+    alignTo: -1
+    type: 0
+    lane: 3
+    advance: 0
+    count: 1
+    spacing: 4
+    duration: 0
+    tag: pressure-v4-80
     lanes: 

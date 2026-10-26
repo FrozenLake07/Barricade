@@ -40,3 +40,11 @@ desktop.ini
 *.aab
 *.unitypackage
 *.app
+
+# 试玩遥测与运行日志
+/Playtests/
+*.log
+*.log.*
+
+# 本地音频素材（体积大、受版权保护，不入库）
+/Assets/Audio/

@@ -1,0 +1,169 @@
+{
+  "master": 0.85,
+  "clips": [
+    {
+      "path": "SFX/Selected/action_aim_adjust_01",
+      "gain": 1
+    },
+    {
+      "path": "SFX/Selected/action_build_normal_01",
+      "gain": 1
+    },
+    {
+      "path": "SFX/Selected/action_build_perfect_01",
+      "gain": 1
+    },
+    {
+      "path": "SFX/Selected/action_build_wrong_01",
+      "gain": 1
+    },
+    {
+      "path": "SFX/Selected/action_rest_breath_01",
+      "gain": 1
+    },
+    {
+      "path": "SFX/Selected/ambience_bell_distant_candidate_01",
+      "gain": 0.55
+    },
+    {
+      "path": "SFX/Selected/ambience_carriage_pass_candidate_01",
+      "gain": 0.55
+    },
+    {
+      "path": "SFX/Selected/ambience_fire_detail_loop_01",
+      "gain": 0.55
+    },
+    {
+      "path": "SFX/Selected/ambience_wind_loop_01",
+      "gain": 0.55
+    },
+    {
+      "path": "SFX/Selected/artillery_chain_detail_01",
+      "gain": 1
+    },
+    {
+      "path": "SFX/Selected/artillery_fire_01",
+      "gain": 0.58
+    },
+    {
+      "path": "SFX/Selected/artillery_flyby_02",
+      "gain": 0.65
+    },
+    {
+      "path": "SFX/Selected/artillery_wall_impact_01",
+      "gain": 0.62
+    },
+    {
+      "path": "SFX/Selected/build_drop_01",
+      "gain": 1
+    },
+    {
+      "path": "SFX/Selected/build_pickup_01",
+      "gain": 1
+    },
+    {
+      "path": "SFX/Selected/build_putdown_03",
+      "gain": 1
+    },
+    {
+      "path": "SFX/Selected/character_pickup_ammunition_02",
+      "gain": 1
+    },
+    {
+      "path": "SFX/Selected/combat_body_fall_03",
+      "gain": 1
+    },
+    {
+      "path": "SFX/Selected/footstep_cobblestone_01",
+      "gain": 1
+    },
+    {
+      "path": "SFX/Selected/structure_body_collision_01",
+      "gain": 0.8
+    },
+    {
+      "path": "SFX/Selected/structure_bullet_hit_stone_01",
+      "gain": 0.75
+    },
+    {
+      "path": "SFX/Selected/structure_bullet_hit_wood_01",
+      "gain": 0.75
+    },
+    {
+      "path": "SFX/Selected/structure_collapse_01",
+      "gain": 1
+    },
+    {
+      "path": "SFX/Selected/structure_crack_heavy_02",
+      "gain": 1
+    },
+    {
+      "path": "SFX/Selected/structure_crack_light_01",
+      "gain": 1
+    },
+    {
+      "path": "SFX/Selected/threat_chain_debris_01",
+      "gain": 0.5
+    },
+    {
+      "path": "SFX/Selected/threat_grenade_explode_02",
+      "gain": 0.6
+    },
+    {
+      "path": "SFX/Selected/threat_grenade_fuse_loop_01",
+      "gain": 0.3
+    },
+    {
+      "path": "SFX/Selected/threat_grenade_hit_unexploded_01",
+      "gain": 1
+    },
+    {
+      "path": "SFX/Selected/threat_grenade_prepare_01",
+      "gain": 1
+    },
+    {
+      "path": "SFX/Selected/threat_grenade_throw_01",
+      "gain": 1
+    },
+    {
+      "path": "SFX/Selected/ui_cancel_02",
+      "gain": 0.8
+    },
+    {
+      "path": "SFX/Selected/ui_confirm_02",
+      "gain": 0.8
+    },
+    {
+      "path": "SFX/Selected/ui_unavailable_02",
+      "gain": 0.8
+    },
+    {
+      "path": "SFX/Selected/weapon_blocked_01",
+      "gain": 1
+    },
+    {
+      "path": "SFX/Selected/weapon_enemy_musket_fire_01",
+      "gain": 0.6
+    },
+    {
+      "path": "SFX/Selected/weapon_no_target_02",
+      "gain": 1
+    },
+    {
+      "path": "SFX/Selected/weapon_player_musket_fire_03",
+      "gain": 0.9
+    },
+    {
+      "path": "SFX/Selected/weapon_reload_mechanism_01",
+      "gain": 1
+    },
+    {
+      "path": "SFX/Selected/weapon_reload_paper_01",
+      "gain": 1
+    },
+    {
+      "path": "SFX/Selected/weapon_reload_ready_02",
+      "gain": 1
+    }
+  ]
+}

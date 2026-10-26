@@ -1,0 +1,69 @@
+Selected audio attribution (2026-10-24)
+
+Musket sound effects by aaronsiler: aaronsiler_musket 1.wav and aaronsiler_musket 3.wav.
+https://freesound.org/people/aaronsiler/sounds/128977/
+https://freesound.org/people/aaronsiler/sounds/128979/
+CC BY 4.0: https://creativecommons.org/licenses/by/4.0/
+Modified: excerpted from publicly offered HQ MP3 previews, downmixed, filtered, level-adjusted and faded.
+Used: weapon_enemy_musket_fire_01 and weapon_player_musket_fire_03.
+
+Body Hitting Ground by dklon.
+https://opengameart.org/content/body-hitting-ground
+CC BY 3.0: https://creativecommons.org/licenses/by/3.0/
+Modified: selected one impact, downmixed, filtered, level-adjusted and faded.
+Used: combat_body_fall_03.
+
+Other selected audio derives from CC0 material. Details and source links follow.
+
+Audeption | CC0 | https://freesound.org/people/Audeption/sounds/425172/ | https://creativecommons.org/publicdomain/zero/1.0/
+Public HQ MP3 preview source; lossy.
+
+dklon | CC BY 3.0 | https://opengameart.org/content/body-hitting-ground | https://creativecommons.org/licenses/by/3.0/
+
+scarbelly25 | CC0 | https://freesound.org/people/scarbelly25/sounds/33939/ | https://creativecommons.org/publicdomain/zero/1.0/
+Public HQ MP3 preview source; lossy.
+
+Thimras | CC0 | https://opengameart.org/content/cannon-fire | https://creativecommons.org/publicdomain/zero/1.0/
+
+Thimras | CC0 | https://opengameart.org/content/cannon-hit | https://creativecommons.org/publicdomain/zero/1.0/
+
+thefilmbakery | CC0 | https://freesound.org/people/thefilmbakery/sounds/137843/ | https://creativecommons.org/publicdomain/zero/1.0/
+Public HQ MP3 preview source; lossy.
+
+bart | CC0 | https://opengameart.org/content/chain-winch-sounds | https://creativecommons.org/publicdomain/zero/1.0/
+
+RossBell | CC0 | https://freesound.org/people/RossBell/sounds/389417/ | https://creativecommons.org/publicdomain/zero/1.0/
+Public HQ MP3 preview source; lossy.
+
+HaelDB | CC0 | https://opengameart.org/content/footsteps-leather-cloth-armor | https://creativecommons.org/publicdomain/zero/1.0/
+
+Jess_Weddle_6121 | CC0 | https://freesound.org/people/Jess_Weddle_6121/sounds/695945/ | https://creativecommons.org/publicdomain/zero/1.0/
+Public HQ MP3 preview source; lossy.
+
+LFA | CC0 | https://opengameart.org/content/equipment-clicks-iii | https://creativecommons.org/publicdomain/zero/1.0/
+
+EZduzziteh | CC0 | https://opengameart.org/content/explosions-4 | https://creativecommons.org/publicdomain/zero/1.0/
+
+AntumDeluge | CC0 | https://opengameart.org/content/fire-crackling | https://creativecommons.org/publicdomain/zero/1.0/
+
+Seidolon | CC0 | https://freesound.org/people/Seidolon/sounds/372186/ | https://creativecommons.org/publicdomain/zero/1.0/
+Public HQ MP3 preview source; lossy.
+
+N3pomuk | CC0 | https://freesound.org/people/N3pomuk/sounds/656397/ | https://creativecommons.org/publicdomain/zero/1.0/
+Public HQ MP3 preview source; lossy.
+
+Kenney | CC0 | https://kenney.nl/assets/impact-sounds | https://creativecommons.org/publicdomain/zero/1.0/
+
+aaronsiler | CC BY 4.0 | https://freesound.org/people/aaronsiler/sounds/128977/ | https://creativecommons.org/licenses/by/4.0/
+Public HQ MP3 preview source; lossy.
+
+aaronsiler | CC BY 4.0 | https://freesound.org/people/aaronsiler/sounds/128979/ | https://creativecommons.org/licenses/by/4.0/
+Public HQ MP3 preview source; lossy.
+
+Luckius | CC0 | https://opengameart.org/content/various-paper-sound-effects | https://creativecommons.org/publicdomain/zero/1.0/
+
+artisticdude | CC0 | https://opengameart.org/content/swishes-sound-pack | https://creativecommons.org/publicdomain/zero/1.0/
+
+Luke.RUSTLTD | CC0 | https://opengameart.org/content/wind1 | https://creativecommons.org/publicdomain/zero/1.0/
+
+rubberduck | CC0 | https://opengameart.org/content/100-cc0-metal-and-wood-sfx | https://creativecommons.org/publicdomain/zero/1.0/

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17230b98bf314234788811721ba9b851, type: 3}
+  m_Name: TavernDialogue
+  m_EditorClassIdentifier: 
+  first:
+    speaker: "\u683C\u6717\u6CF0\u5C14"
+    text: "\u7B49\u7B49\uFF0C\u4F60\u662F\u8C01\uFF1F"
+  third:
+    speaker: "\u6602\u82E5\u62C9"
+    text: "\u65E2\u7136\u4F60\u5DF2\u7ECF\u6765\u4E86\uFF0C\u90A3\u6211\u4EEC\u4E00\u8D77\u53BB\u7B51\u9020\u8857\u5792\u5427"
+  fourth:
+    speaker: "\u6602\u82E5\u62C9"
+    text: "Grantaire\uFF0C\u522B\u559D\u4E86\uFF0C\u8BA9\u6211\u4EEC\u6E05\u6E05\u695A\u695A\u5730\u8D74\u6B7B"

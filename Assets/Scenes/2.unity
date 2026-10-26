@@ -550,6 +550,8 @@ MonoBehaviour:
   restScale: 0.85
   showPerfectTimer: 1
   perfectTimerFontSize: 18
+  enableHeartbeatSound: 1
+  heartbeatVolume: 0.55
 --- !u!1 &268654316
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,6 +640,10 @@ MonoBehaviour:
   leaderUnlockTime: 45
   leaderCooldown: 18
   leaderSpacing: 0.9
+  enableCannon: 1
+  cannonUnlockTime: 1680
+  cannonScreenInset: -0.9
+  cannonFootOffset: -0.59375
   lateGameTime: 180
   beatsPerSpawn: 4
   target: {fileID: 2100190121}
@@ -698,6 +704,10 @@ MonoBehaviour:
   leaderUnlockTime: 45
   leaderCooldown: 18
   leaderSpacing: 0.9
+  enableCannon: 1
+  cannonUnlockTime: 1680
+  cannonScreenInset: -0.9
+  cannonFootOffset: -0.59375
   lateGameTime: 180
   beatsPerSpawn: 4
   target: {fileID: 2100190121}
@@ -1343,7 +1353,7 @@ Transform:
   m_GameObject: {fileID: 1907865760}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6, y: 0.9, z: 0}
+  m_LocalPosition: {x: 5.09375, y: -1.3125, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1469,6 +1479,10 @@ MonoBehaviour:
   leaderUnlockTime: 45
   leaderCooldown: 18
   leaderSpacing: 0.9
+  enableCannon: 1
+  cannonUnlockTime: 1680
+  cannonScreenInset: -0.9
+  cannonFootOffset: -0.59375
   lateGameTime: 180
   beatsPerSpawn: 4
   target: {fileID: 2100190121}
@@ -1612,7 +1626,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: 
+  m_Children:
   - {fileID: 2100190101}
   - {fileID: 2100190111}
   - {fileID: 2100190121}
@@ -1696,7 +1710,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 17.76833156216791, y: 10}
+  m_Size: {x: 17.768332, y: 10}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1728,7 +1742,7 @@ Transform:
   m_GameObject: {fileID: 2100190110}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.552603613, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5526036, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1780,7 +1794,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 17.7577045696068, y: 10}
+  m_Size: {x: 17.757704, y: 10}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1814,7 +1828,7 @@ Transform:
   m_GameObject: {fileID: 2100190120}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.16471838, y: -0.828108395, z: 0}
+  m_LocalPosition: {x: 8.164719, y: -0.82810795, z: 0}
   m_LocalScale: {x: -0.85, y: 0.85, z: 0.85}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1866,7 +1880,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 17.76833156216791, y: 10}
+  m_Size: {x: 17.768332, y: 10}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1905,50 +1919,42 @@ PolygonCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 17.768332, y: 10}
+    newSize: {x: 17.768332, y: 10}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 2.65674814, y: 3.45908608}
-      - {x: 3.61317747, y: 3.77789586}
-      - {x: 4.08076514, y: 2.4282678}
-      - {x: 5.52603613, y: 1.2805526}
-      - {x: 5.73857598, y: -0.313496281}
-      - {x: 6.07863974, y: -1.90754516}
-      - {x: 6.72688629, y: -3.50159405}
-      - {x: 7.34325186, y: -4.35175345}
-      - {x: 7.4282678, y: -4.5642933}
-      - {x: 7.16259299, y: -4.88310308}
-      - {x: 2.50797024, y: -4.88310308}
-      - {x: 1.75345377, y: -4.77683316}
-      - {x: 1.66843783, y: -4.5642933}
-      - {x: 2.22104145, y: -4.03294368}
-      - {x: 1.77470776, y: -3.50159405}
-      - {x: 1.90223167, y: -2.43889479}
-      - {x: 2.1466525, y: -1.90754516}
-      - {x: 1.97662062, y: -1.37619554}
-      - {x: 1.66843783, y: -0.844845909}
-      - {x: 1.88097768, y: 0.217853348}
-      - {x: 1.92348565, y: 1.2805526}
-      - {x: 1.9978746, y: 2.23698193}
-      - {x: 2.1466525, y: 2.66206164}
-      - {x: 2.22104145, y: 3.08714134}
---- !u!1660057539 &9223372036854775807
-SceneRoots:
-  m_ObjectHideFlags: 0
-  m_Roots:
-  - {fileID: 22567799}
-  - {fileID: 1907865762}
-  - {fileID: 1503757974}
-  - {fileID: 575602052}
-  - {fileID: 786502191}
-  - {fileID: 2032446246}
-  - {fileID: 2077356637}
-  - {fileID: 118751737}
-  - {fileID: 796148510}
-  - {fileID: 1578884023}
-  - {fileID: 1710761984}
-  - {fileID: 74927140}
-  - {fileID: 2100190001}
+    - - {x: 2.6567483, y: 3.4590862}
+      - {x: 3.6131775, y: 3.777896}
+      - {x: 4.0807652, y: 2.428268}
+      - {x: 5.5260363, y: 1.2805526}
+      - {x: 5.738576, y: -0.3134963}
+      - {x: 6.07864, y: -1.9075452}
+      - {x: 6.7268863, y: -3.501594}
+      - {x: 7.343252, y: -4.3517537}
+      - {x: 7.428268, y: -4.5642934}
+      - {x: 7.162593, y: -4.8831034}
+      - {x: 2.5079703, y: -4.8831034}
+      - {x: 1.7534539, y: -4.776833}
+      - {x: 1.6684378, y: -4.5642934}
+      - {x: 2.2210414, y: -4.0329437}
+      - {x: 1.7747078, y: -3.501594}
+      - {x: 1.9022317, y: -2.4388947}
+      - {x: 2.1466525, y: -1.9075452}
+      - {x: 1.9766207, y: -1.3761955}
+      - {x: 1.6684378, y: -0.84484595}
+      - {x: 1.8809777, y: 0.21785335}
+      - {x: 1.9234856, y: 1.2805526}
+      - {x: 1.9978746, y: 2.2369819}
+      - {x: 2.1466525, y: 2.6620617}
+      - {x: 2.2210414, y: 3.0871413}
+  m_UseDelaunayMesh: 0
 --- !u!114 &2100200100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1966,3 +1972,20 @@ MonoBehaviour:
   thirdStage: {fileID: 21300000, guid: 1cc00f9d27a442899a33052dba527c42, type: 3}
   secondStageAtPercent: 33
   thirdStageAtPercent: 66
+--- !u!1660057539 &9223372036854775807
+SceneRoots:
+  m_ObjectHideFlags: 0
+  m_Roots:
+  - {fileID: 22567799}
+  - {fileID: 1907865762}
+  - {fileID: 1503757974}
+  - {fileID: 575602052}
+  - {fileID: 786502191}
+  - {fileID: 2032446246}
+  - {fileID: 2077356637}
+  - {fileID: 118751737}
+  - {fileID: 796148510}
+  - {fileID: 1578884023}
+  - {fileID: 1710761984}
+  - {fileID: 74927140}
+  - {fileID: 2100190001}

@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ae64b3bf85d75946bddc578614cbe29, type: 3}
+  m_Name: NameResponses
+  m_EditorClassIdentifier: 
+  specialNamesJson: {fileID: 4900000, guid: 52fcc69c545b90247a252c71afd4d1b0, type: 3}
+  specialNames:
+  - id: enjolras
+    aliases:
+    - "\u6602\u82E5\u62C9"
+    - Enjolras
+    speaker: 
+    reply: 
+    extraBeforeThird: 0
+    extraSpeaker: 
+    extraReply: 
+  - id: grantaire
+    aliases:
+    - "\u683C\u6717\u6CF0\u5C14"
+    - Grantaire
+    speaker: 
+    reply: 
+    extraBeforeThird: 0
+    extraSpeaker: 
+    extraReply: 
+  defaultResponse:
+    id: default
+    aliases: []
+    speaker: 
+    reply: 
+    extraBeforeThird: 0
+    extraSpeaker: 
+    extraReply: 
+  unnamedResponse:
+    id: unnamed
+    aliases: []
+    speaker: 
+    reply: 
+    extraBeforeThird: 0
+    extraSpeaker: 
+    extraReply: 

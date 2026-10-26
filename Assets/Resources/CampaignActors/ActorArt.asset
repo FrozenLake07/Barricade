@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 610bfb9cf8617894cadf861332584c86, type: 3}
+  m_Name: ActorArt
+  m_EditorClassIdentifier: 
+  gavrocheIdle: {fileID: 21300000, guid: e574e25fef04e6f439ef3caf197dc26a, type: 3}
+  gavrocheRun:
+  - {fileID: 21300000, guid: b91234868cef1864e97e116f0b3ca0af, type: 3}
+  - {fileID: 21300000, guid: aca5666bc5051d548911f98bb10adfb2, type: 3}
+  - {fileID: 21300000, guid: a0e36ebe740cce345959e38f0d20a3b3, type: 3}
+  - {fileID: 21300000, guid: e644a1f2899dc92439553262312705be, type: 3}
+  - {fileID: 21300000, guid: 4ccc2162c0cfde74abd32c00d79413e4, type: 3}
+  - {fileID: 21300000, guid: 5c26406405afca549ac56683d468a5e4, type: 3}
+  - {fileID: 21300000, guid: 5b2e45c04ae17914a9f1058ef9506c50, type: 3}
+  - {fileID: 21300000, guid: bcd689e79754df24194460420e647ae9, type: 3}
+  - {fileID: 21300000, guid: 1490f8e2f2a8f8d4d914cde51e1da3b4, type: 3}
+  - {fileID: 21300000, guid: b0ca38bd15e49c046a2ea4c7bf479792, type: 3}
+  - {fileID: 21300000, guid: c8df27579ab020b40a47fcdac0556429, type: 3}
+  - {fileID: 21300000, guid: 393b74dde9322a34cae9f8d3858ff1bd, type: 3}
+  gavrochePick:
+  - {fileID: 21300000, guid: ffc7adb0a9759d64f907041e7ddaa98a, type: 3}
+  - {fileID: 21300000, guid: c7a71a23fa474984ebe8cb5454697ead, type: 3}
+  - {fileID: 21300000, guid: 1440c0e5de3b8fa4cac09f1eb193ee3f, type: 3}
+  - {fileID: 21300000, guid: cf939a4c2c136a9409e231aa81d9922f, type: 3}
+  - {fileID: 21300000, guid: 92c1942dd56769a42a6e318600606788, type: 3}
+  - {fileID: 21300000, guid: 5aa60d1a8b8601546a3ddcaf7406b37f, type: 3}
+  - {fileID: 21300000, guid: 614a7db98812acb49af6fae6c01c9f19, type: 3}
+  - {fileID: 21300000, guid: 9bd119458422d3940beafa2bd3725b59, type: 3}
+  - {fileID: 21300000, guid: 9d0e773ae6c63a843a6075e59a6c592b, type: 3}
+  - {fileID: 21300000, guid: 18eada29df924054f8cd6ce88172345b, type: 3}
+  - {fileID: 21300000, guid: 06bcd5dad14bff14294460ce04a5b5d0, type: 3}
+  - {fileID: 21300000, guid: 7ed3a0653895de1459b3320e763f2801, type: 3}
+  soldierHit:
+  - {fileID: 21300000, guid: c3fd373b629a2634bb315319c404a77d, type: 3}
+  - {fileID: 21300000, guid: 08246476b5535e44ebcb38b11d90131a, type: 3}
+  - {fileID: 21300000, guid: 54d2a64fc04b24d4ea71b7a0b0ecc716, type: 3}
+  - {fileID: 21300000, guid: a63b47a21486e9242ae3bb1bb6cba7aa, type: 3}
+  - {fileID: 21300000, guid: 492e5baf7325d454cb15ca09f74d3571, type: 3}
+  - {fileID: 21300000, guid: 25134689a40c17049afd73072b51e282, type: 3}
+  - {fileID: 21300000, guid: 80d3f67bfbb1114448274da1b4f618fb, type: 3}
+  - {fileID: 21300000, guid: 550888c6b28741546add4e754fc72c3a, type: 3}
+  - {fileID: 21300000, guid: 46b4437592fffad41b037f0eb503273e, type: 3}
+  - {fileID: 21300000, guid: 3bcfccfad42880545b2024c3b94c8f5f, type: 3}
+  - {fileID: 21300000, guid: dbff052a81cf07d43b6b9b70094c8e90, type: 3}
+  - {fileID: 21300000, guid: 759f444c14c336c4a96b861715f077ab, type: 3}
+  soldierDeath:
+  - {fileID: 21300000, guid: b8fbb1e9443a91d4e9eab8a99b360d31, type: 3}
+  - {fileID: 21300000, guid: 97e5bce456d121d4c8d33686f83bbfae, type: 3}
+  - {fileID: 21300000, guid: 32b51e56f346e3742a8182c55e956657, type: 3}
+  - {fileID: 21300000, guid: 3f3a843cd71876d418c78c6255e8c89f, type: 3}
+  - {fileID: 21300000, guid: dae9a20531dfb2648b7021d8c9f1c197, type: 3}
+  - {fileID: 21300000, guid: 5449156d5173a0e4e918892670ae5205, type: 3}
+  - {fileID: 21300000, guid: facfc0605373b52428deedc92d84fd8b, type: 3}
+  - {fileID: 21300000, guid: 6a28e562e73819f4a84795f848977829, type: 3}
+  - {fileID: 21300000, guid: e37703f757195e94298df600a07c8208, type: 3}
+  - {fileID: 21300000, guid: 21869a5a3e4af284d8313f9c5458562b, type: 3}
+  - {fileID: 21300000, guid: 17f789dd3c729234e9ceab90dea3235d, type: 3}
+  - {fileID: 21300000, guid: f9fa52cb3d70c3a43ab640fdb23b6c07, type: 3}
+  grenadierHit:
+  - {fileID: 21300000, guid: abb148294bcb1f947b6f52b7901f3bdb, type: 3}
+  - {fileID: 21300000, guid: 348bbc9ea8a53e149bb2f92aabd50d38, type: 3}
+  - {fileID: 21300000, guid: 549cffaea5913fa4890b40dad71977cb, type: 3}
+  - {fileID: 21300000, guid: 5284aba0b6067394885e7c1a2c6fd1b9, type: 3}
+  - {fileID: 21300000, guid: 98536d7d58f5277468f27d98e48e8f6f, type: 3}
+  - {fileID: 21300000, guid: 05796c9456c07154e9ff8bd6b7cf2499, type: 3}
+  - {fileID: 21300000, guid: 743f81209c651c54fb41dd4ff7c7d48a, type: 3}
+  - {fileID: 21300000, guid: c5d2c0ad2eeefb0488a9b13d252f43d7, type: 3}
+  - {fileID: 21300000, guid: a6e1a68cc2b657e4a8044ac1e5794a67, type: 3}
+  - {fileID: 21300000, guid: cc01f6fa7e108594ead6c09cf49f26d3, type: 3}
+  - {fileID: 21300000, guid: 115c738939338f54ca8c7c6c2927d9f3, type: 3}
+  - {fileID: 21300000, guid: ca77815cce0ba284cbc8b492a233b917, type: 3}
+  grenadierDeath:
+  - {fileID: 21300000, guid: fc8243f8691a35c479642cb136374647, type: 3}
+  - {fileID: 21300000, guid: bdc3f814a58f873429fac07bcd4772b3, type: 3}
+  - {fileID: 21300000, guid: 4941bf12c8f8079409297f8de9405733, type: 3}
+  - {fileID: 21300000, guid: 8d89ac26e022a114c8d7f2aff3ab0207, type: 3}
+  - {fileID: 21300000, guid: 26e47d89b3c1f0c468495814d4f4bcf8, type: 3}
+  - {fileID: 21300000, guid: 2f310e255b41cfa4892b38e62184fe41, type: 3}
+  - {fileID: 21300000, guid: ebdeede00dea0384dbd2a1ba227af9cd, type: 3}
+  - {fileID: 21300000, guid: 6016d549905eba74d93c4ca8fbf3dca7, type: 3}
+  - {fileID: 21300000, guid: 5cd0b652c584eaa4882966793de37f7f, type: 3}
+  - {fileID: 21300000, guid: 046ddfa55bbf55f4eb2d205e7508898f, type: 3}
+  - {fileID: 21300000, guid: 70dffc0f50729374ea6f125d5caf98f4, type: 3}
+  - {fileID: 21300000, guid: 6c9d2455b23acd4409a6678da562950c, type: 3}
+  grenadierWindup:
+  - {fileID: 21300000, guid: 6f67194f57afe4c45ad3681f69a991e5, type: 3}
+  - {fileID: 21300000, guid: 909841bbed92f0c4e943cab678cce74a, type: 3}
+  - {fileID: 21300000, guid: ef8f778022d47f747b95430b748b1758, type: 3}
+  - {fileID: 21300000, guid: 5b041f9d323ccd44b8e4354d971fbe84, type: 3}
+  - {fileID: 21300000, guid: bb359d4cc0a620342a82cc29c429d2d9, type: 3}
+  - {fileID: 21300000, guid: 9410cdceebfb6f5468c900866646baa2, type: 3}
+  - {fileID: 21300000, guid: 800e09bcaed058849b3a5c17155bca13, type: 3}
+  - {fileID: 21300000, guid: f53d285a195a69d4b8a83055b839c8e7, type: 3}
+  - {fileID: 21300000, guid: c4f76fcf4602d334dbcea1041bb8401f, type: 3}
+  - {fileID: 21300000, guid: 1fc810d53269a4744811f77862d0e31b, type: 3}
+  - {fileID: 21300000, guid: dd4d2082c4a920745a9c544ac3fbf67c, type: 3}
+  - {fileID: 21300000, guid: 0253423cefd5a054e8baeb82f01829e8, type: 3}
+  childFPS: 12
+  soldierFPS: 10
+  grenadierFPS: 12
+  deathHold: 0.6
+  deathFade: 0.3
